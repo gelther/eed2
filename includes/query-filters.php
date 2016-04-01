@@ -23,8 +23,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @return void
  */
 function edd_block_attachments() {
-	if ( ! is_attachment() )
+	if ( ! is_attachment() ) {
 		return;
+	}
 
 	$parent   = get_post_field( 'post_parent', get_the_ID() );
 	$uri      = wp_get_attachment_url( get_the_ID() );
