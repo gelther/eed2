@@ -69,7 +69,7 @@ class EDD_Tracking {
 		// Retrieve current theme info
 		$theme_data = wp_get_theme();
 		$theme      = $theme_data->Name . ' ' . $theme_data->Version;
-		
+
 		$data['url']    = home_url();
 		$data['theme']  = $theme;
 		$data['email']  = get_bloginfo( 'admin_email' );
