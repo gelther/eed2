@@ -7,7 +7,7 @@ php:
     closing_php_tag: remove
     control_structure_parentheses_inner_whitespace: whitespace
     doc_function_whitespace: no_space
-    else_if_whitespace: no_space
+    else_if_whitespace: whitespace
     # exclamation_whitespace: whitespace
     # force_control_structure_braces: force
     # function_args_separator_whitespace: whitespace
