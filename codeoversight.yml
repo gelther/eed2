@@ -9,7 +9,7 @@ php:
     doc_function_whitespace: no_space
     else_if_whitespace: no_space
     exclamation_whitespace: whitespace
-    # force_control_structure_braces: force
+    force_control_structure_braces: force
     # function_args_separator_whitespace: whitespace
     # function_parentheses_inner_whitespace: whitespace
     # indentation_whitespace: tab
