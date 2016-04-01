@@ -1200,8 +1200,9 @@ class EDD_API {
 				}
 			}
 
-			if ( ! empty( $error ) )
+			if ( ! empty( $error ) ) {
 				return $error;
+			}
 
 			return $sales;
 		} elseif ( $args['type'] == 'earnings' ) {
@@ -1247,10 +1248,12 @@ class EDD_API {
 						$i = $month_start;
 						while ( $i <= $month_end ) :
 
-							if( $i == $dates['m_start'] )
+							if( $i == $dates['m_start'] ) {
 								$d = $dates['day_start'];
-							else
+							}
+							else {
 								$d = 1;
+							}
 
 							if( $i == $dates['m_end'] ) {
 								$num_of_days = $dates['day_end'];
@@ -1310,8 +1313,9 @@ class EDD_API {
 				}
 			}
 
-			if ( ! empty( $error ) )
+			if ( ! empty( $error ) ) {
 				return $error;
+			}
 
 			return $earnings;
 		} elseif ( $args['type'] == 'customers' ) {
@@ -1641,8 +1645,9 @@ class EDD_API {
 	 * @return void
 	 */
 	private function log_request( $data = array() ) {
-		if ( ! $this->log_requests )
+		if ( ! $this->log_requests ) {
 			return;
+		}
 
 		global $edd_logs, $wp_query;
 
@@ -1724,10 +1729,12 @@ class EDD_API {
 			case 'json' :
 
 				header( 'Content-Type: application/json' );
-				if ( ! empty( $this->pretty_print ) )
+				if ( ! empty( $this->pretty_print ) ) {
 					echo json_encode( $this->data, $this->pretty_print );
-				else
+				}
+				else {
 					echo json_encode( $this->data );
+				}
 
 				break;
 
