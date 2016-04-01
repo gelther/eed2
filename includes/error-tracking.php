@@ -111,10 +111,12 @@ function edd_unset_error( $error_id ) {
  * @return void
  */
 function _edd_die_handler() {
-	if ( defined( 'EDD_UNIT_TESTS' ) )
+	if ( defined( 'EDD_UNIT_TESTS' ) ) {
 		return '_edd_die_handler';
-	else
+	}
+	else {
 		die();
+	}
 }
 
 /**
