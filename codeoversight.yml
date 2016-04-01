@@ -37,3 +37,11 @@ php:
     whitespace_before_function_brace: space
     whitespace_before_function_close: newline
     whitespace_before_function_parentheses: no_space
+blacklist:
+    directories:
+        - assets
+        - bin
+        - lanuages
+        - templates
+        - includes/gateways/libs
+        - includes/libraries
