@@ -190,7 +190,7 @@ function edd_process_download() {
 					$direct    = true;
 					$file_path = $requested_file;
 
-				} else if( defined( 'UPLOADS' ) && strpos( $requested_file, UPLOADS ) !== false ) {
+				} elseif( defined( 'UPLOADS' ) && strpos( $requested_file, UPLOADS ) !== false ) {
 
 					/**
 					 * This is a local file given by URL so we need to figure out the path
@@ -201,14 +201,14 @@ function edd_process_download() {
 					$file_path = realpath( ABSPATH . $file_path );
 					$direct    = true;
 
-				} else if( strpos( $requested_file, content_url() ) !== false ) {
+				} elseif( strpos( $requested_file, content_url() ) !== false ) {
 
 					/** This is a local file given by URL so we need to figure out the path */
 					$file_path = str_replace( content_url(), WP_CONTENT_DIR, $requested_file );
 					$file_path = realpath( $file_path );
 					$direct    = true;
 
-				} else if( strpos( $requested_file, set_url_scheme( content_url(), 'https' ) ) !== false ) {
+				} elseif( strpos( $requested_file, set_url_scheme( content_url(), 'https' ) ) !== false ) {
 
 					/** This is a local file given by an HTTPS URL so we need to figure out the path */
 					$file_path = str_replace( set_url_scheme( content_url(), 'https' ), WP_CONTENT_DIR, $requested_file );
@@ -364,12 +364,12 @@ function edd_get_local_path_from_url( $url ) {
 		 */
 		$file = str_replace( site_url(), '', $file );
 
-	} else if( strpos( $file, $upload_url ) !== false ) {
+	} elseif( strpos( $file, $upload_url ) !== false ) {
 
 		/** This is a local file given by URL so we need to figure out the path */
 		$file = str_replace( $upload_url, edd_get_upload_dir(), $file );
 
-	} else if( strpos( $file, set_url_scheme( $upload_url, 'https' ) ) !== false ) {
+	} elseif( strpos( $file, set_url_scheme( $upload_url, 'https' ) ) !== false ) {
 
 		/** This is a local file given by an HTTPS URL so we need to figure out the path */
 		$file = str_replace( set_url_scheme( $upload_url, 'https' ), edd_get_upload_dir(), $file );
