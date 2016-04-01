@@ -67,7 +67,7 @@ function edd_has_active_discounts() {
 
 	$discounts = edd_get_discounts();
 
-	if ( $discounts) {
+	if ( $discounts ) {
 		foreach ( $discounts as $discount ) {
 			if ( edd_is_discount_active( $discount->ID ) ) {
 				$has_active = true;
