@@ -89,7 +89,6 @@ function edd_has_active_discounts() {
  * @return array
  */
 function edd_get_discount( $discount_id = 0 ) {
-
 	if ( empty( $discount_id ) ) {
 		return false;
 	}
@@ -114,7 +113,6 @@ function edd_get_discount( $discount_id = 0 ) {
  * @return      int
  */
 function edd_get_discount_by_code( $code = '' ) {
-
 	if ( empty( $code ) || ! is_string( $code ) ) {
 		return false;
 	}
@@ -132,7 +130,6 @@ function edd_get_discount_by_code( $code = '' ) {
  * @return      mixed
  */
 function edd_get_discount_by( $field = '', $value = '' ) {
-
 	if ( empty( $field ) || empty( $value ) ) {
 		return false;
 	}
@@ -197,7 +194,6 @@ function edd_get_discount_by( $field = '', $value = '' ) {
  * @return bool Whether or not discount code was created
  */
 function edd_store_discount( $details, $discount_id = null ) {
-
 	$meta = array(
 		'code'              => isset( $details['code'] )             ? $details['code']              : '',
 		'name'              => isset( $details['name'] )             ? $details['name']              : '',
@@ -784,7 +780,6 @@ function edd_discount_product_reqs_met( $code_id = null ) {
  * @return bool $return
  */
 function edd_is_discount_used( $code = null, $user = '', $code_id = 0 ) {
-
 	$return = false;
 
 	if ( empty( $code_id ) ) {
@@ -892,8 +887,6 @@ function edd_is_discount_used( $code = null, $user = '', $code_id = 0 ) {
  * @return bool
  */
 function edd_is_discount_valid( $code = '', $user = '', $set_error = true ) {
-
-
 	$return      = false;
 	$discount_id = edd_get_discount_id_by_code( $code );
 	$user        = trim( $user );
@@ -988,7 +981,6 @@ function edd_get_discounted_amount( $code, $base_price ) {
  * @return int
  */
 function edd_increase_discount_usage( $code ) {
-
 	$id   = edd_get_discount_id_by_code( $code );
 	$uses = edd_get_discount_uses( $id );
 
@@ -1016,7 +1008,6 @@ function edd_increase_discount_usage( $code ) {
  * @return int
  */
 function edd_decrease_discount_usage( $code ) {
-
 	$id   = edd_get_discount_id_by_code( $code );
 	$uses = edd_get_discount_uses( $id );
 
@@ -1060,7 +1051,6 @@ function edd_format_discount_rate( $type, $amount ) {
  * @return string[] All currently active discounts
  */
 function edd_set_cart_discount( $code = '' ) {
-
 	if ( edd_multiple_discounts_allowed() ) {
 		// Get all active cart discounts
 		$discounts = edd_get_cart_discounts();
@@ -1153,7 +1143,6 @@ function edd_cart_has_discounts() {
  * @return float|mixed|void Total discounted amount
  */
 function edd_get_cart_discounted_amount( $discounts = false ) {
-
 	$amount = 0.00;
 	$items  = edd_get_cart_content_details();
 
@@ -1179,7 +1168,6 @@ function edd_get_cart_discounted_amount( $discounts = false ) {
  * @return float The discounted amount
  */
 function edd_get_cart_item_discount_amount( $item = array() ) {
-
 	global $edd_is_last_cart_item, $edd_flat_discount_total;
 
 	// If we're not meeting the requirements of the $item array, return or set them
@@ -1395,7 +1383,6 @@ add_action( 'edd_remove_cart_discount', 'edd_remove_cart_discount' );
  * @param int $cart_key
  */
 function edd_maybe_remove_cart_discount( $cart_key = 0 ) {
-
 	$discounts = edd_get_cart_discounts();
 
 	if ( ! $discounts ) {
@@ -1429,7 +1416,6 @@ function edd_multiple_discounts_allowed() {
  * @return void
  */
 function edd_listen_for_cart_discount() {
-
 	// Array stops the bulk delete of discount codes from storing as a preset_discount
 	if ( empty( $_REQUEST['discount'] ) || is_array( $_REQUEST['discount'] ) ) {
 		return;
@@ -1448,7 +1434,6 @@ add_action( 'init', 'edd_listen_for_cart_discount', 0 );
  * @return void
  */
 function edd_apply_preset_discount() {
-
 	$code = sanitize_text_field( EDD()->session->get( 'preset_discount' ) );
 
 	if ( ! $code ) {
