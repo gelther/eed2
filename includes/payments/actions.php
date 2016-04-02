@@ -131,7 +131,6 @@ add_action( 'edd_update_payment_status', 'edd_complete_purchase', 100, 3 );
  * @return void
  */
 function edd_record_status_change( $payment_id, $new_status, $old_status ) {
-
 	// Get the list of statuses so that status in the payment note can be translated
 	$stati      = edd_get_payment_statuses();
 	$old_status = isset( $stati[ $old_status ] ) ? $stati[ $old_status ] : $old_status;
@@ -151,7 +150,6 @@ add_action( 'edd_update_payment_status', 'edd_record_status_change', 100, 3 );
  * @return void
  */
 function edd_undo_purchase_on_refund( $payment_id, $new_status, $old_status ) {
-
 	$backtrace = debug_backtrace();
 	_edd_deprecated_function( 'edd_undo_purchase_on_refund', '2.5.7', 'EDD_Payment->refund()', $backtrace );
 
@@ -259,7 +257,6 @@ add_action( 'edd_weekly_scheduled_events', 'edd_mark_abandoned_orders' );
  * @return bool|int             If successful the number of rows updated, if it fails, false
  */
 function edd_update_payment_backwards_compat( $meta_id, $object_id, $meta_key, $meta_value ) {
-
 	$meta_keys = array( '_edd_payment_meta', '_edd_payment_tax' );
 
 	if ( ! in_array( $meta_key, $meta_keys ) ) {
