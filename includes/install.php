@@ -231,7 +231,6 @@ function edd_run_install() {
  * @return void
  */
 function edd_new_blog_created( $blog_id, $user_id, $domain, $path, $site_id, $meta ) {
-
 	if ( is_plugin_active_for_network( plugin_basename( EDD_PLUGIN_FILE ) ) ) {
 
 		switch_to_blog( $blog_id );
@@ -253,7 +252,6 @@ add_action( 'wpmu_new_blog', 'edd_new_blog_created', 10, 6 );
  * @return array          The tables to drop
  */
 function edd_wpmu_drop_tables( $tables, $blog_id ) {
-
 	switch_to_blog( $blog_id );
 	$customers_db = new EDD_DB_Customers();
 	if ( $customers_db->installed() ) {
@@ -276,7 +274,6 @@ add_filter( 'wpmu_drop_tables', 'edd_wpmu_drop_tables', 10, 2 );
  * @return void
  */
 function edd_after_install() {
-
 	if ( ! is_admin() ) {
 		return;
 	}
@@ -315,7 +312,6 @@ add_action( 'admin_init', 'edd_after_install' );
  * @return void
  */
 function edd_install_roles_on_network() {
-
 	global $wp_roles;
 
 	if ( ! is_object( $wp_roles ) ) {
