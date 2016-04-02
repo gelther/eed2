@@ -539,7 +539,7 @@ function edd_count_payments( $args = array() ) {
 	}
 
 	foreach ( $statuses as $state ) {
-		$stats[$state] = 0;
+		$stats[ $state ] = 0;
 	}
 
 	foreach ( (array) $count as $row ) {
@@ -548,7 +548,7 @@ function edd_count_payments( $args = array() ) {
 			continue;
 		}
 
-		$stats[$row['post_status']] = $row['num_posts'];
+		$stats[ $row['post_status'] ] = $row['num_posts'];
 	}
 
 	$stats = (object) $stats;
@@ -1698,15 +1698,15 @@ function edd_remove_payment_notes_in_comment_counts( $stats, $post_id ) {
 		if ( 'post-trashed' != $row['comment_approved'] && 'trash' != $row['comment_approved'] ) {
 			$total += $row['num_comments'];
 		}
-		if ( isset( $approved[$row['comment_approved']] ) ) {
-			$stats[$approved[$row['comment_approved']]] = $row['num_comments'];
+		if ( isset( $approved[ $row['comment_approved'] ] ) ) {
+			$stats[ $approved[ $row['comment_approved'] ] ] = $row['num_comments'];
 		}
 	}
 
 	$stats['total_comments'] = $total;
 	foreach ( $approved as $key ) {
-		if ( empty( $stats[$key] ) ) {
-			$stats[$key] = 0;
+		if ( empty( $stats[ $key ] ) ) {
+			$stats[ $key ] = 0;
 		}
 	}
 

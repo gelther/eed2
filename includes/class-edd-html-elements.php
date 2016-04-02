@@ -82,12 +82,12 @@ class EDD_HTML_Elements {
 		if( is_array( $args['selected'] ) ) {
 			foreach( $args['selected'] as $item ) {
 				if( ! in_array( $item, $options ) ) {
-					$options[$item] = get_the_title( $item );
+					$options[ $item ] = get_the_title( $item );
 				}
 			}
 		} elseif ( is_numeric( $args['selected'] ) && $args['selected'] !== 0 ) {
 			if ( ! in_array( $args['selected'], $options ) ) {
-				$options[$args['selected']] = get_the_title( $args['selected'] );
+				$options[ $args['selected'] ] = get_the_title( $args['selected'] );
 			}
 		}
 
