@@ -28,7 +28,6 @@ class EDD_DB_Customers extends EDD_DB  {
 	 * @since   2.1
 	*/
 	public function __construct() {
-
 		global $wpdb;
 
 		$this->table_name  = $wpdb->prefix . 'edd_customers';
@@ -85,7 +84,6 @@ class EDD_DB_Customers extends EDD_DB  {
 	 * @since   2.1
 	*/
 	public function add( $data = array() ) {
-
 		$defaults = array(
 			'payment_ids' => ''
 		);
@@ -147,7 +145,6 @@ class EDD_DB_Customers extends EDD_DB  {
 	 * @since   2.3.1
 	*/
 	public function delete( $_id_or_email = false ) {
-
 		if ( empty( $_id_or_email ) ) {
 			return false;
 		}
@@ -173,7 +170,6 @@ class EDD_DB_Customers extends EDD_DB  {
 	 * @since   2.1
 	*/
 	public function exists( $value = '', $field = 'email' ) {
-
 		$columns = $this->get_columns();
 		if ( ! array_key_exists( $field, $columns ) ) {
 			return false;
@@ -190,7 +186,6 @@ class EDD_DB_Customers extends EDD_DB  {
 	 * @since   2.1
 	*/
 	public function attach_payment( $customer_id = 0, $payment_id = 0 ) {
-
 		$customer = new EDD_Customer( $customer_id );
 
 		if ( empty( $customer->id ) ) {
@@ -209,7 +204,6 @@ class EDD_DB_Customers extends EDD_DB  {
 	 * @since   2.1
 	*/
 	public function remove_payment( $customer_id = 0, $payment_id = 0 ) {
-
 		$customer = new EDD_Customer( $customer_id );
 
 		if ( ! $customer ) {
@@ -228,7 +222,6 @@ class EDD_DB_Customers extends EDD_DB  {
 	 * @since   2.1
 	*/
 	public function increment_stats( $customer_id = 0, $amount = 0.00 ) {
-
 		$customer = new EDD_Customer( $customer_id );
 
 		if ( empty( $customer->id ) ) {
@@ -249,7 +242,6 @@ class EDD_DB_Customers extends EDD_DB  {
 	 * @since   2.1
 	*/
 	public function decrement_stats( $customer_id = 0, $amount = 0.00 ) {
-
 		$customer = new EDD_Customer( $customer_id );
 
 		if ( ! $customer ) {
@@ -270,7 +262,6 @@ class EDD_DB_Customers extends EDD_DB  {
 	 * @since   2.4
 	*/
 	public function update_customer_email_on_user_update( $user_id = 0, $old_user_data ) {
-
 		$customer = new EDD_Customer( $user_id, true );
 
 		if ( ! $customer ) {
@@ -380,7 +371,6 @@ class EDD_DB_Customers extends EDD_DB  {
 	 * @since   2.1
 	*/
 	public function get_customers( $args = array() ) {
-
 		global $wpdb;
 
 		$defaults = array(
@@ -507,7 +497,6 @@ class EDD_DB_Customers extends EDD_DB  {
 	 * @since   2.1
 	*/
 	public function count( $args = array() ) {
-
 		global $wpdb;
 
 		$where = ' WHERE 1=1 ';
@@ -553,7 +542,6 @@ class EDD_DB_Customers extends EDD_DB  {
 	 * @since   2.1
 	*/
 	public function create_table() {
-
 		global $wpdb;
 
 		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
