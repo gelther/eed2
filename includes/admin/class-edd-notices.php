@@ -222,5 +222,6 @@ class EDD_Notices {
 			exit;
 		}
 	}
+
 }
 new EDD_Notices;
