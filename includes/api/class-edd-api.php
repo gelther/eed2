@@ -136,7 +136,6 @@ class EDD_API {
 	 * @since 1.5
 	 */
 	public function __construct() {
-
 		$this->versions = array(
 			'v1' => 'EDD_API_V1',
 		);
@@ -190,7 +189,6 @@ class EDD_API {
 	 * @return string[] $vars New query vars
 	 */
 	public function query_vars( $vars ) {
-
 		$vars[] = 'token';
 		$vars[] = 'key';
 		$vars[] = 'query';
@@ -240,7 +238,6 @@ class EDD_API {
 	 * @return string
 	 */
 	public function get_default_version() {
-
 		$version = get_option( 'edd_default_api_version' );
 
 		if ( defined( 'EDD_API_VERSION' ) ) {
@@ -261,7 +258,6 @@ class EDD_API {
 	 * @since 2.4
 	 */
 	private function set_queried_version() {
-
 		global $wp_query;
 
 		$version = $wp_query->query_vars['edd-api'];
@@ -507,7 +503,6 @@ class EDD_API {
 	 * @return void
 	 */
 	public function process_query() {
-
 		global $wp_query;
 
 		// Start logging how long the request takes for logging
@@ -616,7 +611,6 @@ class EDD_API {
 	 * @return string $query Query mode
 	 */
 	public function get_query_mode() {
-
 		return $this->endpoint;
 	}
 
@@ -628,7 +622,6 @@ class EDD_API {
 	 * @global $wp_query
 	 */
 	public function set_query_mode() {
-
 		global $wp_query;
 
 		// Whitelist our query options
@@ -883,7 +876,6 @@ class EDD_API {
 	 * @return array $customers Multidimensional array of the customers
 	 */
 	public function get_customers( $customer = null ) {
-
 		$customers = array();
 		$error     = array();
 		if ( ! user_can( $this->user_id, 'view_shop_sensitive_data' ) && ! $this->override ) {
@@ -973,7 +965,6 @@ class EDD_API {
 	 * @return array $customers Multidimensional array of the products
 	 */
 	public function get_products( $product = null ) {
-
 		$products = array();
 		$error    = array();
 
@@ -1017,7 +1008,6 @@ class EDD_API {
 	 * @return array                Array of post data to return back in the API
 	 */
 	private function get_product_data( $product_info ) {
-
 		$product = array();
 
 		$product['info']['id']            = $product_info->ID;
@@ -1435,7 +1425,6 @@ class EDD_API {
 	 * @return array $discounts Multidimensional array of the discounts
 	 */
 	public function get_discounts( $discount = null ) {
-
 		$discount_list = array();
 
 		if ( ! user_can( $this->user_id, 'manage_shop_discounts' ) && ! $this->override ) {
@@ -1804,7 +1793,6 @@ class EDD_API {
 	 * @return void
 	 */
 	public function process_api_key( $args ) {
-
 		if ( ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'edd-api-nonce' ) ) {
 
 			wp_die( __( 'Nonce verification failed', 'easy-digital-downloads' ), __( 'Error', 'easy-digital-downloads' ), array( 'response' => 403 ) );
@@ -1863,7 +1851,6 @@ class EDD_API {
 	 * @return boolean True if (re)generated succesfully, false otherwise.
 	 */
 	public function generate_api_key( $user_id = 0, $regenerate = false ) {
-
 		if ( empty( $user_id ) ) {
 			return false;
 		}
@@ -1903,7 +1890,6 @@ class EDD_API {
 	 * @return string
 	 */
 	public function revoke_api_key( $user_id = 0 ) {
-
 		if ( empty( $user_id ) ) {
 			return false;
 		}
@@ -2013,7 +1999,6 @@ class EDD_API {
 	 * @return array default sales statistics
 	 */
 	private function get_default_sales_stats() {
-
 		// Default sales return
 		$sales                           = array();
 		$sales['sales']['today']         = $this->stats->get_sales( 0, 'today' );
@@ -2032,7 +2017,6 @@ class EDD_API {
 	 * @return array default earnings statistics
 	 */
 	private function get_default_earnings_stats() {
-
 		// Default earnings return
 		$earnings                              = array();
 		$earnings['earnings']['today']         = $this->stats->get_earnings( 0, 'today' );
@@ -2054,7 +2038,6 @@ class EDD_API {
 	 * @return string            The API key/secret for the user supplied
 	 */
 	public function api_key_backwards_copmat( $check, $object_id, $meta_key, $single ) {
-
 		if ( $meta_key !== 'edd_user_public_key' && $meta_key !== 'edd_user_secret_key' ) {
 			return $check;
 		}
