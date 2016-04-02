@@ -128,7 +128,7 @@ class EDD_Categories_Reports_Table extends WP_List_Table {
 	 */
 	public function reports_data() {
 
-		/*
+		/**
 		 * Date filtering
 		 */
 		$dates = edd_get_report_dates();
