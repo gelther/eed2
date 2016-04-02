@@ -693,7 +693,7 @@ class EDD_API {
 	 * @since 1.5.1
 	 * @param array $args Arguments to override defaults
 	 * @return array $dates
-	*/
+	 */
 	public function get_dates( $args = array() ) {
 		$dates = array();
 
