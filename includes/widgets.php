@@ -95,6 +95,7 @@ class edd_cart_widget extends WP_Widget {
 
 		<?php
 	}
+
 }
 
 /**
@@ -186,6 +187,7 @@ class edd_categories_tags_widget extends WP_Widget {
 		</p>
 	<?php
 	}
+
 }
 
 
