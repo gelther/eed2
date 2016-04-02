@@ -250,7 +250,6 @@ class EDD_Customer {
 		return $updated;
 	}
 
-
 	/**
 	 * Attach payment to the customer then triggers increasing stats
 	 *
@@ -308,7 +307,6 @@ class EDD_Customer {
 
 		return $payment_added;
 	}
-
 
 	/**
 	 * Remove a payment from this customer, then triggers reducing stats
