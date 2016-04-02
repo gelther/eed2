@@ -47,7 +47,6 @@ function edd_export_earnings() {
 }
 add_action( 'edd_earnings_export', 'edd_export_earnings' );
 
-
 /**
  * Export all the customers to a CSV file.
  *
