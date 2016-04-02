@@ -131,4 +131,5 @@ class EDD_Earnings_Export extends EDD_Export {
 
 		return $data;
 	}
+
 }
