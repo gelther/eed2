@@ -1436,7 +1436,7 @@ function edd_set_payment_transaction_id( $payment_id = 0, $transaction_id = '' )
  *
  * @since 1.3.2
  * @global object $wpdb Used to query the database using the WordPress
- *   Database API
+ * Database API
  * @param string $key the purchase key to search for
  * @return int $purchase Purchase ID
  */
@@ -1457,7 +1457,7 @@ function edd_get_purchase_id_by_key( $key ) {
  *
  * @since 2.4
  * @global object $wpdb Used to query the database using the WordPress
- *   Database API
+ * Database API
  * @param string $key the transaction ID to search for
  * @return int $purchase Purchase ID
  */
