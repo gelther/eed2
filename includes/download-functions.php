@@ -277,7 +277,6 @@ function edd_get_default_variable_price( $download_id = 0 ) {
 	}
 
 	return apply_filters( 'edd_variable_default_price_id', absint( $default_price_id ), $download_id );
-
 }
 
 /**
@@ -493,7 +492,6 @@ function edd_single_price_option_mode( $download_id = 0 ) {
 
 	$download = new EDD_Download( $download_id );
 	return $download->is_single_price_mode();
-
 }
 
 /**
@@ -1172,7 +1170,6 @@ function edd_get_download_token( $url = '' ) {
 	$token = md5( $parts['path'] . '?' . $parts['query'] );
 
 	return $token;
-
 }
 
 /**
