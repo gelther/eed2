@@ -99,7 +99,6 @@ class EDD_Session {
 		} else {
 			add_action( 'init', array( $this, 'init' ), -1 );
 		}
-
 	}
 
 	/**

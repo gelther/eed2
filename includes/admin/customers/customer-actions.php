@@ -150,7 +150,6 @@ function edd_edit_customer( $args ) {
 	}
 
 	return $output;
-
 }
 add_action( 'edd_edit-customer', 'edd_edit_customer', 10, 1 );
 
@@ -216,7 +215,6 @@ function edd_customer_save_note( $args ) {
 	}
 
 	return false;
-
 }
 add_action( 'edd_add-customer-note', 'edd_customer_save_note', 10, 1 );
 
@@ -303,7 +301,6 @@ function edd_customer_delete( $args ) {
 
 	wp_redirect( $redirect );
 	exit;
-
 }
 add_action( 'edd_delete-customer', 'edd_customer_delete', 10, 1 );
 
@@ -365,7 +362,6 @@ function edd_disconnect_customer_user_id( $args ) {
 	}
 
 	return $output;
-
 }
 add_action( 'edd_disconnect-userid', 'edd_disconnect_customer_user_id', 10, 1 );
 
@@ -396,7 +392,6 @@ function edd_process_admin_user_verification() {
 
 	wp_safe_redirect( $url );
 	exit;
-
 }
 add_action( 'edd_verify_user_admin', 'edd_process_admin_user_verification' );
 
@@ -420,5 +415,4 @@ function edd_include_single_customer_recount_tool_batch_processer( $class ) {
 	if ( 'EDD_Tools_Recount_Single_Customer_Stats' === $class ) {
 		require_once EDD_PLUGIN_DIR . 'includes/admin/tools/class-edd-tools-recount-single-customer-stats.php';
 	}
-
 }

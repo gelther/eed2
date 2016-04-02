@@ -67,7 +67,6 @@ class EDD_Heartbeat {
 		}
 
 		return $response;
-
 	}
 
 	/**

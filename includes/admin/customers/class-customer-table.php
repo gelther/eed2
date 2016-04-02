@@ -65,7 +65,6 @@ class EDD_Customer_Reports_Table extends WP_List_Table {
 			'plural'   => __( 'Customers', 'easy-digital-downloads' ),
 			'ajax'     => false,
 		) );
-
 	}
 
 	/**
@@ -178,7 +177,6 @@ class EDD_Customer_Reports_Table extends WP_List_Table {
 		);
 
 		return apply_filters( 'edd_report_customer_columns', $columns );
-
 	}
 
 	/**

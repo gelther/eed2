@@ -82,7 +82,6 @@ class EDD_Emails {
 
 		add_action( 'edd_email_send_before', array( $this, 'send_before' ) );
 		add_action( 'edd_email_send_after', array( $this, 'send_after' ) );
-
 	}
 
 	/**
@@ -315,7 +314,6 @@ class EDD_Emails {
 		do_action( 'edd_email_send_after', $this );
 
 		return $sent;
-
 	}
 
 	/**

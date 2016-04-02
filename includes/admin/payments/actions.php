@@ -352,7 +352,6 @@ function edd_ajax_delete_payment_note() {
 	} else {
 		die( '-1' );
 	}
-
 }
 add_action( 'wp_ajax_edd_delete_payment_note', 'edd_ajax_delete_payment_note' );
 
@@ -404,6 +403,5 @@ function edd_ajax_generate_file_download_link() {
 	}
 
 	die( $file_urls );
-
 }
 add_action( 'wp_ajax_edd_get_file_download_link', 'edd_ajax_generate_file_download_link' );

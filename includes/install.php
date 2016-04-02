@@ -46,7 +46,6 @@ function edd_install( $network_wide = false ) {
 		edd_run_install();
 
 	}
-
 }
 register_activation_hook( EDD_PLUGIN_FILE, 'edd_install' );
 
@@ -238,7 +237,6 @@ function edd_new_blog_created( $blog_id, $user_id, $domain, $path, $site_id, $me
 		restore_current_blog();
 
 	}
-
 }
 add_action( 'wpmu_new_blog', 'edd_new_blog_created', 10, 6 );
 
@@ -260,7 +258,6 @@ function edd_wpmu_drop_tables( $tables, $blog_id ) {
 	restore_current_blog();
 
 	return $tables;
-
 }
 add_filter( 'wpmu_drop_tables', 'edd_wpmu_drop_tables', 10, 2 );
 
@@ -298,8 +295,6 @@ function edd_after_install() {
 		// Delete the transient
 		delete_transient( '_edd_installed' );
 	}
-
-
 }
 add_action( 'admin_init', 'edd_after_install' );
 
@@ -326,6 +321,5 @@ function edd_install_roles_on_network() {
 		$roles->add_caps();
 
 	}
-
 }
 add_action( 'admin_init', 'edd_install_roles_on_network' );

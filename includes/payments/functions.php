@@ -198,7 +198,6 @@ function edd_update_payment_status( $payment_id, $new_status = 'publish' ) {
 	$updated         = $payment->save();
 
 	return $updated;
-
 }
 
 /**
@@ -347,7 +346,6 @@ function edd_undo_purchase( $download_id = false, $payment_id ) {
 		}
 
 	}
-
 }
 
 
@@ -454,7 +452,6 @@ function edd_count_payments( $args = array() ) {
 
 			$where .= $wpdb->prepare( 'AND ((p.post_title LIKE %s) OR (p.post_content LIKE %s))', $search, $search );
 		}
-
 	}
 
 	if ( ! empty( $args['download'] ) && is_numeric( $args['download'] ) ) {
@@ -1258,7 +1255,6 @@ function edd_remove_payment_prefix_postfix( $number ) {
 	$number = intval( $number );
 
 	return apply_filters( 'edd_remove_payment_prefix_postfix', $number, $prefix, $postfix );
-
 }
 
 /**
@@ -1369,7 +1365,6 @@ function edd_get_payment_item_tax( $payment_id = 0, $cart_key = false ) {
 	}
 
 	return $item_tax;
-
 }
 
 /**
@@ -1574,7 +1569,6 @@ function edd_get_payment_note_html( $note, $payment_id = 0 ) {
 	$note_html .= '</div>';
 
 	return $note_html;
-
 }
 
 /**

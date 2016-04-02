@@ -142,7 +142,6 @@ function edd_display_email_template_preview() {
 	echo EDD()->emails->build_email( edd_email_preview_template_tags( edd_get_email_body_content( 0, array() ) ) );
 
 	exit;
-
 }
 add_action( 'template_redirect', 'edd_display_email_template_preview' );
 

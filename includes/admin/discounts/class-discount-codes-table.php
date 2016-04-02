@@ -328,7 +328,6 @@ class EDD_Discount_Codes_Table extends WP_List_Table {
 				edd_update_discount_status( $id, 'inactive' );
 			}
 		}
-
 	}
 
 	/**

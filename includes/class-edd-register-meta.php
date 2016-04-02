@@ -42,7 +42,6 @@ class EDD_Register_Meta {
 		}
 
 		return self::$instance;
-
 	}
 
 	/**

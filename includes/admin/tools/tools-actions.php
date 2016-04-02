@@ -34,7 +34,6 @@ function edd_include_recount_store_earnings_tool_batch_processer( $class ) {
 	if ( 'EDD_Tools_Recount_Store_Earnings' === $class ) {
 		require_once EDD_PLUGIN_DIR . 'includes/admin/tools/class-edd-tools-recount-store-earnings.php';
 	}
-
 }
 
 /**
@@ -57,7 +56,6 @@ function edd_include_recount_download_tool_batch_processer( $class ) {
 	if ( 'EDD_Tools_Recount_Download_Stats' === $class ) {
 		require_once EDD_PLUGIN_DIR . 'includes/admin/tools/class-edd-tools-recount-download-stats.php';
 	}
-
 }
 
 /**
@@ -80,7 +78,6 @@ function edd_include_recount_all_tool_batch_processer( $class ) {
 	if ( 'EDD_Tools_Recount_All_Stats' === $class ) {
 		require_once EDD_PLUGIN_DIR . 'includes/admin/tools/class-edd-tools-recount-all-stats.php';
 	}
-
 }
 
 /**
@@ -103,7 +100,6 @@ function edd_include_reset_tool_batch_processer( $class ) {
 	if ( 'EDD_Tools_Reset_Stats' === $class ) {
 		require_once EDD_PLUGIN_DIR . 'includes/admin/tools/class-edd-tools-reset-stats.php';
 	}
-
 }
 
 /**
@@ -126,5 +122,4 @@ function edd_include_customer_recount_tool_batch_processer( $class ) {
 	if ( 'EDD_Tools_Recount_Customer_Stats' === $class ) {
 		require_once EDD_PLUGIN_DIR . 'includes/admin/tools/class-edd-tools-recount-customer-stats.php';
 	}
-
 }

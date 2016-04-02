@@ -46,7 +46,6 @@ class EDD_Earnings_Export extends EDD_Export {
 		header( 'Content-Type: text/csv; charset=utf-8' );
 		header( 'Content-Disposition: attachment; filename=' . apply_filters( 'edd_earnings_export_filename', 'edd-export-' . $this->export_type . '-' . date( 'n' ) . '-' . date( 'Y' ) ) . '.csv' );
 		header( 'Expires: 0' );
-
 	}
 
 	/**

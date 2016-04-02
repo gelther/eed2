@@ -199,7 +199,6 @@ class EDD_Batch_Downloads_Export extends EDD_Batch_Export {
 		}
 
 		return false;
-
 	}
 
 	/**

@@ -427,7 +427,6 @@ function edd_tools_import_export_process_import() {
 	update_option( 'edd_settings', $settings );
 
 	wp_safe_redirect( admin_url( 'edit.php?post_type=download&page=edd-tools&edd-message=settings-imported' ) ); exit;
-
 }
 add_action( 'edd_import_settings', 'edd_tools_import_export_process_import' );
 

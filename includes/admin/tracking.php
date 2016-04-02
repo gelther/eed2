@@ -41,7 +41,6 @@ class EDD_Tracking {
 		add_action( 'edd_opt_into_tracking', array( $this, 'check_for_optin' ) );
 		add_action( 'edd_opt_out_of_tracking', array( $this, 'check_for_optout' ) );
 		add_action( 'admin_notices', array( $this, 'admin_notice' ) );
-
 	}
 
 	/**
@@ -125,7 +124,6 @@ class EDD_Tracking {
 		) );
 
 		update_option( 'edd_tracking_last_send', time() );
-
 	}
 
 	/**
@@ -144,7 +142,6 @@ class EDD_Tracking {
 		}
 
 		return $input;
-
 	}
 
 	/**
@@ -163,7 +160,6 @@ class EDD_Tracking {
 		$this->send_checkin( true );
 
 		update_option( 'edd_tracking_notice', '1' );
-
 	}
 
 	/**
@@ -182,7 +178,6 @@ class EDD_Tracking {
 		update_option( 'edd_tracking_notice', '1' );
 
 		wp_redirect( remove_query_arg( 'edd_action' ) ); exit;
-
 	}
 
 	/**

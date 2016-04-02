@@ -83,7 +83,6 @@ function edd_unset_discount_query_arg( $query ) {
 		}
 
 	}
-
 }
 add_action( 'pre_get_posts', 'edd_unset_discount_query_arg', 999999 );
 
@@ -107,7 +106,6 @@ function edd_prevent_canonical_redirect( $redirect_url, $requested_url ) {
 	}
 
 	return $redirect_url;
-
 }
 add_action( 'redirect_canonical', 'edd_prevent_canonical_redirect', 0, 2 );
 

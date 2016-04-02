@@ -150,7 +150,6 @@ function edd_show_upgrade_notices() {
 		// End 'Stepped' upgrade process notices
 
 	}
-
 }
 add_action( 'admin_notices', 'edd_show_upgrade_notices' );
 
@@ -216,7 +215,6 @@ function edd_maybe_resume_upgrade() {
 	}
 
 	return $doing_upgrade;
-
 }
 
 /**
@@ -470,7 +468,6 @@ function edd_v20_upgrades() {
 	$wpdb->query( "DELETE FROM $wpdb->options WHERE option_name LIKE '_wp_session_expires_%' AND option_value+0 < 2789308218" );
 
 	update_option( 'edd_settings', $edd_options );
-
 }
 
 /**
@@ -548,7 +545,6 @@ function edd_v20_upgrade_sequential_payment_numbers() {
 
 		wp_redirect( admin_url() ); exit;
 	}
-
 }
 add_action( 'edd_upgrade_sequential_payment_numbers', 'edd_v20_upgrade_sequential_payment_numbers' );
 
@@ -660,7 +656,6 @@ function edd_v21_upgrade_customers_db() {
 
 		wp_redirect( admin_url() ); exit;
 	}
-
 }
 add_action( 'edd_upgrade_customers_db', 'edd_v21_upgrade_customers_db' );
 

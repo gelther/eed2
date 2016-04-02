@@ -35,7 +35,6 @@ class EDD_DB_Customers extends EDD_DB  {
 		$this->version     = '1.0';
 
 		add_action( 'profile_update', array( $this, 'update_customer_email_on_user_update' ), 10, 2 );
-
 	}
 
 	/**
@@ -132,7 +131,6 @@ class EDD_DB_Customers extends EDD_DB  {
 			return $this->insert( $args, 'customer' );
 
 		}
-
 	}
 
 	/**
@@ -160,7 +158,6 @@ class EDD_DB_Customers extends EDD_DB  {
 		} else {
 			return false;
 		}
-
 	}
 
 	/**
@@ -176,7 +173,6 @@ class EDD_DB_Customers extends EDD_DB  {
 		}
 
 		return (bool) $this->get_column_by( 'id', $field, $value );
-
 	}
 
 	/**
@@ -194,7 +190,6 @@ class EDD_DB_Customers extends EDD_DB  {
 
 		// Attach the payment, but don't increment stats, as this function previously did not
 		return $customer->attach_payment( $payment_id, false );
-
 	}
 
 	/**
@@ -212,7 +207,6 @@ class EDD_DB_Customers extends EDD_DB  {
 
 		// Remove the payment, but don't decrease stats, as this function previously did not
 		return $customer->remove_payment( $payment_id, false );
-
 	}
 
 	/**
@@ -232,7 +226,6 @@ class EDD_DB_Customers extends EDD_DB  {
 		$increased_value = $customer->increase_value( $amount );
 
 		return ( $increased_count && $increased_value ) ? true : false;
-
 	}
 
 	/**
@@ -252,7 +245,6 @@ class EDD_DB_Customers extends EDD_DB  {
 		$decreased_value = $customer->decrease_value( $amount );
 
 		return ( $decreased_count && $decreased_value ) ? true : false;
-
 	}
 
 	/**
@@ -297,7 +289,6 @@ class EDD_DB_Customers extends EDD_DB  {
 			}
 
 		}
-
 	}
 
 	/**
@@ -486,7 +477,6 @@ class EDD_DB_Customers extends EDD_DB  {
 		}
 
 		return $customers;
-
 	}
 
 
@@ -532,7 +522,6 @@ class EDD_DB_Customers extends EDD_DB  {
 		}
 
 		return absint( $count );
-
 	}
 
 	/**

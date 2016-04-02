@@ -318,7 +318,6 @@ function edd_deliver_download( $file = '', $redirect = false ) {
 		edd_readfile_chunked( $file );
 
 	}
-
 }
 
 /**
@@ -378,7 +377,6 @@ function edd_get_local_path_from_url( $url ) {
 	}
 
 	return $file;
-
 }
 
 /**
@@ -826,6 +824,5 @@ function edd_set_requested_file_scheme( $requested_file, $download_files, $file_
 	}
 
 	return $requested_file;
-
 }
 add_filter( 'edd_requested_file', 'edd_set_requested_file_scheme', 10, 3 );

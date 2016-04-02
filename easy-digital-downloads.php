@@ -394,7 +394,6 @@ final class Easy_Digital_Downloads {
 			// Load the default language files.
 			load_plugin_textdomain( 'easy-digital-downloads', false, $edd_lang_dir );
 		}
-
 	}
 
 	/**

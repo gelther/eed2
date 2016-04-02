@@ -573,7 +573,6 @@ final class EDD_Payment {
 		}
 
 		return $this->ID;
-
 	}
 
 	/**
@@ -972,7 +971,6 @@ final class EDD_Payment {
 		$this->increase_tax( $tax );
 
 		return true;
-
 	}
 
 	/**
@@ -1449,7 +1447,6 @@ final class EDD_Payment {
 		}
 
 		return $updated;
-
 	}
 
 	/**
@@ -1594,7 +1591,6 @@ final class EDD_Payment {
 		foreach ( $discounts as $discount ) {
 			edd_decrease_discount_usage( $discount );
 		}
-
 	}
 
 	/**
@@ -1663,7 +1659,6 @@ final class EDD_Payment {
 			}
 
 		}
-
 	}
 
 	/**
@@ -1763,7 +1758,6 @@ final class EDD_Payment {
 		}
 
 		return $tax;
-
 	}
 
 	/**
@@ -1783,7 +1777,6 @@ final class EDD_Payment {
 		}
 
 		return $fees_total;
-
 	}
 
 	/**

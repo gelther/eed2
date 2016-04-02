@@ -57,7 +57,6 @@ class EDD_Download_Reports_Table extends WP_List_Table {
 		add_action( 'edd_report_view_actions', array( $this, 'category_filter' ) );
 
 		$this->query();
-
 	}
 
 	/**
@@ -250,7 +249,6 @@ class EDD_Download_Reports_Table extends WP_List_Table {
 		$args = apply_filters( 'edd_download_reports_prepare_items_args', $args, $this );
 
 		$this->products = new WP_Query( $args );
-
 	}
 
 	/**

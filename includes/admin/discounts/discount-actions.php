@@ -70,7 +70,6 @@ function edd_add_discount( $data ) {
 		wp_redirect( add_query_arg( 'edd-message', 'discount_exists', $data['edd-redirect'] ) ); edd_die();
 
 	}
-
 }
 add_action( 'edd_add_discount', 'edd_add_discount' );
 
@@ -123,7 +122,6 @@ function edd_edit_discount( $data ) {
 		wp_redirect( add_query_arg( 'edd-message', 'discount_update_failed', $data['edd-redirect'] ) ); edd_die();
 
 	}
-
 }
 add_action( 'edd_edit_discount', 'edd_edit_discount' );
 

@@ -164,7 +164,6 @@ class EDD_API {
 
 		// Setup EDD_Stats instance
 		$this->stats = new EDD_Payment_Stats;
-
 	}
 
 	/**
@@ -284,7 +283,6 @@ class EDD_API {
 			$this->queried_version = $this->get_default_version();
 
 		}
-
 	}
 
 	/**
@@ -336,7 +334,6 @@ class EDD_API {
 			$this->is_valid_request = true;
 			$wp_query->set( 'key', 'public' );
 		}
-
 	}
 
 	/**
@@ -1046,7 +1043,6 @@ class EDD_API {
 		}
 
 		return apply_filters( 'edd_api_products_product', $product );
-
 	}
 
 	/**
@@ -2056,7 +2052,6 @@ class EDD_API {
 		}
 
 		return $return;
-
 	}
 
 }

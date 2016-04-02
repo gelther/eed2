@@ -790,7 +790,6 @@ function edd_has_upgrade_completed( $upgrade_action = '' ) {
 	$completed_upgrades = edd_get_completed_upgrades();
 
 	return in_array( $upgrade_action, $completed_upgrades );
-
 }
 
 /**
@@ -807,7 +806,6 @@ function edd_get_completed_upgrades() {
 	}
 
 	return $completed_upgrades;
-
 }
 
 

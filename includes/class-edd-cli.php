@@ -117,7 +117,6 @@ class EDD_CLI extends WP_CLI_Command {
 
 		WP_CLI::line( sprintf( __( 'Earnings: %s', 'easy-digital-downloads' ), $earnings ) );
 		WP_CLI::line( sprintf( __( 'Sales: %s', 'easy-digital-downloads' ), $sales ) );
-
 	}
 
 
@@ -221,7 +220,6 @@ class EDD_CLI extends WP_CLI_Command {
 
 			WP_CLI::line( '' );
 		}
-
 	}
 
 
@@ -334,7 +332,6 @@ class EDD_CLI extends WP_CLI_Command {
 			}
 
 		}
-
 	}
 
 

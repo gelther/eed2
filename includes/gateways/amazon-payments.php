@@ -52,8 +52,6 @@ final class EDD_Amazon_Payments {
 		$this->setup_client();
 		$this->filters();
 		$this->actions();
-
-
 	}
 
 	/**
@@ -69,7 +67,6 @@ final class EDD_Amazon_Payments {
 		}
 
 		return self::$instance;
-
 	}
 
 	/**
@@ -81,7 +78,6 @@ final class EDD_Amazon_Payments {
 	 */
 	private function register() {
 		add_filter( 'edd_payment_gateways', array( $this, 'register_gateway' ), 1, 1 );
-
 	}
 
 	/**
@@ -96,7 +92,6 @@ final class EDD_Amazon_Payments {
 			$path = trailingslashit( plugin_dir_path( EDD_PLUGIN_FILE ) ) . 'includes/gateways/libs/amazon';
 			define( 'EDD_AMAZON_CLASS_DIR', trailingslashit( $path ) );
 		}
-
 	}
 
 	/**
@@ -110,7 +105,6 @@ final class EDD_Amazon_Payments {
 		// Include the Amazon Library
 		require_once EDD_AMAZON_CLASS_DIR . 'Client.php'; // Requires the other files itself
 		require_once EDD_AMAZON_CLASS_DIR . 'IpnHandler.php';
-
 	}
 
 	/**
@@ -127,7 +121,6 @@ final class EDD_Amazon_Payments {
 			add_filter( 'edd_settings_gateways', array( $this, 'register_gateway_settings' ), 1, 1 );
 			add_filter( 'edd_payment_details_transaction_id-' . $this->gateway_id, array( $this, 'link_transaction_id' ), 10, 2 );
 		}
-
 	}
 
 	/**
@@ -156,7 +149,6 @@ final class EDD_Amazon_Payments {
 		}
 
 		add_action( 'edd_amazon_cc_form', array( $this, 'wallet_form' ) );
-
 	}
 
 	/**
@@ -202,7 +194,6 @@ final class EDD_Amazon_Payments {
 		$config = apply_filters( 'edd_amazon_client_config', $config );
 
 		$this->client = new Client( $config );
-
 	}
 
 	/**
@@ -226,7 +217,6 @@ final class EDD_Amazon_Payments {
 		$gateways            = array_merge( $gateways, $default_amazon_info );
 
 		return $gateways;
-
 	}
 
 	/**
@@ -334,7 +324,6 @@ final class EDD_Amazon_Payments {
 		$gateway_settings['amazon'] = $default_amazon_settings;
 
 		return $gateway_settings;
-
 	}
 
 	/**
@@ -407,7 +396,6 @@ final class EDD_Amazon_Payments {
 			) ) );
 
 		}
-
 	}
 
 	/**
@@ -428,7 +416,6 @@ final class EDD_Amazon_Payments {
 			};
 		</script>
 		<?php
-
 	}
 
 	/**
@@ -463,7 +450,6 @@ final class EDD_Amazon_Payments {
 			wp_die( print_r( $e, true ) );
 
 		}
-
 	}
 
 	/**
@@ -536,7 +522,6 @@ final class EDD_Amazon_Payments {
 
 
 		wp_redirect( edd_get_checkout_uri( array( 'payment-mode' => 'amazon', 'state' => 'authorized', 'amazon_reference_id' => $reference ) ) ); exit;
-
 	}
 
 
@@ -713,7 +698,6 @@ final class EDD_Amazon_Payments {
 		<?php
 		$form = ob_get_clean();
 		echo $form;
-
 	}
 
 	/**
@@ -747,7 +731,6 @@ final class EDD_Amazon_Payments {
 		}
 
 		echo json_encode( $address ); exit;
-
 	}
 
 	/**
@@ -863,8 +846,6 @@ final class EDD_Amazon_Payments {
 			edd_send_back_to_checkout( '?payment-mode=amazon&amazon_reference_id=' . $purchase_data['post_data']['edd_amazon_reference_id'] );
 
 		}
-
-
 	}
 
 	/**
@@ -880,7 +861,6 @@ final class EDD_Amazon_Payments {
 		}
 
 		return $this->checkout_uri;
-
 	}
 
 	/**
@@ -896,7 +876,6 @@ final class EDD_Amazon_Payments {
 		}
 
 		return $this->redirect_uri;
-
 	}
 
 	/**
@@ -912,7 +891,6 @@ final class EDD_Amazon_Payments {
 		}
 
 		return $this->signin_redirect;
-
 	}
 
 	/**
@@ -924,7 +902,6 @@ final class EDD_Amazon_Payments {
 	 */
 	private function get_amazon_ipn_url() {
 		return esc_url_raw( add_query_arg( array( 'edd-listener' => 'amazon' ), home_url( 'index.php' ) ) );
-
 	}
 
 	/**
@@ -940,7 +917,6 @@ final class EDD_Amazon_Payments {
 		if ( ! empty( $_POST['edd-gateway'] ) && $this->gateway_id == $_REQUEST['edd-gateway'] ) {
 			add_filter( 'edd_require_billing_address', '__return_false', 9999 );
 		}
-
 	}
 
 	/**
@@ -956,7 +932,6 @@ final class EDD_Amazon_Payments {
 		$transaction_url = '<a href="' . esc_url( $base_url . $transaction_id ) . '" target="_blank">' . $transaction_id . '</a>';
 
 		return apply_filters( 'edd_' . $this->gateway_id . '_link_payment_details_transaction_id', $transaction_url );
-
 	}
 
 	/**
@@ -1045,7 +1020,6 @@ final class EDD_Amazon_Payments {
 			wp_die( $e->getErrorMessage(), __( 'IPN Error', 'easy-digital-downloads' ), array( 'response' => 401 ) );
 
 		}
-
 	}
 
 	/**
@@ -1076,7 +1050,6 @@ final class EDD_Amazon_Payments {
 		}
 
 		$this->refund( $payment_id );
-
 	}
 
 	/**
@@ -1134,7 +1107,6 @@ final class EDD_Amazon_Payments {
 			edd_insert_payment_note( $payment_id, __( 'Refund request failed in Amazon.', 'easy-digital-downloads' ) );
 
 		}
-
 	}
 
 	/**

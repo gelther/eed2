@@ -443,7 +443,6 @@ class EDD_Payments_Query extends EDD_Stats {
 		} else {
 			$this->__set( 's', $search );
 		}
-
 	}
 
 	/**
@@ -530,6 +529,5 @@ class EDD_Payments_Query extends EDD_Stats {
 		}
 
 		$this->__unset( 'download' );
-
 	}
 }

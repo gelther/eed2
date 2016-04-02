@@ -101,7 +101,6 @@ class EDD_Graph {
 			'lines'           => true,
 			'points'          => true
 		);
-
 	}
 
 	/**

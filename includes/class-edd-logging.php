@@ -32,7 +32,6 @@ class EDD_Logging {
 
 		// Create types taxonomy and default types
 		add_action( 'init', array( $this, 'register_taxonomy' ), 1 );
-
 	}
 
 	/**

@@ -68,7 +68,6 @@ class EDD_License {
 		// Setup hooks
 		$this->includes();
 		$this->hooks();
-
 	}
 
 	/**
@@ -115,7 +114,6 @@ class EDD_License {
 		add_action( 'admin_notices', array( $this, 'notices' ) );
 
 		add_action( 'in_plugin_update_message-' . plugin_basename( $this->file ), array( $this, 'plugin_row_license_missing' ), 10, 2 );
-
 	}
 
 	/**
@@ -194,7 +192,6 @@ class EDD_License {
 		) . '</p>';
 
 		$has_ran = true;
-
 	}
 
 
@@ -276,7 +273,6 @@ class EDD_License {
 		$license_data = json_decode( wp_remote_retrieve_body( $response ) );
 
 		update_option( $this->item_shortname . '_license_active', $license_data );
-
 	}
 
 
@@ -382,7 +378,6 @@ class EDD_License {
 		$license_data = json_decode( wp_remote_retrieve_body( $response ) );
 
 		update_option( $this->item_shortname . '_license_active', $license_data );
-
 	}
 
 
@@ -433,7 +428,6 @@ class EDD_License {
 			}
 
 		}
-
 	}
 
 	/**
@@ -453,7 +447,6 @@ class EDD_License {
 			echo '&nbsp;<strong><a href="' . esc_url( admin_url( 'edit.php?post_type=download&page=edd-settings&tab=licenses' ) ) . '">' . __( 'Enter valid license key for automatic updates.', 'easy-digital-downloads' ) . '</a></strong>';
 			$showed_imissing_key_message[ $this->item_shortname ] = true;
 		}
-
 	}
 }
 

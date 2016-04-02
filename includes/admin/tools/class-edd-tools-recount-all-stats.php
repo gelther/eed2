@@ -141,7 +141,6 @@ class EDD_Tools_Recount_All_Stats extends EDD_Batch_Export {
 		}
 
 		return false;
-
 	}
 
 	/**
@@ -307,7 +306,6 @@ class EDD_Tools_Recount_All_Stats extends EDD_Batch_Export {
 			$this->store_data( 'edd_temp_payment_items', $payment_items );
 			$this->store_data( 'edd_recount_all_total', $total );
 		}
-
 	}
 
 	/**
