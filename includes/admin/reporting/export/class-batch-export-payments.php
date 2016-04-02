@@ -212,7 +212,6 @@ class EDD_Batch_Payments_Export extends EDD_Batch_Export {
 		}
 
 		return false;
-
 	}
 
 	/**
