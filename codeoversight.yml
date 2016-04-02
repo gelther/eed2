@@ -27,7 +27,7 @@ php:
     use_quotes: single_quotes
     variable_array_index_whitespace: whitespace
     whitespace_after_control_structure: whitespace
-    # whitespace_after_doc_asterisk: single_space
+    whitespace_after_doc_asterisk: single_space
     # whitespace_after_else: space
     # whitespace_after_function_open: newline
     # whitespace_after_function: double_newline
