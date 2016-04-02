@@ -139,7 +139,6 @@ class EDD_Download {
 		$download = WP_Post::get_instance( $_id );
 
 		return $this->setup_download( $download );
-
 	}
 
 	/**
@@ -175,7 +174,6 @@ class EDD_Download {
 		}
 
 		return true;
-
 	}
 
 	/**
@@ -193,7 +191,6 @@ class EDD_Download {
 			return new WP_Error( 'edd-download-invalid-property', sprintf( __( 'Can\'t get property %s', 'easy-digital-downloads' ), $key ) );
 
 		}
-
 	}
 
 	/**
@@ -225,7 +222,6 @@ class EDD_Download {
 		do_action( 'edd_download_post_create', $id, $args );
 
 		return $this->setup_download( $download );
-
 	}
 
 	/**
@@ -236,7 +232,6 @@ class EDD_Download {
 	 */
 	public function get_ID() {
 		return $this->ID;
-
 	}
 
 	/**
@@ -281,7 +276,6 @@ class EDD_Download {
 		 * @param string|int $id The downloads ID.
 		 */
 		return apply_filters( 'edd_get_download_price', $this->price, $this->ID );
-
 	}
 
 	/**
@@ -306,7 +300,6 @@ class EDD_Download {
 		 * @param int|string The ID of the download.
 		 */
 		return apply_filters( 'edd_get_variable_prices', $this->prices, $this->ID );
-
 	}
 
 	/**
@@ -327,7 +320,6 @@ class EDD_Download {
 		 * @param int|string The ID of the download.
 		 */
 		return (bool) apply_filters( 'edd_single_price_option_mode', $ret, $this->ID );
-
 	}
 
 	/**
@@ -348,7 +340,6 @@ class EDD_Download {
 		 * @param int|string The ID of the download.
 		 */
 		return (bool) apply_filters( 'edd_has_variable_prices', $ret, $this->ID );
-
 	}
 
 	/**
@@ -400,7 +391,6 @@ class EDD_Download {
 		}
 
 		return apply_filters( 'edd_download_files', $this->files, $this->ID, $variable_price_id );
-
 	}
 
 	/**
@@ -433,7 +423,6 @@ class EDD_Download {
 		}
 
 		return absint( apply_filters( 'edd_file_download_limit', $this->file_download_limit, $this->ID ) );
-
 	}
 
 	/**
@@ -447,7 +436,6 @@ class EDD_Download {
 		$condition = isset( $files[ $file_key ]['condition'] ) ? $files[ $file_key ]['condition'] : 'all';
 
 		return apply_filters( 'edd_get_file_price_condition', $condition, $this->ID, $files );
-
 	}
 
 	/**
@@ -468,7 +456,6 @@ class EDD_Download {
 		}
 
 		return apply_filters( 'edd_get_download_type', $this->type, $this->ID );
-
 	}
 
 	/**
@@ -495,7 +482,6 @@ class EDD_Download {
 		}
 
 		return (array) apply_filters( 'edd_get_bundled_products', array_filter( $this->bundled_downloads ), $this->ID );
-
 	}
 
 	/**
@@ -512,7 +498,6 @@ class EDD_Download {
 		}
 
 		return (string) apply_filters( 'edd_product_notes', $this->notes, $this->ID );
-
 	}
 
 	/**
@@ -533,7 +518,6 @@ class EDD_Download {
 		}
 
 		return apply_filters( 'edd_get_download_sku', $this->sku, $this->ID );
-
 	}
 
 	/**
@@ -556,7 +540,6 @@ class EDD_Download {
 		}
 
 		return apply_filters( 'edd_get_download_button_behavior', $this->button_behavior, $this->ID );
-
 	}
 
 	/**
@@ -582,7 +565,6 @@ class EDD_Download {
 		}
 
 		return $this->sales;
-
 	}
 
 	/**
@@ -633,7 +615,6 @@ class EDD_Download {
 		}
 
 		return false;
-
 	}
 
 	/**
@@ -659,7 +640,6 @@ class EDD_Download {
 		}
 
 		return $this->earnings;
-
 	}
 
 	/**
@@ -680,7 +660,6 @@ class EDD_Download {
 		}
 
 		return false;
-
 	}
 
 	/**
@@ -708,7 +687,6 @@ class EDD_Download {
 		}
 
 		return false;
-
 	}
 
 	/**
@@ -745,7 +723,6 @@ class EDD_Download {
 		}
 
 		return (bool) apply_filters( 'edd_is_free_download', $is_free, $this->ID, $price_id );
-
 	}
 
 	/**
