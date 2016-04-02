@@ -305,7 +305,5 @@ function edd_update_payment_backwards_compat( $meta_id, $object_id, $meta_key, $
 	}
 
 	return $updated;
-
-
 }
 add_action( 'updated_postmeta', 'edd_update_payment_backwards_compat', 10, 4 );
