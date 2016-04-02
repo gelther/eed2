@@ -35,7 +35,7 @@ php:
     whitespace_before_doc_asterisk: space
     whitespace_before_else: space
     whitespace_before_function_brace: space
-    # whitespace_before_function_close: newline
+    whitespace_before_function_close: no_space
     # whitespace_before_function_parentheses: no_space
 
 blacklist:
