@@ -193,7 +193,6 @@ function edd_currency_filter( $price = '', $currency = '' ) {
  * @return int $decimals
 */
 function edd_currency_decimal_filter( $decimals = 2 ) {
-
 	$currency = edd_get_currency();
 
 	switch ( $currency ) {
