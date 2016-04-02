@@ -59,7 +59,6 @@ class EDD_Session {
 	 * @since 1.5
 	 */
 	public function __construct() {
-
 		$this->use_php_sessions = $this->use_php_sessions();
 
 		if ( $this->use_php_sessions ) {
@@ -111,7 +110,6 @@ class EDD_Session {
 	 * @return void
 	 */
 	public function init() {
-
 		if ( $this->use_php_sessions ) {
 			$this->session = isset( $_SESSION['edd' . $this->prefix ] ) && is_array( $_SESSION['edd' . $this->prefix ] ) ? $_SESSION['edd' . $this->prefix ] : array();
 		} else {
@@ -169,7 +167,6 @@ class EDD_Session {
 	 * @return string Session variable
 	 */
 	public function set( $key, $value ) {
-
 		$key = sanitize_key( $key );
 
 		if ( is_array( $value ) ) {
@@ -245,7 +242,6 @@ class EDD_Session {
 	 * @return boolean $ret True if we are using PHP sessions, false otherwise
 	 */
 	public function use_php_sessions() {
-
 		$ret = false;
 
 		// If the database variable is already set, no need to run autodetection
