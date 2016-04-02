@@ -22,16 +22,16 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  */
 function edd_get_download_by( $field = '', $value = '' ) {
 
-	if( empty( $field ) || empty( $value ) ) {
+	if ( empty( $field ) || empty( $value ) ) {
 		return false;
 	}
 
-	switch( strtolower( $field ) ) {
+	switch ( strtolower( $field ) ) {
 
 		case 'id':
 			$download = get_post( $value );
 
-			if( get_post_type( $download ) != 'download' ) {
+			if ( get_post_type( $download ) != 'download' ) {
 				return false;
 			}
 
@@ -46,7 +46,7 @@ function edd_get_download_by( $field = '', $value = '' ) {
 				'post_status'    => 'any'
 			) );
 
-			if( $download ) {
+			if ( $download ) {
 				$download = $download[0];
 			}
 
@@ -61,7 +61,7 @@ function edd_get_download_by( $field = '', $value = '' ) {
 				'post_status'    => 'any'
 			) );
 
-			if( $download ) {
+			if ( $download ) {
 				$download = $download[0];
 			}
 
@@ -71,7 +71,7 @@ function edd_get_download_by( $field = '', $value = '' ) {
 			return false;
 	}
 
-	if( $download ) {
+	if ( $download ) {
 		return $download;
 	}
 
@@ -120,7 +120,7 @@ function edd_get_download( $download = 0 ) {
  */
 function edd_is_free_download( $download_id = 0, $price_id = false ) {
 
-	if( empty( $download_id ) ) {
+	if ( empty( $download_id ) ) {
 		return false;
 	}
 
@@ -137,7 +137,7 @@ function edd_is_free_download( $download_id = 0, $price_id = false ) {
  */
 function edd_get_download_price( $download_id = 0 ) {
 
-	if( empty( $download_id ) ) {
+	if ( empty( $download_id ) ) {
 		return false;
 	}
 
@@ -156,7 +156,7 @@ function edd_get_download_price( $download_id = 0 ) {
  */
 function edd_price( $download_id = 0, $echo = true, $price_id = false ) {
 
-	if( empty( $download_id ) ) {
+	if ( empty( $download_id ) ) {
 		$download_id = get_the_ID();
 	}
 
@@ -168,7 +168,7 @@ function edd_price( $download_id = 0, $echo = true, $price_id = false ) {
 
 			$price = edd_get_price_option_amount( $download_id, $price_id );
 
-		} elseif( $default = edd_get_default_variable_price( $download_id ) ) {
+		} elseif ( $default = edd_get_default_variable_price( $download_id ) ) {
 
 			$price = edd_get_price_option_amount( $download_id, $default );
 
@@ -238,7 +238,7 @@ function edd_get_download_final_price( $download_id = 0, $user_purchase_info, $a
  */
 function edd_get_variable_prices( $download_id = 0 ) {
 
-	if( empty( $download_id ) ) {
+	if ( empty( $download_id ) ) {
 		return false;
 	}
 
@@ -255,7 +255,7 @@ function edd_get_variable_prices( $download_id = 0 ) {
  */
 function edd_has_variable_prices( $download_id = 0 ) {
 
-	if( empty( $download_id ) ) {
+	if ( empty( $download_id ) ) {
 		return false;
 	}
 
@@ -795,7 +795,7 @@ function edd_get_download_files( $download_id = 0, $variable_price_id = null ) {
  * @return string The file name
  */
 function edd_get_file_name( $file = array() ) {
-	if( empty( $file ) || ! is_array( $file ) ) {
+	if ( empty( $file ) || ! is_array( $file ) ) {
 		return false;
 	}
 	$name = ! empty( $file['name'] ) ? esc_html( $file['name'] ) : basename( $file['file'] );
@@ -1218,13 +1218,13 @@ function edd_validate_url_token( $url = '' ) {
 		// Parameters that will be removed from the URL before testing the token
 		$remove = array();
 
-		foreach( $query_args as $key => $value ) {
-			if( false === in_array( $key, $allowed ) ) {
+		foreach ( $query_args as $key => $value ) {
+			if ( false === in_array( $key, $allowed ) ) {
 				$remove[] = $key;
 			}
 		}
 
-		if( ! empty( $remove ) ) {
+		if ( ! empty( $remove ) ) {
 
 			$url = remove_query_arg( $remove, $url );
 
