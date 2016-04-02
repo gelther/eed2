@@ -208,7 +208,6 @@ class EDD_Download_Reports_Table extends WP_List_Table {
 	 * @return void
 	 */
 	public function query() {
-
 		$orderby  = isset( $_GET['orderby'] ) ? $_GET['orderby'] : 'title';
 		$order    = isset( $_GET['order'] ) ? $_GET['order'] : 'DESC';
 		$category = $this->get_category();
