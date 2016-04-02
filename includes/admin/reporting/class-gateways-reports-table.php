@@ -48,7 +48,6 @@ class EDD_Gateawy_Reports_Table extends WP_List_Table {
 			'plural'   => edd_get_label_plural(),
 			'ajax'     => false,
 		) );
-
 	}
 
 	/**
@@ -167,6 +166,5 @@ class EDD_Gateawy_Reports_Table extends WP_List_Table {
 		$sortable              = $this->get_sortable_columns();
 		$this->_column_headers = array( $columns, $hidden, $sortable );
 		$this->items           = $this->reports_data();
-
 	}
 }
