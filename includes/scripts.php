@@ -323,7 +323,6 @@ function edd_admin_downloads_icon() {
 }
 add_action( 'admin_head', 'edd_admin_downloads_icon' );
 
-
 /**
  * Load head styles
  *
