@@ -309,7 +309,6 @@ final class EDD_Payment {
 	 * @return mixed void|false
 	 */
 	public function __construct( $payment_id = false ) {
-
 		if ( empty( $payment_id ) ) {
 			return false;
 		}
@@ -325,7 +324,6 @@ final class EDD_Payment {
 	 * @return mixed        The value
 	 */
 	public function __get( $key ) {
-
 		if ( method_exists( $this, 'get_' . $key ) ) {
 
 			$value = call_user_func( array( $this, 'get_' . $key ) );
@@ -474,7 +472,6 @@ final class EDD_Payment {
 	 * @return int|bool Fale on failure, the payment ID on success.
 	 */
 	private function insert_payment() {
-
 		// Construct the payment title
 		$payment_title = '';
 
@@ -987,7 +984,6 @@ final class EDD_Payment {
 	 * @return bool               If the item was removed or not
 	 */
 	public function remove_download( $download_id, $args = array() ) {
-
 		// Set some defaults
 		$defaults = array(
 			'quantity'   => 1,
@@ -1151,7 +1147,6 @@ final class EDD_Payment {
 	 * @return bool If the fee was added
 	 */
 	public function add_fee( $args, $global = true ) {
-
 		$default_args = array(
 			'label'       => '',
 			'amount'      => 0,
@@ -1201,7 +1196,6 @@ final class EDD_Payment {
 	 * @return boolean             If the item is removed
 	 */
 	public function remove_fee_by( $key, $value, $global = false ) {
-
 		$allowed_fee_keys = apply_filters( 'edd_payment_fee_keys', array(
 			'index', 'label', 'amount', 'type',
 		) );
@@ -1412,7 +1406,6 @@ final class EDD_Payment {
 	 * @return bool Returns if the status was successfully updated
 	 */
 	public function update_status( $status = false ) {
-
 		if ( $status == 'completed' || $status == 'complete' ) {
 			$status = 'publish';
 		}
@@ -1482,7 +1475,6 @@ final class EDD_Payment {
 	 * @return mixed             The value from the post meta
 	 */
 	public function get_meta( $meta_key = '_edd_payment_meta', $single = true ) {
-
 		$meta = get_post_meta( $this->ID, $meta_key, $single );
 
 		if ( $meta_key === '_edd_payment_meta' ) {
@@ -1590,7 +1582,6 @@ final class EDD_Payment {
 	 * @return void
 	 */
 	private function process_failure() {
-
 		$discounts = $this->discounts;
 		if ( 'none' === $discounts || empty( $discounts ) ) {
 			return;
@@ -1651,7 +1642,6 @@ final class EDD_Payment {
 	 * @return void
 	 */
 	private function maybe_alter_stats( $alter_store_earnings, $alter_customer_value, $alter_customer_purchase_count ) {
-
 		edd_undo_purchase( false, $this->ID );
 
 		// Decrease store earnings
