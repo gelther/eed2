@@ -126,7 +126,6 @@ function edd_log_user_in( $user_id, $user_login, $user_pass ) {
  * @return void
 */
 function edd_process_register_form( $data ) {
-
 	if ( is_user_logged_in() ) {
 		return;
 	}
