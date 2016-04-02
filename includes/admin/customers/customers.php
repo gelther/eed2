@@ -30,7 +30,6 @@ function edd_customers_page() {
 function edd_customer_views() {
 	$views = array();
 	return apply_filters( 'edd_customer_views', $views );
-
 }
 
 /**
@@ -42,7 +41,6 @@ function edd_customer_views() {
 function edd_customer_tabs() {
 	$tabs = array();
 	return apply_filters( 'edd_customer_tabs', $tabs );
-
 }
 
 /**
@@ -146,7 +144,6 @@ function edd_render_customer_view( $view, $callbacks ) {
 
 	</div>
 	<?php
-
 }
 
 
