@@ -360,7 +360,6 @@ function edd_setup_email_tags() {
 	foreach ( $email_tags as $email_tag ) {
 		edd_add_email_tag( $email_tag['tag'], $email_tag['description'], $email_tag['function'] );
 	}
-
 }
 add_action( 'edd_add_email_tags', 'edd_setup_email_tags' );
 
