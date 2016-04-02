@@ -118,7 +118,6 @@ function edd_get_discount_by_code( $code = '' ) {
 	}
 
 	return edd_get_discount_by( 'code', $code );
-
 }
 
 /**
@@ -294,7 +293,6 @@ function edd_store_discount( $details, $discount_id = null ) {
 		// Discount code created
 		return $discount_id;
 	}
-
 }
 
 
@@ -995,7 +993,6 @@ function edd_increase_discount_usage( $code ) {
 	do_action( 'edd_discount_increase_use_count', $uses, $id, $code );
 
 	return $uses;
-
 }
 
 /**
@@ -1024,7 +1021,6 @@ function edd_decrease_discount_usage( $code ) {
 	do_action( 'edd_discount_decrease_use_count', $uses, $id, $code );
 
 	return $uses;
-
 }
 
 /**
@@ -1273,7 +1269,6 @@ function edd_get_cart_item_discount_amount( $item = array() ) {
 	}
 
 	return $amount;
-
 }
 
 /**
