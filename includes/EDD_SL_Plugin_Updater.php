@@ -42,7 +42,6 @@ class EDD_SL_Plugin_Updater {
 
 		// Set up hooks.
 		$this->init();
-
 	}
 
 	/**
@@ -58,7 +57,6 @@ class EDD_SL_Plugin_Updater {
 		remove_action( 'after_plugin_row_' . $this->name, 'wp_plugin_update_row', 10, 2 );
 		add_action( 'after_plugin_row_' . $this->name, array( $this, 'show_update_notification' ), 10, 2 );
 		add_action( 'admin_init', array( $this, 'show_changelog' ) );
-
 	}
 
 	/**
