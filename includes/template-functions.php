@@ -527,8 +527,7 @@ function edd_get_purchase_download_links( $payment_id = 0 ) {
 						$links .= '<a href="' . esc_url( edd_get_download_file_url( $payment_key, $email, $filekey, $download['id'], $price_id ) ) . '">';
 							if ( isset( $file['name'] ) ) {
 								$links .= esc_html( $file['name'] );
-							}
-							else {
+							} else {
 								$links .= esc_html( $file['file'] );
 							}
 						$links .= '</a>';
