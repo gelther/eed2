@@ -92,7 +92,6 @@ function edd_email_test_purchase_receipt() {
 	$emails->__set( 'headers', $headers );
 
 	$emails->send( edd_get_admin_notice_emails(), $subject, $message, $attachments );
-
 }
 
 /**
@@ -141,7 +140,6 @@ function edd_admin_email_notice( $payment_id = 0, $payment_data = array() ) {
 	$emails->__set( 'heading', __( 'New Sale!', 'easy-digital-downloads' ) );
 
 	$emails->send( edd_get_admin_notice_emails(), $subject, $message, $attachments );
-
 }
 add_action( 'edd_admin_sale_notice', 'edd_admin_email_notice', 10, 2 );
 
