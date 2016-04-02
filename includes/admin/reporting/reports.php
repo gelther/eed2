@@ -74,7 +74,6 @@ function edd_reports_default_views() {
  * @return string $view Report View
  */
 function edd_get_reporting_view( $default = 'earnings' ) {
-
 	if ( ! isset( $_GET['view'] ) || ! in_array( $_GET['view'], array_keys( edd_reports_default_views() ) ) ) {
 		$view = $default;
 	} else {
@@ -91,7 +90,6 @@ function edd_get_reporting_view( $default = 'earnings' ) {
  * @return void
  */
 function edd_reports_tab_reports() {
-
 	if ( ! current_user_can( 'view_shop_reports' ) ) {
 		wp_die( __( 'You do not have permission to access this report', 'easy-digital-downloads' ), __( 'Error', 'easy-digital-downloads' ), array( 'response' => 403 ) );
 	}
@@ -115,7 +113,6 @@ add_action( 'edd_reports_tab_reports', 'edd_reports_tab_reports' );
  * @return void
  */
 function edd_report_views() {
-
 	if ( ! current_user_can( 'view_shop_reports' ) ) {
 		return;
 	}
@@ -150,7 +147,6 @@ function edd_report_views() {
  * @return void
  */
 function edd_reports_downloads_table() {
-
 	if ( ! current_user_can( 'view_shop_reports' ) ) {
 		return;
 	}
@@ -174,7 +170,6 @@ add_action( 'edd_reports_view_downloads', 'edd_reports_downloads_table' );
  * @return void
  */
 function edd_reports_download_details() {
-
 	if ( ! current_user_can( 'view_shop_reports' ) ) {
 		return;
 	}
@@ -206,7 +201,6 @@ add_action( 'edd_reports_view_downloads', 'edd_reports_download_details' );
  * @return void
  */
 function edd_reports_gateways_table() {
-
 	if ( ! current_user_can( 'view_shop_reports' ) ) {
 		return;
 	}
@@ -227,7 +221,6 @@ add_action( 'edd_reports_view_gateways', 'edd_reports_gateways_table' );
  * @return void
  */
 function edd_reports_earnings() {
-
 	if ( ! current_user_can( 'view_shop_reports' ) ) {
 		return;
 	}
@@ -297,7 +290,6 @@ add_action( 'edd_reports_view_categories', 'edd_reports_categories' );
  * @return void
  */
 function edd_reports_taxes() {
-
 	if ( ! current_user_can( 'view_shop_reports' ) ) {
 		return;
 	}
@@ -339,7 +331,6 @@ add_action( 'edd_reports_view_taxes', 'edd_reports_taxes' );
  * @return void
  */
 function edd_reports_tab_export() {
-
 	if ( ! current_user_can( 'view_shop_reports' ) ) {
 		return;
 	}
@@ -458,7 +449,6 @@ add_action( 'edd_reports_tab_export', 'edd_reports_tab_export' );
  * @return void
  */
 function edd_reports_tab_logs() {
-
 	if ( ! current_user_can( 'view_shop_reports' ) ) {
 		return;
 	}
@@ -485,7 +475,6 @@ add_action( 'edd_reports_tab_logs', 'edd_reports_tab_logs' );
  * @return array
  */
 function edd_estimated_monthly_stats( $include_taxes = true ) {
-
 	$estimated = get_transient( 'edd_estimated_monthly_stats' . $include_taxes );
 
 	if ( false === $estimated ) {
