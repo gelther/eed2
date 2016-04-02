@@ -111,7 +111,6 @@ function edd_format_amount( $amount, $decimals = true ) {
 	return apply_filters( 'edd_format_amount', $formatted, $amount, $decimals, $decimal_sep, $thousands_sep );
 }
 
-
 /**
  * Formats the currency display
  *
