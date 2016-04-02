@@ -50,7 +50,6 @@ function edd_block_attachments() {
 }
 add_action( 'template_redirect', 'edd_block_attachments' );
 
-
 /**
  * Removes our tracking query arg so as not to interfere with the WP query, see https://core.trac.wordpress.org/ticket/25143
  *
