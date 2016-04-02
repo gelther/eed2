@@ -161,7 +161,6 @@ function edd_string_is_image_url( $str ) {
  * @return string $ip User's IP address
  */
 function edd_get_ip() {
-
 	$ip = '127.0.0.1';
 
 	if ( ! empty( $_SERVER['HTTP_CLIENT_IP'] ) ) {
@@ -227,7 +226,6 @@ function edd_get_host() {
  * @return bool true if host matches, false if not
  */
 function edd_is_host( $host = false ) {
-
 	$return = false;
 
 	if ( $host ) {
@@ -440,7 +438,6 @@ function edd_get_php_arg_separator_output() {
  * @return string $page_url Current page URL
  */
 function edd_get_current_page_url( $nocache = false ) {
-
 	global $wp;
 
 	if ( get_option( 'permalink_structure' ) ) {
@@ -480,7 +477,6 @@ function edd_get_current_page_url( $nocache = false ) {
  * @return string      The URL with cache busting added or not
  */
 function edd_add_cache_busting( $url = '' ) {
-
 	$no_cache_checkout = edd_get_option( 'no_cache_checkout', false );
 
 	if ( edd_is_caching_plugin_active() || ( edd_is_checkout() && $no_cache_checkout ) ) {
@@ -702,7 +698,6 @@ function edd_use_skus() {
  * @return string $timezone The timezone ID
  */
 function edd_get_timezone_id() {
-
 	// if site timezone string exists, return it
 	if ( $timezone = get_option( 'timezone_string' ) ) {
 		return $timezone;
@@ -765,7 +760,6 @@ function edd_object_to_array( $data ) {
  * @return array Upload directory information
  */
 function edd_set_upload_dir( $upload ) {
-
 	// Override the year / month being based on the post publication date, if year/month organization is enabled
 	if ( get_option( 'uploads_use_yearmonth_folders' ) ) {
 		// Generate the yearly and monthly dirs
@@ -789,7 +783,6 @@ function edd_set_upload_dir( $upload ) {
  * @return bool                   If the action has been added to the copmleted actions array
  */
 function edd_has_upgrade_completed( $upgrade_action = '' ) {
-
 	if ( empty( $upgrade_action ) ) {
 		return false;
 	}
@@ -807,7 +800,6 @@ function edd_has_upgrade_completed( $upgrade_action = '' ) {
  * @return array The array of completed upgrades
  */
 function edd_get_completed_upgrades() {
-
 	$completed_upgrades = get_option( 'edd_completed_upgrades' );
 
 	if ( false === $completed_upgrades ) {
@@ -886,7 +878,6 @@ endif;
  * @return bool Whether the receipt is visible or not.
  */
 function edd_can_view_receipt( $payment_key = '' ) {
-
 	$return = false;
 
 	if ( empty( $payment_key ) ) {
