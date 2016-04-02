@@ -93,7 +93,7 @@ class EDD_Cache_Helper {
 	 */
 	private function nocache() {
 		if ( ! defined( 'DONOTCACHEPAGE' ) ) {
-			define( "DONOTCACHEPAGE", "true" );
+			define( 'DONOTCACHEPAGE', 'true' );
 		}
 
 		nocache_headers();
