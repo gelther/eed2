@@ -102,7 +102,6 @@ function edd_reports_tab_reports() {
 	}
 
 	do_action( 'edd_reports_view_' . $current_view );
-
 }
 add_action( 'edd_reports_tab_reports', 'edd_reports_tab_reports' );
 
