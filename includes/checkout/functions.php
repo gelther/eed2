@@ -58,7 +58,7 @@ function edd_can_checkout() {
  * @access      public
  * @since       1.6
  * @return      string
-*/
+ */
 function edd_get_success_page_uri() {
 	$page_id = edd_get_option( 'success_page', 0 );
 	$page_id = absint( $page_id );
@@ -88,7 +88,7 @@ function edd_is_success_page() {
  * @access      public
  * @since       1.0
  * @return      void
-*/
+ */
 function edd_send_to_success_page( $query_string = null ) {
 	$redirect = edd_get_success_page_uri();
 
@@ -177,7 +177,7 @@ function edd_send_back_to_checkout( $args = array() ) {
  * @access      public
  * @since       1.0
  * @return      string
-*/
+ */
 function edd_get_success_page_url( $query_string = null ) {
 	$success_page = edd_get_option( 'success_page', 0 );
 	$success_page = get_permalink( $success_page );
@@ -226,7 +226,7 @@ function edd_is_failed_transaction_page() {
  * @access      public
  * @since       1.9.9
  * @return      void
-*/
+ */
 function edd_listen_for_failed_payments() {
 	$failed_page = edd_get_option( 'failure_page', 0 );
 
@@ -254,7 +254,7 @@ add_action( 'template_redirect', 'edd_listen_for_failed_payments' );
  * @access      public
  * @since       1.7
  * @return      bool
-*/
+ */
 function edd_field_is_required( $field = '' ) {
 	$required_fields = edd_purchase_form_required_fields();
 	return array_key_exists( $field, $required_fields );
