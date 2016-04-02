@@ -125,26 +125,26 @@ function edd_process_download() {
 		$ctype          = edd_get_file_ctype( $file_extension );
 
 		if ( ! edd_is_func_disabled( 'set_time_limit' ) && ! ini_get( 'safe_mode' ) ) {
-			@set_time_limit(0);
+			@set_time_limit( 0 );
 		}
 		if ( function_exists( 'get_magic_quotes_runtime' ) && get_magic_quotes_runtime() && version_compare( phpversion(), '5.4', '<' ) ) {
-			set_magic_quotes_runtime(0);
+			set_magic_quotes_runtime( 0 );
 		}
 
 		@session_write_close();
 		if( function_exists( 'apache_setenv' ) ) {
-			@apache_setenv('no-gzip', 1);
+			@apache_setenv( 'no-gzip', 1 );
 		}
 		@ini_set( 'zlib.output_compression', 'Off' );
 
 		do_action( 'edd_process_download_headers', $requested_file, $args['download'], $args['email'], $args['payment'] );
 
 		nocache_headers();
-		header("Robots: none");
-		header("Content-Type: " . $ctype . "");
-		header("Content-Description: File Transfer");
-		header("Content-Disposition: attachment; filename=\"" . apply_filters( 'edd_requested_file_name', basename( $requested_file ) ) . "\"");
-		header("Content-Transfer-Encoding: binary");
+		header( "Robots: none" );
+		header( "Content-Type: " . $ctype . "" );
+		header( "Content-Description: File Transfer" );
+		header( "Content-Disposition: attachment; filename=\"" . apply_filters( 'edd_requested_file_name', basename( $requested_file ) ) . "\"" );
+		header( "Content-Transfer-Encoding: binary" );
 
 		// If the file isn't locally hosted, process the redirect
 		if ( filter_var( $requested_file, FILTER_VALIDATE_URL ) && ! edd_is_local_file( $requested_file ) ) {
@@ -331,8 +331,8 @@ function edd_deliver_download( $file = '', $redirect = false ) {
  * @return bool                   If the file is hosted locally or not
  */
 function edd_is_local_file( $requested_file ) {
-	$home_url       = preg_replace('#^https?://#', '', home_url() );
-	$requested_file = preg_replace('#^https?://#', '', $requested_file );
+	$home_url       = preg_replace( '#^https?://#', '', home_url() );
+	$requested_file = preg_replace( '#^https?://#', '', $requested_file );
 
 	$is_local_url  = strpos( $requested_file, $home_url ) === 0;
 	$is_local_path = strpos( $requested_file, '/' ) === 0;
@@ -710,7 +710,7 @@ function edd_readfile_chunked( $file, $retbytes = true ) {
 	$handle    = @fopen( $file, 'r' );
 
 	if ( $size = @filesize( $file ) ) {
-		header("Content-Length: " . $size );
+		header( "Content-Length: " . $size );
 	}
 
 	if ( false === $handle ) {

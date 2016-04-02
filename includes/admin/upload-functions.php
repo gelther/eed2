@@ -119,7 +119,7 @@ function edd_scan_folders( $path = '', $return = array() ) {
 					$return[] = trailingslashit( $path . DIRECTORY_SEPARATOR . $f );
 				}
 
-				edd_scan_folders( $path . DIRECTORY_SEPARATOR . $f, $return);
+				edd_scan_folders( $path . DIRECTORY_SEPARATOR . $f, $return );
 			}
 		}
 	}

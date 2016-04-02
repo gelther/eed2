@@ -100,7 +100,7 @@ function edd_get_download( $download = 0 ) {
 		'numberposts' => 1
 	);
 
-	$download = get_posts($args);
+	$download = get_posts( $args );
 
 	if ( $download ) {
 		return $download[0];
@@ -979,7 +979,7 @@ function edd_get_download_file_url( $key, $email, $filekey, $download_id = 0, $p
 
 	$hours = absint( edd_get_option( 'download_link_expiration', 24 ) );
 
-	if ( ! ( $date = strtotime( '+' . $hours . 'hours', current_time( 'timestamp') ) ) ) {
+	if ( ! ( $date = strtotime( '+' . $hours . 'hours', current_time( 'timestamp' ) ) ) ) {
 		$date = 2147472000; // Highest possible date, January 19, 2038
 	}
 
