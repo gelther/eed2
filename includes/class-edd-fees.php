@@ -301,4 +301,5 @@ class EDD_Fees {
 
 		return $payment_meta;
 	}
+
 }
