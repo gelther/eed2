@@ -52,7 +52,6 @@ class EDD_Download_History_Export extends EDD_Export {
 		header( 'Expires: 0' );
 	}
 
-
 	/**
 	 * Set the CSV columns
 	 *
@@ -117,4 +116,5 @@ class EDD_Download_History_Export extends EDD_Export {
 
 		return $data;
 	}
+
 }
