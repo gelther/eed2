@@ -136,7 +136,6 @@ function edd_scan_folders( $path = '', $return = array() ) {
  * @return mixed|void The htaccess rules
  */
 function edd_get_htaccess_rules( $method = false ) {
-
 	if ( empty( $method ) ) {
 		$method = edd_get_file_download_method();
 	}
