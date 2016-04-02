@@ -13,7 +13,7 @@ php:
     function_args_separator_whitespace: whitespace
     function_parentheses_inner_whitespace: whitespace
     indentation_whitespace: tab
-    # opening_doc_asterisk: double
+    opening_doc_asterisk: double
     # php_tag_casing: lower
     # php_tags: full_php_tags
     # remove_double_semicolon: remove
