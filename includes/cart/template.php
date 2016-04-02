@@ -19,7 +19,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @return void
  */
 function edd_checkout_cart() {
-
 	// Check if the Update cart button should be shown
 	if ( edd_item_quantities_enabled() ) {
 		add_action( 'edd_cart_footer_buttons', 'edd_update_cart_button' );
@@ -172,7 +171,6 @@ function edd_save_cart_button() {
  * @return void
  */
 function edd_empty_cart_restore_cart_link() {
-
 	if ( edd_is_cart_saving_disabled() ) {
 		return;
 	}
