@@ -242,7 +242,6 @@ function edd_add_download_filters() {
 			echo '<input type="hidden" name="author" value="' . esc_attr( $author_id ) . '" />';
 		}
 	}
-
 }
 add_action( 'restrict_manage_posts', 'edd_add_download_filters', 100 );
 
