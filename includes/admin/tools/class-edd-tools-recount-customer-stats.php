@@ -126,7 +126,6 @@ class EDD_Tools_Recount_Customer_Stats extends EDD_Batch_Export {
 		}
 
 		return false;
-
 	}
 
 	/**
