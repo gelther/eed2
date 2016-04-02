@@ -21,7 +21,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @return      mixed
  */
 function edd_get_download_by( $field = '', $value = '' ) {
-
 	if ( empty( $field ) || empty( $value ) ) {
 		return false;
 	}
@@ -119,7 +118,6 @@ function edd_get_download( $download = 0 ) {
  * @return bool $is_free True if the product is free, false if the product is not free or the check fails
  */
 function edd_is_free_download( $download_id = 0, $price_id = false ) {
-
 	if ( empty( $download_id ) ) {
 		return false;
 	}
@@ -136,7 +134,6 @@ function edd_is_free_download( $download_id = 0, $price_id = false ) {
  * @return mixed string|int Price of the download
  */
 function edd_get_download_price( $download_id = 0 ) {
-
 	if ( empty( $download_id ) ) {
 		return false;
 	}
@@ -155,7 +152,6 @@ function edd_get_download_price( $download_id = 0 ) {
  * @return void
  */
 function edd_price( $download_id = 0, $echo = true, $price_id = false ) {
-
 	if ( empty( $download_id ) ) {
 		$download_id = get_the_ID();
 	}
@@ -237,7 +233,6 @@ function edd_get_download_final_price( $download_id = 0, $user_purchase_info, $a
  * @return array Variable prices
  */
 function edd_get_variable_prices( $download_id = 0 ) {
-
 	if ( empty( $download_id ) ) {
 		return false;
 	}
@@ -254,7 +249,6 @@ function edd_get_variable_prices( $download_id = 0 ) {
  * @return bool true if has variable prices, false otherwise
  */
 function edd_has_variable_prices( $download_id = 0 ) {
-
 	if ( empty( $download_id ) ) {
 		return false;
 	}
@@ -272,7 +266,6 @@ function edd_has_variable_prices( $download_id = 0 ) {
  * @return int              The Price ID to select by default
  */
 function edd_get_default_variable_price( $download_id = 0 ) {
-
 	if ( ! edd_has_variable_prices( $download_id ) ) {
 		return false;
 	}
@@ -429,7 +422,6 @@ function edd_get_lowest_price_id( $download_id = 0 ) {
  * @return float Amount of the highest price
  */
 function edd_get_highest_price_option( $download_id = 0 ) {
-
 	if ( empty( $download_id ) ) {
 		$download_id = get_the_ID();
 	}
@@ -490,7 +482,6 @@ function edd_price_range( $download_id = 0 ) {
  * @return bool
  */
 function edd_single_price_option_mode( $download_id = 0 ) {
-
 	if ( empty( $download_id ) ) {
 		$download = get_post();
 
@@ -513,7 +504,6 @@ function edd_single_price_option_mode( $download_id = 0 ) {
  * @return array $types Download types
  */
 function edd_get_download_types() {
-
 	$types = array(
 		'0'      => __( 'Default', 'easy-digital-downloads' ),
 		'bundle' => __( 'Bundle', 'easy-digital-downloads' )
@@ -904,7 +894,6 @@ function edd_set_file_download_limit_override( $download_id = 0, $payment_id = 0
  * @return bool True if at limit, false otherwise
  */
 function edd_is_file_at_download_limit( $download_id = 0, $payment_id = 0, $file_id = 0, $price_id = false ) {
-
 	// Checks to see if at limit
 	$logs = new EDD_Logging();
 
@@ -975,7 +964,6 @@ function edd_get_file_price_condition( $download_id = 0, $file_key ) {
  * @return string Constructed download URL
  */
 function edd_get_download_file_url( $key, $email, $filekey, $download_id = 0, $price_id = false ) {
-
 	$hours = absint( edd_get_option( 'download_link_expiration', 24 ) );
 
 	if ( ! ( $date = strtotime( '+' . $hours . 'hours', current_time( 'timestamp' ) ) ) ) {
@@ -1125,7 +1113,6 @@ function edd_get_random_downloads( $num = 3, $post_ids = true ) {
  * @return string The token for the URL.
  */
 function edd_get_download_token( $url = '' ) {
-
 	$args   = array();
 	$hash   = apply_filters( 'edd_get_url_token_algorithm', 'sha256' );
 	$secret = apply_filters( 'edd_get_url_token_secret', hash( $hash, wp_salt() ) );
@@ -1199,7 +1186,6 @@ function edd_get_download_token( $url = '' ) {
  * @return bool
  */
 function edd_validate_url_token( $url = '' ) {
-
 	$ret   = false;
 	$parts = parse_url( $url );
 
