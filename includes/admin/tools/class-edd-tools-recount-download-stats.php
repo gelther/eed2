@@ -123,7 +123,6 @@ class EDD_Tools_Recount_Download_Stats extends EDD_Batch_Export {
 		update_post_meta( $this->download_id, '_edd_download_earnings', $totals['earnings'] );
 
 		return false;
-
 	}
 
 	/**
