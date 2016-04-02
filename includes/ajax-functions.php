@@ -34,7 +34,6 @@ function edd_is_ajax_enabled() {
  * @return bool True if AJAX works, false otherwise
  */
 function edd_test_ajax_works() {
-
 	// Check if the Airplane Mode plugin is installed
 	if ( class_exists( 'Airplane_Mode_Core' ) ) {
 
@@ -662,7 +661,6 @@ add_action( 'wp_ajax_edd_check_for_download_price_variations', 'edd_check_for_do
  * @return void
  */
 function edd_ajax_search_users() {
-
 	if ( current_user_can( 'manage_shop_settings' ) ) {
 
 		$search_query = trim( $_POST['user_name'] );
