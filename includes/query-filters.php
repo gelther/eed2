@@ -72,7 +72,7 @@ function edd_unset_discount_query_arg( $query ) {
 		global $wp;
 
 		// unset ref var from $wp
-		unset( $wp->query_vars[ 'discount' ] );
+		unset( $wp->query_vars['discount'] );
 
 		// if in home (because $wp->query_vars is empty) and 'show_on_front' is page
 		if ( empty( $wp->query_vars ) && get_option( 'show_on_front' ) === 'page' ) {
