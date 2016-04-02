@@ -130,7 +130,6 @@ function edd_get_shop_states( $country = null ) {
 	return apply_filters( 'edd_shop_states', $states, $country );
 }
 
-
 /**
  * Get Country List
  *
