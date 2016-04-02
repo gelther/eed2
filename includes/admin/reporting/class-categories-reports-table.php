@@ -396,4 +396,5 @@ class EDD_Categories_Reports_Table extends WP_List_Table {
 		$this->_column_headers = array( $columns, $hidden, $sortable );
 		$this->items           = $this->reports_data();
 	}
+
 }
