@@ -76,7 +76,6 @@ class EDD_Emails {
 	 * @since 2.1
 	 */
 	public function __construct() {
-
 		if ( 'none' === $this->get_template() ) {
 			$this->html = false;
 		}
@@ -196,7 +195,6 @@ class EDD_Emails {
 	 * @param string $content
 	 */
 	public function parse_tags( $content ) {
-
 		// The email tags are parsed during setup for purchase receipts and sale notifications
 		// Onoce tags are not restricted to payments, we'll expand this. See https://github.com/easydigitaldownloads/Easy-Digital-Downloads/issues/2151
 
@@ -212,7 +210,6 @@ class EDD_Emails {
 	 * @return string
 	 */
 	public function build_email( $message ) {
-
 		if ( false === $this->html ) {
 			return apply_filters( 'edd_email_message', wp_strip_all_tags( $message ), $this );
 		}
@@ -273,7 +270,6 @@ class EDD_Emails {
 	 * @since 2.1
 	 */
 	public function send( $to, $subject, $message, $attachments = '' ) {
-
 		if ( ! did_action( 'init' ) && ! did_action( 'admin_init' ) ) {
 			_doing_it_wrong( __FUNCTION__, __( 'You cannot send email with EDD_Emails until init/admin_init has been reached', 'easy-digital-downloads' ), null );
 			return false;
@@ -353,7 +349,6 @@ class EDD_Emails {
 	 * @since 2.1
 	 */
 	public function text_to_html( $message ) {
-
 		if ( 'text/html' == $this->content_type || true === $this->html ) {
 			$message = apply_filters( 'edd_email_template_wpautop', true ) ? wpautop( $message ) : $message;
 		}
