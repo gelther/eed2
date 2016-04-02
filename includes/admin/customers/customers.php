@@ -28,7 +28,6 @@ function edd_customers_page() {
  * @return array Array of views and their callbacks
  */
 function edd_customer_views() {
-
 	$views = array();
 	return apply_filters( 'edd_customer_views', $views );
 
@@ -41,7 +40,6 @@ function edd_customer_views() {
  * @return array Array of tabs for the customer
  */
 function edd_customer_tabs() {
-
 	$tabs = array();
 	return apply_filters( 'edd_customer_tabs', $tabs );
 
@@ -85,7 +83,6 @@ function edd_customers_list() {
  * @return void
  */
 function edd_render_customer_view( $view, $callbacks ) {
-
 	$render = true;
 
 	$customer_view_role = apply_filters( 'edd_view_customers_role', 'view_shop_reports' );
@@ -161,7 +158,6 @@ function edd_render_customer_view( $view, $callbacks ) {
  * @return void
  */
 function edd_customers_view( $customer ) {
-
 	$customer_edit_role = apply_filters( 'edd_edit_customers_role', 'edit_shop_payments' );
 
 	?>
@@ -416,7 +412,6 @@ function edd_customers_view( $customer ) {
  * @return void
  */
 function edd_customer_notes_view( $customer ) {
-
 	$paged       = isset( $_GET['paged'] ) && is_numeric( $_GET['paged'] ) ? $_GET['paged'] : 1;
 	$paged       = absint( $paged );
 	$note_count  = $customer->get_notes_count();
@@ -575,7 +570,6 @@ function edd_customer_tools_view( $customer ) {
  * @return void
  */
 function edd_verify_customer_notice( $customer ) {
-
 	if ( ! edd_user_pending_verification( $customer->user_id ) ) {
 		return;
 	}
