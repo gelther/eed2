@@ -21,7 +21,7 @@ php:
     semicolon_before_closing_php_tag: add
     static_array_index_whitespace: no_space
     string_operator_whitespace: whitespace
-    # true_false_casing: lower
+    true_false_casing: lower
     # type_cast_casing: lower
     # type_cast_inner_whitespace: no_space
     # use_quotes: single_quotes
