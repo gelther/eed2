@@ -95,7 +95,6 @@ class EDD_Pie_Graph extends EDD_Graph {
 		$this->options = wp_parse_args( $options, $defaults );
 
 		add_action( 'edd_graph_load_scripts', array( $this, 'load_additional_scripts' ) );
-
 	}
 
 	/**
@@ -195,7 +194,6 @@ class EDD_Pie_Graph extends EDD_Graph {
 			<?php
 		}
 		return apply_filters( 'edd_pie_graph_output', ob_get_clean(), $this->id, $this->data, $this->options );
-
 	}
 
 }
