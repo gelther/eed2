@@ -242,7 +242,6 @@ function edd_purchase_form_validate_gateway() {
 	}
 
 	return $gateway;
-
 }
 
 /**
