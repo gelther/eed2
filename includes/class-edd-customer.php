@@ -116,7 +116,6 @@ class EDD_Customer {
 		}
 
 		$this->setup_customer( $customer );
-
 	}
 
 	/**
@@ -153,7 +152,6 @@ class EDD_Customer {
 		}
 
 		return false;
-
 	}
 
 	/**
@@ -171,7 +169,6 @@ class EDD_Customer {
 			return new WP_Error( 'edd-customer-invalid-property', sprintf( __( 'Can\'t get property %s', 'easy-digital-downloads' ), $key ) );
 
 		}
-
 	}
 
 	/**
@@ -220,7 +217,6 @@ class EDD_Customer {
 		do_action( 'edd_customer_post_create', $created, $args );
 
 		return $created;
-
 	}
 
 	/**
@@ -373,7 +369,6 @@ class EDD_Customer {
 		do_action( 'edd_customer_post_remove_payment', $payment_removed, $payment->ID, $this->id );
 
 		return $payment_removed;
-
 	}
 
 	/**
@@ -496,7 +491,6 @@ class EDD_Customer {
 		$desired_notes = array_slice( $notes_array, $offset, $length );
 
 		return $desired_notes;
-
 	}
 
 	/**
@@ -510,7 +504,6 @@ class EDD_Customer {
 		$notes_array = array_reverse( array_filter( explode( "\n\n", $all_notes ) ) );
 
 		return count( $notes_array );
-
 	}
 
 	/**
@@ -548,7 +541,6 @@ class EDD_Customer {
 
 		// Return the formatted note, so we can test, as well as update any displays
 		return $new_note;
-
 	}
 
 	/**
@@ -561,7 +553,6 @@ class EDD_Customer {
 		$all_notes = $this->db->get_column( 'notes', $this->id );
 
 		return (string) $all_notes;
-
 	}
 
 	/**
