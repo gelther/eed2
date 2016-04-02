@@ -32,7 +32,6 @@ class EDD_Heartbeat {
 	 * @return void
 	 */
 	public static function init() {
-
 		add_filter( 'heartbeat_received', array( 'EDD_Heartbeat', 'heartbeat_received' ), 10, 2 );
 		add_action( 'admin_enqueue_scripts', array( 'EDD_Heartbeat', 'enqueue_scripts' ) );
 	}
@@ -45,7 +44,6 @@ class EDD_Heartbeat {
 	 * @return array
 	 */
 	public static function heartbeat_received( $response, $data ) {
-
 		if ( ! current_user_can( 'view_shop_reports' ) ) {
 			return $response; // Only modify heartbeat if current user can view show reports
 		}
@@ -80,7 +78,6 @@ class EDD_Heartbeat {
 	 * @return array
 	 */
 	public static function enqueue_scripts() {
-
 		if ( ! current_user_can( 'view_shop_reports' ) ) {
 			return; // Only load heartbeat if current user can view show reports
 		}
