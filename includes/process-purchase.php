@@ -993,7 +993,6 @@ function edd_purchase_form_validate_cc_zip( $zip = 0, $country_code = '' ) {
 	return apply_filters( 'edd_is_zip_valid', $ret, $zip, $country_code );
 }
 
-
 /**
  * Check the purchase to ensure a banned email is not allowed through
  *
@@ -1044,7 +1043,6 @@ function edd_check_purchase_email( $valid_data, $posted ) {
 	}
 }
 add_action( 'edd_checkout_error_checks', 'edd_check_purchase_email', 10, 2 );
-
 
 /**
  * Process a straight-to-gateway purchase
