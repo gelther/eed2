@@ -30,7 +30,6 @@ class EDD_Roles {
 	 * @since 1.4.4
 	 */
 	public function __construct() {
-
 		add_filter( 'map_meta_cap', array( $this, 'meta_caps' ), 10, 4 );
 	}
 
@@ -202,7 +201,6 @@ class EDD_Roles {
 	 * @return array $caps
 	 */
 	public function meta_caps( $caps, $cap, $user_id, $args ) {
-
 		switch ( $cap ) {
 
 			case 'view_product_stats' :
@@ -235,7 +233,6 @@ class EDD_Roles {
 	 * @return void
 	 */
 	public function remove_caps() {
-
 		global $wp_roles;
 
 		if ( class_exists( 'WP_Roles' ) ) {

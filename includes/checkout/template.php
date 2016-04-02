@@ -153,7 +153,6 @@ add_action( 'edd_purchase_form', 'edd_show_purchase_form' );
  * @return void
  */
 function edd_user_info_fields() {
-
 	$customer = EDD()->session->get( 'customer' );
 	$customer = wp_parse_args( $customer, array( 'first_name' => '', 'last_name' => '', 'email' => '' ) );
 
@@ -290,7 +289,6 @@ add_action( 'edd_cc_form', 'edd_get_cc_form' );
  * @return void
  */
 function edd_default_cc_address_fields() {
-
 	$logged_in = is_user_logged_in();
 	$customer  = EDD()->session->get( 'customer' );
 	$customer  = wp_parse_args( $customer, array( 'address' => array(
@@ -626,7 +624,6 @@ add_action( 'edd_payment_mode_select', 'edd_payment_mode_select' );
  * @return void
 */
 function edd_show_payment_icons() {
-
 	if ( edd_show_gateways() && did_action( 'edd_payment_mode_top' ) ) {
 		return;
 	}
@@ -696,7 +693,6 @@ add_action( 'edd_checkout_form_top', 'edd_show_payment_icons' );
  * @return void
 */
 function edd_discount_field() {
-
 	if ( isset( $_GET['payment-mode'] ) && edd_is_ajax_disabled() ) {
 		return; // Only show before a payment method has been selected if ajax is disabled
 	}

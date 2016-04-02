@@ -33,7 +33,6 @@ final class EDD_Amazon_Payments {
 	 * @return void
 	 */
 	private function __construct() {
-
 		if ( version_compare( phpversion(), 5.3, '<' ) ) {
 			// The Amazon Login & Pay libraries require PHP 5.3
 			return;
@@ -65,7 +64,6 @@ final class EDD_Amazon_Payments {
 	 * @return EDD_Amazon_Payments instance
 	 */
 	public static function getInstance() {
-
 		if ( ! isset( self::$instance ) && ! ( self::$instance instanceof EDD_Amazon_Payments ) ) {
 			self::$instance = new EDD_Amazon_Payments;
 		}
@@ -82,7 +80,6 @@ final class EDD_Amazon_Payments {
 	 * @return void
 	 */
 	private function register() {
-
 		add_filter( 'edd_payment_gateways', array( $this, 'register_gateway' ), 1, 1 );
 
 	}
@@ -95,7 +92,6 @@ final class EDD_Amazon_Payments {
 	 * @return void
 	 */
 	private function config() {
-
 		if ( ! defined( 'EDD_AMAZON_CLASS_DIR' ) ) {
 			$path = trailingslashit( plugin_dir_path( EDD_PLUGIN_FILE ) ) . 'includes/gateways/libs/amazon';
 			define( 'EDD_AMAZON_CLASS_DIR', trailingslashit( $path ) );
@@ -111,7 +107,6 @@ final class EDD_Amazon_Payments {
 	 * @return void
 	 */
 	private function includes() {
-
 		// Include the Amazon Library
 		require_once EDD_AMAZON_CLASS_DIR . 'Client.php'; // Requires the other files itself
 		require_once EDD_AMAZON_CLASS_DIR . 'IpnHandler.php';
@@ -125,7 +120,6 @@ final class EDD_Amazon_Payments {
 	 * @return void
 	 */
 	private function filters() {
-
 		add_filter( 'edd_accepted_payment_icons', array( $this, 'register_payment_icon' ), 10, 1 );
 
 		if ( is_admin() ) {
@@ -144,7 +138,6 @@ final class EDD_Amazon_Payments {
 	 * @return void
 	 */
 	private function actions() {
-
 		add_action( 'wp_enqueue_scripts', array( $this, 'print_client' ), 10 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'load_scripts' ), 11 );
 		add_action( 'init', array( $this, 'capture_oauth' ), 9 );
@@ -174,7 +167,6 @@ final class EDD_Amazon_Payments {
 	 * @return PayWithAmazon\Client
 	 */
 	private function get_client() {
-
 		if ( ! is_null( $this->client ) ) {
 			return $this->client;
 		}
@@ -192,7 +184,6 @@ final class EDD_Amazon_Payments {
 	 * @return void
 	 */
 	private function setup_client() {
-
 		$region = edd_get_shop_country();
 
 		if ( 'GB' === $region ) {
@@ -223,7 +214,6 @@ final class EDD_Amazon_Payments {
 	 * @return array
 	 */
 	public function register_gateway( $gateways ) {
-
 		$default_amazon_info = array(
 			$this->gateway_id    => array(
 				'admin_label'    => __( 'Amazon', 'easy-digital-downloads' ),
@@ -275,7 +265,6 @@ final class EDD_Amazon_Payments {
 	 * @return array
 	 */
 	public function register_gateway_settings( $gateway_settings ) {
-
 		$default_amazon_settings = array(
 			'amazon' => array(
 				'id'   => 'amazon',
@@ -356,7 +345,6 @@ final class EDD_Amazon_Payments {
 	 * @return void
 	 */
 	public function load_scripts() {
-
 		if ( ! edd_is_checkout() ) {
 			return;
 		}
@@ -430,7 +418,6 @@ final class EDD_Amazon_Payments {
 	 * @return void
 	 */
 	public function print_client() {
-
 		if ( ! edd_is_checkout() ) {
 			return;
 		}
@@ -452,7 +439,6 @@ final class EDD_Amazon_Payments {
 	 * @return void
 	 */
 	public function capture_oauth() {
-
 		if ( ! isset( $_GET['edd-listener'] ) || $_GET['edd-listener'] !== 'amazon' ) {
 			return;
 		}
@@ -488,7 +474,6 @@ final class EDD_Amazon_Payments {
 	 * @return void
 	 */
 	public function signin_redirect() {
-
 		if ( ! isset( $_GET['edd-listener'] ) || $_GET['edd-listener'] !== 'amazon' ) {
 			return;
 		}
@@ -563,7 +548,6 @@ final class EDD_Amazon_Payments {
 	 * @return void
 	 */
 	public function login_form() {
-
 		if ( empty( $this->reference_id ) && 'amazon' == edd_get_chosen_gateway() ) :
 
 			remove_all_actions( 'edd_purchase_form_after_cc_form' );
@@ -740,7 +724,6 @@ final class EDD_Amazon_Payments {
 	 * @return void
 	 */
 	public function ajax_get_address() {
-
 		if ( empty( $_POST['reference_id'] ) ) {
 			die( '-2' );
 		}
@@ -777,7 +760,6 @@ final class EDD_Amazon_Payments {
 	 * @return void
 	 */
 	public function checkout_errors( $valid_data, $post_data ) {
-
 		// should validate that we have a reference ID here, perhaps even fire the API call here
 		if ( empty( $post_data['edd_amazon_reference_id'] ) ) {
 			edd_set_error( 'missing_reference_id', __( 'Missing Reference ID, please try again', 'easy-digital-downloads' ) );
@@ -793,7 +775,6 @@ final class EDD_Amazon_Payments {
 	 * @return void
 	 */
 	public function process_purchase( $purchase_data ) {
-
 		if ( empty( $purchase_data['post_data']['edd_amazon_reference_id'] ) ) {
 			edd_set_error( 'missing_reference_id', __( 'Missing Reference ID, please try again', 'easy-digital-downloads' ) );
 		}
@@ -894,7 +875,6 @@ final class EDD_Amazon_Payments {
 	 * @return string
 	 */
 	private function get_amazon_checkout_uri() {
-
 		if ( is_null( $this->checkout_uri ) ) {
 			$this->checkout_uri = esc_url_raw( add_query_arg( array( 'payment-mode' => 'amazon' ), edd_get_checkout_uri() ) );
 		}
@@ -911,7 +891,6 @@ final class EDD_Amazon_Payments {
 	 * @return string
 	 */
 	private function get_amazon_authenticate_redirect() {
-
 		if ( is_null( $this->redirect_uri ) ) {
 			$this->redirect_uri = esc_url_raw( add_query_arg( array( 'edd-listener' => 'amazon', 'state' => 'return_auth' ), edd_get_checkout_uri() ) );
 		}
@@ -928,7 +907,6 @@ final class EDD_Amazon_Payments {
 	 * @return string
 	 */
 	private function get_amazon_signin_redirect() {
-
 		if ( is_null( $this->signin_redirect ) ) {
 			$this->signin_redirect = esc_url_raw( add_query_arg( array( 'edd-listener' => 'amazon', 'state' => 'signed-in' ), home_url() ) );
 		}
@@ -945,7 +923,6 @@ final class EDD_Amazon_Payments {
 	 * @return string
 	 */
 	private function get_amazon_ipn_url() {
-
 		return esc_url_raw( add_query_arg( array( 'edd-listener' => 'amazon' ), home_url( 'index.php' ) ) );
 
 	}
@@ -960,7 +937,6 @@ final class EDD_Amazon_Payments {
 	 * @return void
 	 */
 	public function disable_address_requirement() {
-
 		if ( ! empty( $_POST['edd-gateway'] ) && $this->gateway_id == $_REQUEST['edd-gateway'] ) {
 			add_filter( 'edd_require_billing_address', '__return_false', 9999 );
 		}
@@ -976,7 +952,6 @@ final class EDD_Amazon_Payments {
 	 * @return string                 A link to the PayPal transaction details
 	 */
 	public function link_transaction_id( $transaction_id, $payment_id ) {
-
 		$base_url        = 'https://sellercentral.amazon.com/hz/me/pmd/payment-details?orderReferenceId=';
 		$transaction_url = '<a href="' . esc_url( $base_url . $transaction_id ) . '" target="_blank">' . $transaction_id . '</a>';
 
@@ -992,7 +967,6 @@ final class EDD_Amazon_Payments {
 	 * @return void
 	 */
 	public function process_ipn() {
-
 		if ( ! isset( $_GET['edd-listener'] ) || $_GET['edd-listener'] !== 'amazon' ) {
 			return;
 		}
@@ -1085,7 +1059,6 @@ final class EDD_Amazon_Payments {
 	 * @return void
 	 */
 	public function process_refund( $payment_id, $new_status, $old_status ) {
-
 		if ( 'publish' != $old_status && 'revoked' != $old_status ) {
 			return;
 		}
@@ -1115,7 +1088,6 @@ final class EDD_Amazon_Payments {
 	 * @return string
 	 */
 	private function refund( $payment_id = 0 ) {
-
 		$refund = $this->client->refund( array(
 			'merchant_id'         => edd_get_option( 'amazon_seller_id', '' ),
 			'amazon_capture_id'   => edd_get_payment_meta( $payment_id, '_edd_amazon_capture_id', true ),
@@ -1173,7 +1145,6 @@ final class EDD_Amazon_Payments {
 	 * @return string
 	 */
 	private function get_registration_url() {
-
 		switch ( edd_get_shop_country() ) {
 			case 'GB':
 				$base_url = 'https://payments.amazon.co.uk/preregistration/lpa';

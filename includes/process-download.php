@@ -22,7 +22,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @return      void
  */
 function edd_process_download() {
-
 	if ( ! isset( $_GET['download_id'] ) && isset( $_GET['download'] ) ) {
 		$_GET['download_id'] = $_GET['download'];
 	}
@@ -269,7 +268,6 @@ add_action( 'init', 'edd_process_download', 100 );
  * @return   void
  */
 function edd_deliver_download( $file = '', $redirect = false ) {
-
 	/**
 	 * If symlinks are enabled, a link to the file will be created
 	 * This symlink is used to hide the true location of the file, even when the file URL is revealed
@@ -350,7 +348,6 @@ function edd_is_local_file( $requested_file ) {
  * @return string      If found to be locally hosted, the path to the file
  */
 function edd_get_local_path_from_url( $url ) {
-
 	$file       = $url;
 	$upload_dir = wp_upload_dir();
 	$upload_url = $upload_dir['baseurl'] . '/edd';
@@ -703,7 +700,6 @@ function edd_get_file_ctype( $extension ) {
  * @return   bool|string        If string, $status || $cnt
  */
 function edd_readfile_chunked( $file, $retbytes = true ) {
-
 	$chunksize = 1024 * 1024;
 	$buffer    = '';
 	$cnt       = 0;
@@ -743,7 +739,6 @@ function edd_readfile_chunked( $file, $retbytes = true ) {
  * @return array       Same arguements, with the status of verification added
  */
 function edd_process_legacy_download_url( $args ) {
-
 	// Verify the payment
 	$args['payment'] = edd_verify_download_link( $args['download'], $args['key'], $args['email'], $args['expire'], $args['file_key'] );
 
@@ -764,7 +759,6 @@ function edd_process_legacy_download_url( $args ) {
  * @return array       Same arguements, with the status of verification added
  */
 function edd_process_signed_download_url( $args ) {
-
 	$parts = parse_url( add_query_arg( array() ) );
 	wp_parse_str( $parts['query'], $query_args );
 	$url = add_query_arg( $query_args, site_url() );
@@ -820,7 +814,6 @@ function edd_symlink_file_downloads() {
  * @return string                 The file (if local) with the matched scheme
  */
 function edd_set_requested_file_scheme( $requested_file, $download_files, $file_key ) {
-
 	// If it's a URL and it's local, let's make sure the scheme matches the requested scheme
 	if ( filter_var( $requested_file, FILTER_VALIDATE_URL ) && edd_is_local_file( $requested_file ) ) {
 

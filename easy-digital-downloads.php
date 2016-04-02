@@ -183,7 +183,6 @@ final class Easy_Digital_Downloads {
 	 * @return void
 	 */
 	private function setup_constants() {
-
 		// Plugin version.
 		if ( ! defined( 'EDD_VERSION' ) ) {
 			define( 'EDD_VERSION', '2.5.10' );
@@ -342,7 +341,6 @@ final class Easy_Digital_Downloads {
 	 * @return void
 	 */
 	public function load_textdomain() {
-
 		/**
 		 * Due to the introduction of language packs through translate.wordpress.org, loading our textdomain is complex.
 		 *
@@ -405,7 +403,6 @@ final class Easy_Digital_Downloads {
 	 * h/t: https://github.com/10up/grunt-wp-plugin/issues/21#issuecomment-62003284
 	 */
 	function load_old_textdomain( $mofile, $textdomain ) {
-
 		if ( $textdomain === 'easy-digital-downloads' && ! file_exists( $mofile ) ) {
 			$mofile = dirname( $mofile ) . DIRECTORY_SEPARATOR . str_replace( $textdomain, 'edd', basename( $mofile ) );
 		}

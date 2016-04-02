@@ -43,7 +43,6 @@ class EDD_Fees {
 	 * @return mixed
 	 */
 	public function add_fee( $args = array() ) {
-
 		// Backwards compatabliity with pre 2.0
 		if ( func_num_args() > 1 ) {
 
@@ -116,7 +115,6 @@ class EDD_Fees {
 	 * @return array $fees
 	 */
 	public function remove_fee( $id = '' ) {
-
 		$fees = $this->get_fees( 'all' );
 
 		if ( isset( $fees[ $id ] ) ) {
@@ -137,7 +135,6 @@ class EDD_Fees {
 	 * @return bool
 	 */
 	public function has_fees( $type = 'fee' ) {
-
 		if ( 'all' == $type || 'fee' == $type ) {
 			if ( ! edd_get_cart_contents() ) {
 				$type = 'item';
@@ -160,7 +157,6 @@ class EDD_Fees {
 	 * @return mixed array|bool
 	 */
 	public function get_fees( $type = 'fee', $download_id = 0 ) {
-
 		$fees = EDD()->session->get( 'edd_cart_fees' );
 
 		if ( ! edd_get_cart_contents() ) {

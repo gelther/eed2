@@ -48,7 +48,6 @@ function edd_dashboard_sales_widget() {
  * @return void
  */
 function edd_load_dashboard_sales_widget() {
-
 	if ( ! current_user_can( apply_filters( 'edd_dashboard_stats_cap', 'view_shop_reports' ) ) ) {
 		die();
 	}

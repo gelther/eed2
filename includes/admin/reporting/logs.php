@@ -21,7 +21,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @return void
  */
 function edd_logs_view_sales() {
-
 	if ( ! current_user_can( 'view_shop_reports' ) ) {
 		return;
 	}
@@ -45,7 +44,6 @@ add_action( 'edd_logs_view_sales', 'edd_logs_view_sales' );
  * @return void
  */
 function edd_logs_view_file_downloads() {
-
 	if ( ! current_user_can( 'view_shop_reports' ) ) {
 		return;
 	}
@@ -81,7 +79,6 @@ add_action( 'edd_logs_view_file_downloads', 'edd_logs_view_file_downloads' );
  * @return void
  */
 function edd_logs_view_gateway_errors() {
-
 	if ( ! current_user_can( 'view_shop_reports' ) ) {
 		return;
 	}
@@ -104,7 +101,6 @@ add_action( 'edd_logs_view_gateway_errors', 'edd_logs_view_gateway_errors' );
  * @return void
  */
 function edd_logs_view_api_requests() {
-
 	if ( ! current_user_can( 'view_shop_reports' ) ) {
 		return;
 	}

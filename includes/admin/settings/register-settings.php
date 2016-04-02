@@ -41,7 +41,6 @@ function edd_get_option( $key = '', $default = false ) {
  * @return boolean True if updated, false if not.
  */
 function edd_update_option( $key = '', $value = false ) {
-
 	// If no key, exit
 	if ( empty( $key ) ){
 		return false;
@@ -82,7 +81,6 @@ function edd_update_option( $key = '', $value = false ) {
  * @return boolean True if updated, false if not.
  */
 function edd_delete_option( $key = '' ) {
-
 	// If no key, exit
 	if ( empty( $key ) ){
 		return false;
@@ -118,7 +116,6 @@ function edd_delete_option( $key = '' ) {
  * @return array EDD settings
  */
 function edd_get_settings() {
-
 	$settings = get_option( 'edd_settings' );
 
 	if ( empty( $settings ) ) {
@@ -149,7 +146,6 @@ function edd_get_settings() {
  * @return void
 */
 function edd_register_settings() {
-
 	if ( false == get_option( 'edd_settings' ) ) {
 		add_option( 'edd_settings' );
 	}
@@ -221,7 +217,6 @@ add_action( 'admin_init', 'edd_register_settings' );
  * @return array
 */
 function edd_get_registered_settings() {
-
 	/**
 	 * 'Whitelisted' EDD settings, filters are provided for each settings
 	 * section to allow extensions and other plugins to add their own settings
@@ -892,7 +887,6 @@ function edd_get_registered_settings() {
  * @return string $input Sanitizied value
  */
 function edd_settings_sanitize( $input = array() ) {
-
 	global $edd_options;
 
 	if ( empty( $_POST['_wp_http_referer'] ) ) {
@@ -965,7 +959,6 @@ function edd_settings_sanitize( $input = array() ) {
  * @return string $input Sanitizied value
  */
 function edd_settings_sanitize_misc_file_downloads( $input ) {
-
 	global $edd_options;
 
 	if ( ! current_user_can( 'manage_shop_settings' ) ) {
@@ -989,7 +982,6 @@ add_filter( 'edd_settings_misc-file_downloads_sanitize', 'edd_settings_sanitize_
  * @return string $input Sanitizied value
  */
 function edd_settings_sanitize_misc_accounting( $input ) {
-
 	global $edd_options;
 
 	if ( ! current_user_can( 'manage_shop_settings' ) ) {
@@ -1018,7 +1010,6 @@ add_filter( 'edd_settings_misc-accounting_sanitize', 'edd_settings_sanitize_misc
  * @return string $input Sanitizied value
  */
 function edd_settings_sanitize_taxes( $input ) {
-
 	if ( ! current_user_can( 'manage_shop_settings' ) ) {
 		return $input;
 	}
@@ -1050,7 +1041,6 @@ add_filter( 'edd_settings_sanitize_text', 'edd_sanitize_text_field' );
  * @return array $tabs
  */
 function edd_get_settings_tabs() {
-
 	$settings = edd_get_registered_settings();
 
 	$tabs             = array();
@@ -1079,7 +1069,6 @@ function edd_get_settings_tabs() {
  * @return array $section
  */
 function edd_get_settings_tab_sections( $tab = false ) {
-
 	$tabs     = false;
 	$sections = edd_get_registered_settings_sections();
 
@@ -1100,7 +1089,6 @@ function edd_get_settings_tab_sections( $tab = false ) {
  * @return array Array of tabs and sections
  */
 function edd_get_registered_settings_sections() {
-
 	static $sections = false;
 
 	if ( false !== $sections ) {
@@ -1157,7 +1145,6 @@ function edd_get_registered_settings_sections() {
  * @return array $pages_options An array of the pages
  */
 function edd_get_pages( $force = false ) {
-
 	$pages_options = array( '' => '' ); // Blank option
 
 	if ( ( ! isset( $_GET['page'] ) || 'edd-settings' != $_GET['page'] ) && ! $force ) {

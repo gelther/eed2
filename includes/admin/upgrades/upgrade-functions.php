@@ -163,7 +163,6 @@ add_action( 'admin_notices', 'edd_show_upgrade_notices' );
  * @return void
 */
 function edd_trigger_upgrades() {
-
 	if ( ! current_user_can( 'manage_shop_settings' ) ) {
 		wp_die( __( 'You do not have permission to do shop upgrades', 'easy-digital-downloads' ), __( 'Error', 'easy-digital-downloads' ), array( 'response' => 403 ) );
 	}
@@ -210,7 +209,6 @@ add_action( 'wp_ajax_edd_trigger_upgrades', 'edd_trigger_upgrades' );
  * @return mixed   When nothing to resume returns false, otherwise starts the upgrade where it left off
  */
 function edd_maybe_resume_upgrade() {
-
 	$doing_upgrade = get_option( 'edd_doing_upgrade', false );
 
 	if ( empty( $doing_upgrade ) ) {
@@ -229,7 +227,6 @@ function edd_maybe_resume_upgrade() {
  * @return bool                   If the function was successfully added
  */
 function edd_set_upgrade_complete( $upgrade_action = '' ) {
-
 	if ( empty( $upgrade_action ) ) {
 		return false;
 	}
@@ -440,7 +437,6 @@ function edd_v15_upgrades() {
  * @return void
  */
 function edd_v20_upgrades() {
-
 	global $edd_options, $wpdb;
 
 	ignore_user_abort( true );
@@ -484,7 +480,6 @@ function edd_v20_upgrades() {
  * @return void
  */
 function edd_v20_upgrade_sequential_payment_numbers() {
-
 	if ( ! current_user_can( 'manage_shop_settings' ) ) {
 		wp_die( __( 'You do not have permission to do shop upgrades', 'easy-digital-downloads' ), __( 'Error', 'easy-digital-downloads' ), array( 'response' => 403 ) );
 	}
@@ -564,7 +559,6 @@ add_action( 'edd_upgrade_sequential_payment_numbers', 'edd_v20_upgrade_sequentia
  * @return void
  */
 function edd_v21_upgrade_customers_db() {
-
 	global $wpdb;
 
 	if ( ! current_user_can( 'manage_shop_settings' ) ) {

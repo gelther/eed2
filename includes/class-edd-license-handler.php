@@ -37,7 +37,6 @@ class EDD_License {
 	 * @param string  $_api_url
 	 */
 	function __construct( $_file, $_item, $_version, $_author, $_optname = null, $_api_url = null ) {
-
 		$this->file = $_file;
 
 		if ( is_numeric( $_item ) ) {
@@ -91,7 +90,6 @@ class EDD_License {
 	 * @return  void
 	 */
 	private function hooks() {
-
 		// Register settings
 		add_filter( 'edd_settings_licenses', array( $this, 'settings' ), 1 );
 
@@ -127,7 +125,6 @@ class EDD_License {
 	 * @return  void
 	 */
 	public function auto_updater() {
-
 		$args = array(
 			'version' => $this->version,
 			'license' => $this->license,
@@ -181,7 +178,6 @@ class EDD_License {
 	 * @return  void
 	 */
 	public function license_help_text( $active_tab = '' ) {
-
 		static $has_ran;
 
 		if ( 'licenses' !== $active_tab ) {
@@ -209,7 +205,6 @@ class EDD_License {
 	 * @return  void
 	 */
 	public function activate_license() {
-
 		if ( ! isset( $_POST['edd_settings'] ) ) {
 			return;
 		}
@@ -292,7 +287,6 @@ class EDD_License {
 	 * @return  void
 	 */
 	public function deactivate_license() {
-
 		if ( ! isset( $_POST['edd_settings'] ) ) {
 			return;
 		}
@@ -354,7 +348,6 @@ class EDD_License {
 	 * @return  void
 	 */
 	public function weekly_license_check() {
-
 		if ( ! empty( $_POST['edd_settings'] ) ) {
 			return; // Don't fire when saving settings
 		}
@@ -400,7 +393,6 @@ class EDD_License {
 	 * @return  void
 	 */
 	public function notices() {
-
 		static $showed_invalid_message;
 
 		if ( empty( $this->license ) ) {
@@ -452,7 +444,6 @@ class EDD_License {
 	 * @return  void
 	 */
 	public function plugin_row_license_missing( $plugin_data, $version_info ) {
-
 		static $showed_imissing_key_message;
 
 		$license = get_option( $this->item_shortname . '_license_active' );

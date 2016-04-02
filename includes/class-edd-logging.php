@@ -199,7 +199,6 @@ class EDD_Logging {
 	 * @return bool True if successful, false otherwise
 	 */
 	public function update_log( $log_data = array(), $log_meta = array() ) {
-
 		do_action( 'edd_pre_update_log', $log_data, $log_meta );
 
 		$defaults = array(
@@ -277,7 +276,6 @@ class EDD_Logging {
 	 * @return int Log count
 	 */
 	public function get_log_count( $object_id = 0, $type = null, $meta_query = null, $date_query = null ) {
-
 		global $pagenow, $typenow;
 
 		$query_args = array(

@@ -21,7 +21,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @return void
  */
 function edd_add_download_meta_box() {
-
 	$post_types = apply_filters( 'edd_download_metabox_post_types', array( 'download' ) );
 
 	foreach ( $post_types as $post_type ) {
@@ -53,7 +52,6 @@ add_action( 'add_meta_boxes', 'edd_add_download_meta_box' );
  * @return array $fields Array of fields.
  */
 function edd_download_metabox_fields() {
-
 	$fields = array(
 			'_edd_product_type',
 			'edd_price',
@@ -92,7 +90,6 @@ function edd_download_metabox_fields() {
  * @return void
  */
 function edd_download_meta_box_save( $post_id, $post ) {
-
 	if ( ! isset( $_POST['edd_download_meta_box_nonce'] ) || ! wp_verify_nonce( $_POST['edd_download_meta_box_nonce'], basename( __FILE__ ) ) ) {
 		return;
 	}
@@ -176,7 +173,6 @@ add_action( 'save_post', 'edd_download_meta_box_save', 10, 2 );
  * @return array
  */
 function edd_sanitize_bundled_products_save( $products = array() ) {
-
 	global $post;
 
 	$self = array_search( $post->ID, $products );
@@ -464,7 +460,6 @@ add_action( 'edd_render_price_row', 'edd_render_price_row', 10, 4 );
  * @return      void
  */
 function edd_render_product_type_field( $post_id = 0 ) {
-
 	$types = edd_get_download_types();
 	$type  = edd_get_download_type( $post_id );
 ?>

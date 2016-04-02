@@ -37,7 +37,6 @@ class EDD_Batch_Customers_Export extends EDD_Batch_Export {
 	 * @return array $cols All the columns
 	 */
 	public function csv_cols() {
-
 		$cols = array(
 			'id'        => __( 'ID', 'easy-digital-downloads' ),
 			'name'      => __( 'Name', 'easy-digital-downloads' ),
@@ -59,7 +58,6 @@ class EDD_Batch_Customers_Export extends EDD_Batch_Export {
 	 * @return array $data The data for the CSV file
 	 */
 	public function get_data() {
-
 		$data = array();
 
 		if ( ! empty( $this->download ) ) {
@@ -135,7 +133,6 @@ class EDD_Batch_Customers_Export extends EDD_Batch_Export {
 	 * @return int
 	 */
 	public function get_percentage_complete() {
-
 		$percentage = 0;
 
 		// We can't count the number when getting them for a specific download

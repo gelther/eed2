@@ -19,7 +19,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @return void
  */
 function edd_setup_edd_post_types() {
-
 	$archives = defined( 'EDD_DISABLE_ARCHIVE' ) && EDD_DISABLE_ARCHIVE ? false : true;
 	$slug     = defined( 'EDD_SLUG' ) ? EDD_SLUG : 'downloads';
 	$rewrite  = defined( 'EDD_DISABLE_REWRITE' ) && EDD_DISABLE_REWRITE ? false : array( 'slug' => $slug, 'with_front' => false );
@@ -198,7 +197,6 @@ add_filter( 'enter_title_here', 'edd_change_default_title' );
  * @return void
 */
 function edd_setup_download_taxonomies() {
-
 	$slug = defined( 'EDD_SLUG' ) ? EDD_SLUG : 'downloads';
 
 	/** Categories */
@@ -266,7 +264,6 @@ add_action( 'init', 'edd_setup_download_taxonomies', 0 );
  * @return array            Associative array of labels (name = plural)
  */
 function edd_get_taxonomy_labels( $taxonomy = 'download_category' ) {
-
 	$allowed_taxonomies = apply_filters( 'edd_allowed_download_taxonomies', array( 'download_category', 'download_tag' ) );
 
 	if ( ! in_array( $taxonomy, $allowed_taxonomies ) ) {

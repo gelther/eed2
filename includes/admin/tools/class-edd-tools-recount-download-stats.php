@@ -206,7 +206,6 @@ class EDD_Tools_Recount_Download_Stats extends EDD_Batch_Export {
 	 * @return bool
 	 */
 	public function process_step() {
-
 		if ( ! $this->can_export() ) {
 			wp_die( __( 'You do not have permission to export data.', 'easy-digital-downloads' ), __( 'Error', 'easy-digital-downloads' ), array( 'response' => 403 ) );
 		}
@@ -241,7 +240,6 @@ class EDD_Tools_Recount_Download_Stats extends EDD_Batch_Export {
 	 * @return void
 	 */
 	public function export() {
-
 		// Set headers
 		$this->headers();
 

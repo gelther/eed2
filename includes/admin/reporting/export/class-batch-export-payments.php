@@ -222,7 +222,6 @@ class EDD_Batch_Payments_Export extends EDD_Batch_Export {
 	 * @return int
 	 */
 	public function get_percentage_complete() {
-
 		$status = $this->status;
 		$args   = array(
 			'start-date' => date( 'n/d/Y', strtotime( $this->start ) ),

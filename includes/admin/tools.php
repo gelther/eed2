@@ -63,7 +63,6 @@ function edd_tools_page() {
  * @return      array
  */
 function edd_get_tools_tabs() {
-
 	$tabs                  = array();
 	$tabs['general']       = __( 'General', 'easy-digital-downloads' );
 	$tabs['api_keys']      = __( 'API Keys', 'easy-digital-downloads' );
@@ -81,7 +80,6 @@ function edd_get_tools_tabs() {
  * @return      void
  */
 function edd_tools_banned_emails_display() {
-
 	if ( ! current_user_can( 'manage_shop_settings' ) ) {
 		return;
 	}
@@ -119,7 +117,6 @@ add_action( 'edd_tools_tab_general', 'edd_tools_banned_emails_display' );
  * @return      void
  */
 function edd_tools_recount_stats_display() {
-
 	if ( ! current_user_can( 'manage_shop_settings' ) ) {
 		return;
 	}
@@ -188,7 +185,6 @@ add_action( 'edd_tools_tab_general', 'edd_tools_recount_stats_display' );
  * @return      void
  */
 function edd_tools_clear_doing_upgrade_display() {
-
 	if ( ! current_user_can( 'manage_shop_settings' ) || false === get_option( 'edd_doing_upgrade' ) ) {
 		return;
 	}
@@ -221,7 +217,6 @@ add_action( 'edd_tools_tab_general', 'edd_tools_clear_doing_upgrade_display' );
  * @return      void
  */
 function edd_tools_api_keys_display() {
-
 	if ( ! current_user_can( 'manage_shop_settings' ) ) {
 		return;
 	}
@@ -255,7 +250,6 @@ add_action( 'edd_tools_tab_api_keys', 'edd_tools_api_keys_display' );
  * @return      void
  */
 function edd_tools_banned_emails_save() {
-
 	global $edd_options;
 
 	if ( ! wp_verify_nonce( $_POST['edd_banned_emails_nonce'], 'edd_banned_emails_nonce' ) ) {
@@ -316,7 +310,6 @@ add_action( 'edd_clear_doing_upgrade', 'edd_tools_clear_upgrade_notice' );
  * @return      void
  */
 function edd_tools_import_export_display() {
-
 	if ( ! current_user_can( 'manage_shop_settings' ) ) {
 		return;
 	}
@@ -367,7 +360,6 @@ add_action( 'edd_tools_tab_import_export', 'edd_tools_import_export_display' );
  * @return      void
  */
 function edd_tools_import_export_process_export() {
-
 	if ( empty( $_POST['edd_export_nonce'] ) ) {
 		return;
 	}
@@ -407,7 +399,6 @@ add_action( 'edd_export_settings', 'edd_tools_import_export_process_export' );
  * @return void
  */
 function edd_tools_import_export_process_import() {
-
 	if ( empty( $_POST['edd_import_nonce'] ) ) {
 		return;
 	}
@@ -448,7 +439,6 @@ add_action( 'edd_import_settings', 'edd_tools_import_export_process_import' );
  * @return      void
  */
 function edd_tools_sysinfo_display() {
-
 	if ( ! current_user_can( 'manage_shop_settings' ) ) {
 		return;
 	}
@@ -776,7 +766,6 @@ function edd_tools_sysinfo_get() {
  * @return      void
  */
 function edd_tools_sysinfo_download() {
-
 	if ( ! current_user_can( 'manage_shop_settings' ) ) {
 		return;
 	}

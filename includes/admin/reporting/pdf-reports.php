@@ -24,7 +24,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @author Sunny Ratilal
  */
 function edd_generate_pdf( $data ) {
-
 	if ( ! current_user_can( 'view_shop_reports' ) ) {
 		wp_die( __( 'You do not have permission to generate PDF sales reports', 'easy-digital-downloads' ), __( 'Error', 'easy-digital-downloads' ), array( 'response' => 403 ) );
 	}

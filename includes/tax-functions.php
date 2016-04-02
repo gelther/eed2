@@ -258,7 +258,6 @@ function edd_display_tax_rate() {
  * @return bool
  */
 function edd_cart_needs_tax_address_fields() {
-
 	if ( ! edd_is_cart_taxed() ) {
 		return false;
 	}

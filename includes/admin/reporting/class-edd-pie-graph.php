@@ -67,7 +67,6 @@ class EDD_Pie_Graph extends EDD_Graph {
 	 * @since 2.4
 	 */
 	public function __construct( $_data, $options = array() ) {
-
 		$this->data = $_data;
 		// Set this so filters recieving $this can quickly know if it's a graph they want to modify
 		$this->type = 'pie';
@@ -118,7 +117,6 @@ class EDD_Pie_Graph extends EDD_Graph {
 	 * @return string
 	 */
 	public function build_graph() {
-
 		if ( count( $this->data ) ) {
 			$this->load_scripts();
 

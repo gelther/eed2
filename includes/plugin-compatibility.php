@@ -104,7 +104,6 @@ add_filter( 'edd_downloads_excerpt', 'edd_qtranslate_content' );
  * @return string|bool $target Target URL. False if redirect is disabled
  */
 function edd_qtranslate_prevent_redirect( $target ) {
-
 	if ( strpos( $target, 'eddfile' ) ) {
 		$target = false;
 		global $q_config;
@@ -147,7 +146,6 @@ add_action( 'edd_email_send_before', 'edd_disable_mandrill_nl2br' );
  * @return void
  */
 function edd_disable_404_redirected_redirect() {
-
 	if ( ! defined( 'WBZ404_VERSION' ) ) {
 		return;
 	}

@@ -104,7 +104,6 @@ class EDD_Stats {
 	 * @return void
 	 */
 	public function setup_dates( $_start_date = 'this_month', $_end_date = false ) {
-
 		if ( empty( $_start_date ) ) {
 			$_start_date = 'this_month';
 		}
@@ -126,7 +125,6 @@ class EDD_Stats {
 	 * @return array|WP_Error If the date is invalid, a WP_Error object will be returned
 	 */
 	public function convert_date( $date, $end_date = false ) {
-
 		$this->timestamp = false;
 		$second          = $end_date ? 59 : 0;
 		$minute          = $end_date ? 59 : 0;
@@ -499,7 +497,6 @@ class EDD_Stats {
 	 * @return string
 	 */
 	public function payments_where( $where = '' ) {
-
 		global $wpdb;
 
 		$start_where = '';

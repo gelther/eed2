@@ -40,7 +40,6 @@ class edd_cart_widget extends WP_Widget {
 
 	/** @see WP_Widget::widget */
 	function widget( $args, $instance ) {
-
 		if ( ! empty( $instance['hide_on_checkout'] ) && edd_is_checkout() ) {
 			return;
 		}
@@ -77,7 +76,6 @@ class edd_cart_widget extends WP_Widget {
 
 	/** @see WP_Widget::form */
 	function form( $instance ) {
-
 		$defaults = array(
 			'title'            => '',
 			'hide_on_checkout' => false,

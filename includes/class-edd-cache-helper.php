@@ -18,7 +18,6 @@ class EDD_Cache_Helper {
 	 * Initializes the object instance
 	 */
 	public function __construct() {
-
 		add_action( 'init', array( $this, 'init' ), 0 );
 		add_action( 'admin_notices', array( $this, 'notices' ) );
 	}
@@ -30,7 +29,6 @@ class EDD_Cache_Helper {
 	 * @return void
 	 */
 	public function init() {
-
 		if ( false === ( $page_uris = get_transient( 'edd_cache_excluded_uris' ) ) ) {
 
 			$purchase_page = edd_get_option( 'purchase_page', '' );
@@ -106,7 +104,6 @@ class EDD_Cache_Helper {
 	 * @return void
 	 */
 	public function notices() {
-
 		// W3 Total Cache
 		if ( function_exists( 'w3tc_pgcache_flush' ) && function_exists( 'w3_instance' ) ) {
 

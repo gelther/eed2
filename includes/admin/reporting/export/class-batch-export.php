@@ -105,7 +105,6 @@ class EDD_Batch_Export extends EDD_Export {
 	 * @since 2.4
 	 */
 	public function __construct( $_step = 1 ) {
-
 		$upload_dir     = wp_upload_dir();
 		$this->filetype = '.csv';
 		$this->filename = 'edd-' . $this->export_type . $this->filetype;
@@ -126,7 +125,6 @@ class EDD_Batch_Export extends EDD_Export {
 	 * @return bool
 	 */
 	public function process_step() {
-
 		if ( ! $this->can_export() ) {
 			wp_die( __( 'You do not have permission to export data.', 'easy-digital-downloads' ), __( 'Error', 'easy-digital-downloads' ), array( 'response' => 403 ) );
 		}
@@ -156,7 +154,6 @@ class EDD_Batch_Export extends EDD_Export {
 	 * @return string
 	 */
 	public function print_csv_cols() {
-
 		$col_data = '';
 		$cols     = $this->get_csv_cols();
 		$i        = 1;
@@ -181,7 +178,6 @@ class EDD_Batch_Export extends EDD_Export {
 	 * @return string|false
 	 */
 	public function print_csv_rows() {
-
 		$row_data = '';
 		$data     = $this->get_data();
 		$cols     = $this->get_csv_cols();
@@ -227,7 +223,6 @@ class EDD_Batch_Export extends EDD_Export {
 	 * @return string
 	 */
 	protected function get_file() {
-
 		$file = '';
 
 		if ( @file_exists( $this->file ) ) {
@@ -256,7 +251,6 @@ class EDD_Batch_Export extends EDD_Export {
 	 * @return void
 	 */
 	protected function stash_step_data( $data = '' ) {
-
 		$file  = $this->get_file();
 		$file .= $data;
 		@file_put_contents( $this->file, $file );
@@ -278,7 +272,6 @@ class EDD_Batch_Export extends EDD_Export {
 	 * @return void
 	 */
 	public function export() {
-
 		// Set headers
 		$this->headers();
 

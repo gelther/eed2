@@ -77,7 +77,6 @@ class EDD_Graph {
 	 * @since 1.9
 	 */
 	public function __construct( $_data ) {
-
 		$this->data = $_data;
 
 		// Generate unique ID
@@ -156,7 +155,6 @@ class EDD_Graph {
 	 * @return string
 	 */
 	public function build_graph() {
-
 		$yaxis_count = 1;
 
 		$this->load_scripts();

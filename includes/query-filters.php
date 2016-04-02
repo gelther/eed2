@@ -57,7 +57,6 @@ add_action( 'template_redirect', 'edd_block_attachments' );
  * @since 2.4.3
  */
 function edd_unset_discount_query_arg( $query ) {
-
 	if ( is_admin() || ! $query->is_main_query() ) {
 		return;
 	}
@@ -95,7 +94,6 @@ add_action( 'pre_get_posts', 'edd_unset_discount_query_arg', 999999 );
  * @return string
  */
 function edd_prevent_canonical_redirect( $redirect_url, $requested_url ) {
-
 	if ( ! is_front_page() ) {
 		return $redirect_url;
 	}
@@ -120,7 +118,6 @@ add_action( 'redirect_canonical', 'edd_prevent_canonical_redirect', 0, 2 );
  * @return string
  */
 function edd_refresh_permalinks_on_bad_404() {
-
 	global $wp;
 
 	if ( ! is_404() ) {

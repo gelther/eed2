@@ -60,7 +60,6 @@ add_action( 'admin_menu', 'edd_add_options_link', 10 );
  * @return bool True if EDD admin page we're looking for or an EDD page or if $page is empty, any EDD page
  */
 function edd_is_admin_page( $passed_page = '', $passed_view = '' ) {
-
 	global $pagenow, $typenow;
 
 	$found      = false;

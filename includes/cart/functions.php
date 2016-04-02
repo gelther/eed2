@@ -34,7 +34,6 @@ function edd_get_cart_contents() {
  * @return array $details Cart content details
  */
 function edd_get_cart_content_details() {
-
 	global $edd_is_last_cart_item, $edd_flat_discount_total;
 
 	$cart_items = edd_get_cart_contents();
@@ -104,7 +103,6 @@ function edd_get_cart_content_details() {
  * @return int Sum quantity of items in the cart
  */
 function edd_get_cart_quantity() {
-
 	$total_quantity = 0;
 	$cart           = edd_get_cart_contents();
 
@@ -453,7 +451,6 @@ function edd_cart_item_price( $item_id = 0, $options = array() ) {
  * @return float|bool Price for this item
  */
 function edd_get_cart_item_price( $download_id = 0, $options = array(), $remove_tax_from_inclusive = false ) {
-
 	$price           = 0;
 	$variable_prices = edd_has_variable_prices( $download_id );
 
@@ -515,7 +512,6 @@ function edd_get_cart_item_final_price( $item_key = 0 ) {
  * @return float Tax amount
  */
 function edd_get_cart_item_tax( $download_id = 0, $options = array(), $subtotal = '' ) {
-
 	$tax = 0;
 	if ( ! edd_download_is_tax_exclusive( $download_id ) ) {
 
@@ -595,7 +591,6 @@ function edd_get_cart_item_price_name( $item = array() ) {
  * @return string item title
  */
 function edd_get_cart_item_name( $item = array() ) {
-
 	$item_title = get_the_title( $item['id'] );
 
 	if ( empty( $item_title ) ) {
@@ -636,7 +631,6 @@ function edd_cart_subtotal() {
  * @return float Total amount before taxes
  */
 function edd_get_cart_subtotal() {
-
 	$items    = edd_get_cart_content_details();
 	$subtotal = edd_get_cart_items_subtotal( $items );
 
@@ -649,7 +643,6 @@ function edd_get_cart_subtotal() {
  * @return float Total discountable amount before taxes
  */
 function edd_get_cart_discountable_subtotal( $code_id ) {
-
 	$cart_items = edd_get_cart_content_details();
 	$items      = array();
 
@@ -794,7 +787,6 @@ function edd_get_cart_fee_total() {
  * @return float Total Cart tax on Fees
  */
 function edd_get_cart_fee_tax() {
-
 	$tax  = 0;
 	$fees = edd_get_cart_fees();
 
@@ -856,7 +848,6 @@ function edd_get_purchase_summary( $purchase_data, $email = true ) {
  * @return mixed|void Total tax amount
  */
 function edd_get_cart_tax() {
-
 	$cart_tax = 0;
 	$items    = edd_get_cart_content_details();
 
@@ -944,7 +935,6 @@ function edd_add_collection_to_cart( $taxonomy, $terms ) {
  * @return string $remove_url URL to remove the cart item
  */
 function edd_remove_item_url( $cart_key ) {
-
 	global $wp_query;
 
 	if ( defined( 'DOING_AJAX' ) ) {
@@ -1143,7 +1133,6 @@ function edd_save_cart() {
  * @return mixed || false Returns false if cart saving is disabled
  */
 function edd_restore_cart() {
-
 	if ( edd_is_cart_saving_disabled() ) {
 		return false;
 	}
@@ -1206,7 +1195,6 @@ function edd_restore_cart() {
  * @return int
  */
 function edd_get_cart_token() {
-
 	$user_id = get_current_user_id();
 
 	if ( is_user_logged_in() ) {

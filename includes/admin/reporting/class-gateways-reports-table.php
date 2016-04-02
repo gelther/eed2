@@ -130,7 +130,6 @@ class EDD_Gateawy_Reports_Table extends WP_List_Table {
 	 * @return array $reports_data All the data for customer reports
 	 */
 	public function reports_data() {
-
 		$reports_data = array();
 		$gateways     = edd_get_payment_gateways();
 

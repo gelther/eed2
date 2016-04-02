@@ -38,7 +38,6 @@ add_action( 'edd_complete_purchase', 'edd_trigger_purchase_receipt', 999, 1 );
  * @return void
  */
 function edd_resend_purchase_receipt( $data ) {
-
 	$purchase_id = absint( $data['purchase_id'] );
 
 	if ( empty( $purchase_id ) ) {

@@ -19,7 +19,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @return bool True if on the Checkout page, false otherwise
  */
 function edd_is_checkout() {
-
 	global $wp_query;
 
 	$is_object_set    = isset( $wp_query->queried_object );
@@ -229,7 +228,6 @@ function edd_is_failed_transaction_page() {
  * @return      void
 */
 function edd_listen_for_failed_payments() {
-
 	$failed_page = edd_get_option( 'failure_page', 0 );
 
 	if ( ! empty( $failed_page ) && is_page( $failed_page ) && ! empty( $_GET['payment-id'] ) ) {
@@ -281,7 +279,6 @@ function edd_get_banned_emails() {
  * @return      bool
  */
 function edd_is_email_banned( $email = '' ) {
-
 	if ( empty( $email ) ) {
 		return false;
 	}
@@ -325,7 +322,6 @@ function edd_is_ssl_enforced() {
  * @return void
  */
 function edd_enforced_ssl_redirect_handler() {
-
 	if ( ! edd_is_ssl_enforced() || ! edd_is_checkout() || is_admin() || is_ssl() ) {
 		return;
 	}
@@ -382,7 +378,6 @@ add_action( 'template_redirect', 'edd_enforced_ssl_asset_handler' );
  * @return mixed
  */
 function edd_enforced_ssl_asset_filter( $content ) {
-
 	if ( is_array( $content ) ) {
 
 		$content = array_map( 'edd_enforced_ssl_asset_filter', $content );
@@ -431,7 +426,6 @@ function edd_enforced_ssl_asset_filter( $content ) {
  * @return bool            If the card number provided matches a specific format of a valid card
  */
 function edd_validate_card_number_format( $number = 0 ) {
-
 	$number = trim( $number );
 	if ( empty( $number ) ) {
 		return false;
@@ -466,7 +460,6 @@ function edd_validate_card_number_format( $number = 0 ) {
  * @return bool
  */
 function edd_validate_card_number_format_luhn( $number ) {
-
 	// Strip any non-digits (useful for credit card numbers with spaces and hyphens)
 	$number = preg_replace( '/\D/', '', $number );
 
@@ -507,7 +500,6 @@ function edd_validate_card_number_format_luhn( $number ) {
  * @return string|bool
  */
 function edd_detect_cc_type( $number ) {
-
 	$return = false;
 
 	$card_types = array(
@@ -595,7 +587,6 @@ function edd_detect_cc_type( $number ) {
  * @return bool
  */
 function edd_purchase_form_validate_cc_exp_date( $exp_month, $exp_year ) {
-
 	$month_name = date( 'M', mktime( 0, 0, 0, $exp_month, 10 ) );
 	$expiration = strtotime( date( 't', strtotime( $month_name . ' ' . $exp_year ) ) . ' ' . $month_name . ' ' . $exp_year . ' 11:59:59PM' );
 

@@ -18,7 +18,6 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
  * @return void
  */
 function edd_process_batch_export_download() {
-
 	if ( ! wp_verify_nonce( $_REQUEST['nonce'], 'edd-batch-export' ) ) {
 		wp_die( __( 'Nonce verification failed', 'easy-digital-downloads' ), __( 'Error', 'easy-digital-downloads' ), array( 'response' => 403 ) );
 	}
@@ -113,7 +112,6 @@ add_action( 'edd_register_batch_exporter', 'edd_register_payments_batch_export',
  * @return void
  */
 function edd_include_payments_batch_processer( $class ) {
-
 	if ( 'EDD_Batch_Payments_Export' === $class ) {
 		require_once EDD_PLUGIN_DIR . 'includes/admin/reporting/export/class-batch-export-payments.php';
 	}
@@ -137,7 +135,6 @@ add_action( 'edd_register_batch_exporter', 'edd_register_customers_batch_export'
  * @return void
  */
 function edd_include_customers_batch_processer( $class ) {
-
 	if ( 'EDD_Batch_Customers_Export' === $class ) {
 		require_once EDD_PLUGIN_DIR . 'includes/admin/reporting/export/class-batch-export-customers.php';
 	}
@@ -162,7 +159,6 @@ add_action( 'edd_register_batch_exporter', 'edd_register_downloads_batch_export'
  * @return void
  */
 function edd_include_downloads_batch_processer( $class ) {
-
 	if ( 'EDD_Batch_Downloads_Export' === $class ) {
 		require_once EDD_PLUGIN_DIR . 'includes/admin/reporting/export/class-batch-export-downloads.php';
 	}
@@ -186,7 +182,6 @@ add_action( 'edd_register_batch_exporter', 'edd_register_file_downloads_batch_ex
  * @return void
  */
 function edd_include_file_downloads_batch_processer( $class ) {
-
 	if ( 'EDD_Batch_File_Downloads_Export' === $class ) {
 		require_once EDD_PLUGIN_DIR . 'includes/admin/reporting/export/class-batch-export-file-downloads.php';
 	}

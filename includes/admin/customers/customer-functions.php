@@ -11,7 +11,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @return array        The altered list of views
  */
 function edd_register_default_customer_views( $views ) {
-
 	$default_views = array(
 		'overview' => 'edd_customers_view',
 		'delete'   => 'edd_customers_delete_view',
@@ -32,7 +31,6 @@ add_filter( 'edd_customer_views', 'edd_register_default_customer_views', 1, 1 );
  * @return array       The altered list of tabs
  */
 function edd_register_default_customer_tabs( $tabs ) {
-
 	$default_tabs = array(
 		'overview' => array( 'dashicon' => 'dashicons-admin-users', 'title' => __( 'Customer Profile', 'easy-digital-downloads' ) ),
 		'notes'    => array( 'dashicon' => 'dashicons-admin-comments', 'title' => __( 'Customer Notes', 'easy-digital-downloads' ) ),
@@ -51,7 +49,6 @@ add_filter( 'edd_customer_tabs', 'edd_register_default_customer_tabs', 1, 1 );
  * @return array       The altered list of tabs, with 'delete' at the bottom
  */
 function edd_register_delete_customer_tab( $tabs ) {
-
 	$tabs['delete'] = array( 'dashicon' => 'dashicons-trash', 'title' => __( 'Delete Customer', 'easy-digital-downloads' ) );
 
 	return $tabs;
@@ -65,7 +62,6 @@ add_filter( 'edd_customer_tabs', 'edd_register_delete_customer_tab', PHP_INT_MAX
  * @return void
  */
 function edd_maybe_remove_adminbar_profile_link() {
-
 	if ( current_user_can( 'manage_shop_settings' ) ) {
 		return;
 	}
@@ -87,7 +83,6 @@ add_action( 'wp_before_admin_bar_render', 'edd_maybe_remove_adminbar_profile_lin
  * @return void
  */
 function edd_maybe_remove_menu_profile_links() {
-
 	if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
 		return;
 	}

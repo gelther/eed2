@@ -35,7 +35,6 @@ class EDD_Tracking {
 	 * @access public
 	 */
 	public function __construct() {
-
 		$this->schedule_send();
 
 		add_action( 'edd_settings_general_sanitize', array( $this, 'check_for_settings_optin' ) );
@@ -63,7 +62,6 @@ class EDD_Tracking {
 	 * @return void
 	 */
 	private function setup_data() {
-
 		$data = array();
 
 		// Retrieve current theme info
@@ -104,7 +102,6 @@ class EDD_Tracking {
 	 * @return void
 	 */
 	public function send_checkin( $override = false ) {
-
 		if ( ! $this->tracking_allowed() && ! $override ) {
 			return;
 		}
@@ -157,7 +154,6 @@ class EDD_Tracking {
 	 * @return void
 	 */
 	public function check_for_optin( $data ) {
-
 		global $edd_options;
 
 		$edd_options['allow_tracking'] = '1';
@@ -177,7 +173,6 @@ class EDD_Tracking {
 	 * @return void
 	 */
 	public function check_for_optout( $data ) {
-
 		global $edd_options;
 		if ( isset( $edd_options['allow_tracking'] ) ) {
 			unset( $edd_options['allow_tracking'] );
@@ -218,7 +213,6 @@ class EDD_Tracking {
 	 * @return void
 	 */
 	public function admin_notice() {
-
 		$hide_notice = get_option( 'edd_tracking_notice' );
 
 		if ( $hide_notice ) {

@@ -114,7 +114,6 @@ add_filter( 'admin_title', 'edd_view_order_details_title', 10, 2 );
  * @return string
  */
 function edd_override_edit_post_for_payment_link( $url, $post_id = 0, $context ) {
-
 	$post = get_post( $post_id );
 	if ( ! $post ) {
 		return $url;

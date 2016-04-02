@@ -163,7 +163,6 @@ abstract class EDD_DB {
 	 * @return  bool
 	 */
 	public function update( $row_id, $data = array(), $where = '' ) {
-
 		global $wpdb;
 
 		// Row ID must be positive integer
@@ -205,7 +204,6 @@ abstract class EDD_DB {
 	 * @return  bool
 	 */
 	public function delete( $row_id = 0 ) {
-
 		global $wpdb;
 
 		// Row ID must be positive integer

@@ -22,7 +22,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @return      void
  */
 function edd_process_purchase_form() {
-
 	do_action( 'edd_pre_process_purchase' );
 
 	// Make sure the cart isn't empty
@@ -136,7 +135,6 @@ add_action( 'wp_ajax_nopriv_edd_process_checkout', 'edd_process_purchase_form' )
  * @return      void
  */
 function edd_process_purchase_login() {
-
 	$is_ajax = isset( $_POST['edd_ajax'] );
 
 	$user_data = edd_purchase_form_validate_user_login();
@@ -224,7 +222,6 @@ function edd_purchase_form_validate_fields() {
  * @return      string
  */
 function edd_purchase_form_validate_gateway() {
-
 	$gateway = edd_get_default_gateway();
 
 	// Check if a gateway value is present
@@ -524,7 +521,6 @@ function edd_purchase_form_validate_new_user() {
  * @return      array
  */
 function edd_purchase_form_validate_user_login() {
-
 	// Start an array to collect valid user data
 	$valid_user_data = array(
 		// Assume there will be errors
@@ -1059,7 +1055,6 @@ add_action( 'edd_checkout_error_checks', 'edd_check_purchase_email', 10, 2 );
  * @return void
  */
 function edd_process_straight_to_gateway( $data ) {
-
 	$download_id = $data['download_id'];
 	$options     = isset( $data['edd_options'] ) ? $data['edd_options'] : array();
 	$quantity    = isset( $data['edd_download_quantity'] ) ? $data['edd_download_quantity'] : 1;

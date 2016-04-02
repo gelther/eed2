@@ -51,7 +51,6 @@ class EDD_Tools_Recount_Customer_Stats extends EDD_Batch_Export {
 	 * @return array $data The data for the CSV file
 	 */
 	public function get_data() {
-
 		$args = array(
 			'number'  => $this->per_step,
 			'offset'  => $this->per_step * ( $this->step - 1 ),
@@ -137,7 +136,6 @@ class EDD_Tools_Recount_Customer_Stats extends EDD_Batch_Export {
 	 * @return int
 	 */
 	public function get_percentage_complete() {
-
 		$args = array(
 			'number'  => -1,
 			'orderby' => 'id',
@@ -175,7 +173,6 @@ class EDD_Tools_Recount_Customer_Stats extends EDD_Batch_Export {
 	 * @return bool
 	 */
 	public function process_step() {
-
 		if ( ! $this->can_export() ) {
 			wp_die( __( 'You do not have permission to export data.', 'easy-digital-downloads' ), __( 'Error', 'easy-digital-downloads' ), array( 'response' => 403 ) );
 		}
@@ -208,7 +205,6 @@ class EDD_Tools_Recount_Customer_Stats extends EDD_Batch_Export {
 	 * @return void
 	 */
 	public function export() {
-
 		// Set headers
 		$this->headers();
 

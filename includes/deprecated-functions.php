@@ -150,7 +150,6 @@ function edd_get_menu_access_level() {
  * @return bool $local_only
  */
 function edd_local_taxes_only() {
-
 	$backtrace = debug_backtrace();
 
 	_edd_deprecated_function( __FUNCTION__, '1.6', 'no alternatives', $backtrace );
@@ -171,7 +170,6 @@ function edd_local_taxes_only() {
  * @return bool
  */
 function edd_local_tax_opted_in() {
-
 	$backtrace = debug_backtrace();
 
 	_edd_deprecated_function( __FUNCTION__, '1.6', 'no alternatives', $backtrace );
@@ -208,7 +206,6 @@ function edd_taxes_on_prices() {
  * @global $user_ID
  */
 function edd_show_has_purchased_item_message() {
-
 	$backtrace = debug_backtrace();
 
 	_edd_deprecated_function( __FUNCTION__, '1.8', 'no alternatives', $backtrace );
@@ -235,7 +232,6 @@ function edd_show_has_purchased_item_message() {
  * @return void
  */
 function edd_clear_earnings_cache( $payment, $payment_data ) {
-
 	$backtrace = debug_backtrace();
 
 	_edd_deprecated_function( __FUNCTION__, '1.8.4', 'no alternatives', $backtrace );
@@ -254,7 +250,6 @@ function edd_clear_earnings_cache( $payment, $payment_data ) {
  * @return float Total amount
 */
 function edd_get_cart_amount( $add_taxes = true, $local_override = false ) {
-
 	$backtrace = debug_backtrace();
 
 	_edd_deprecated_function( __FUNCTION__, '1.9', 'edd_get_cart_subtotal() or edd_get_cart_total()', $backtrace );
@@ -387,7 +382,6 @@ function edd_get_email_body_header() {
  * @return string Email template footer
  */
 function edd_get_email_body_footer() {
-
 	$backtrace = debug_backtrace();
 
 	_edd_deprecated_function( __FUNCTION__, '2.0', '', $backtrace );
@@ -457,7 +451,6 @@ function edd_apply_email_template( $body, $payment_id, $payment_data=array() ) {
  * @return bool Whether or not taxes are calculated after discount
  */
 function edd_taxes_after_discounts() {
-
 	$backtrace = debug_backtrace();
 
 	_edd_deprecated_function( __FUNCTION__, '2.1', 'none', $backtrace );
@@ -484,7 +477,6 @@ function edd_taxes_after_discounts() {
  * @return bool True if payment and link was verified, false otherwise
  */
 function edd_verify_download_link( $download_id = 0, $key = '', $email = '', $expire = '', $file_key = 0 ) {
-
 	$meta_query = array(
 		'relation' => 'AND',
 		array(

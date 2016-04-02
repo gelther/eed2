@@ -512,7 +512,6 @@ add_action( 'edd_paypal_web_accept', 'edd_process_paypal_web_accept_and_cart', 1
  * @return void
  */
 function edd_process_paypal_refund( $data, $payment_id = 0 ) {
-
 	// Collect payment details
 
 	if ( empty( $payment_id ) ) {
@@ -584,7 +583,6 @@ function edd_get_paypal_page_style() {
  * @return string
  */
 function edd_paypal_success_page_content( $content ) {
-
 	if ( ! isset( $_GET['payment-id'] ) && ! edd_get_purchase_session() ) {
 		return $content;
 	}
@@ -622,7 +620,6 @@ add_filter( 'edd_payment_confirm_paypal', 'edd_paypal_success_page_content' );
  * @return string                   Transaction ID
  */
 function edd_paypal_get_payment_transaction_id( $payment_id ) {
-
 	$transaction_id = '';
 	$notes          = edd_get_payment_notes( $payment_id );
 
@@ -646,7 +643,6 @@ add_filter( 'edd_get_payment_transaction_id-paypal', 'edd_paypal_get_payment_tra
  * @return string                 A link to the PayPal transaction details
  */
 function edd_paypal_link_transaction_id( $transaction_id, $payment_id ) {
-
 	$paypal_base_url = 'https://www.paypal.com/webscr?cmd=_history-details-from-hub&id=';
 	$transaction_url = '<a href="' . esc_url( $paypal_base_url . $transaction_id ) . '" target="_blank">' . $transaction_id . '</a>';
 

@@ -302,7 +302,6 @@ class EDD_Discount_Codes_Table extends WP_List_Table {
 	 * @return void
 	 */
 	public function process_bulk_action() {
-
 		if ( empty( $_REQUEST['_wpnonce'] ) ) {
 			return;
 		}
