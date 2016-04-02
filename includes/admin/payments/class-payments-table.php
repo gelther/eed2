@@ -625,4 +625,5 @@ class EDD_Payment_History_Table extends WP_List_Table {
 			)
 		);
 	}
+
 }
