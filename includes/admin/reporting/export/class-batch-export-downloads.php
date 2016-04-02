@@ -37,7 +37,6 @@ class EDD_Batch_Downloads_Export extends EDD_Batch_Export {
 	 * @return array $cols All the columns
 	 */
 	public function csv_cols() {
-
 		$cols = array(
 			'ID'                     => __( 'ID', 'easy-digital-downloads' ),
 			'post_name'              => __( 'Slug', 'easy-digital-downloads' ),
@@ -70,7 +69,6 @@ class EDD_Batch_Downloads_Export extends EDD_Batch_Export {
 	 * @return array $data The data for the CSV file
 	 */
 	public function get_data() {
-
 		$data = array();
 
 		$meta = array(
@@ -211,7 +209,6 @@ class EDD_Batch_Downloads_Export extends EDD_Batch_Export {
 	 * @return int
 	 */
 	public function get_percentage_complete() {
-
 		$args = array(
 			'post_type'      => 'download',
 			'posts_per_page' => -1,
