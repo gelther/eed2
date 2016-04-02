@@ -93,7 +93,6 @@ class EDD_Tools_Recount_Single_Customer_Stats extends EDD_Batch_Export {
 		}
 
 		return false;
-
 	}
 
 	/**
