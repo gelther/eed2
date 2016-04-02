@@ -117,7 +117,6 @@ function edd_log_user_in( $user_id, $user_login, $user_pass ) {
 	do_action( 'edd_log_user_in', $user_id, $user_login, $user_pass );
 }
 
-
 /**
  * Process Register Form
  *
