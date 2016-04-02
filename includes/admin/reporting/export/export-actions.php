@@ -28,7 +28,6 @@ function edd_process_batch_export_download() {
 
 	$export = new $_REQUEST['class'];
 	$export->export();
-
 }
 add_action( 'edd_download_batch_export', 'edd_process_batch_export_download' );
 
@@ -115,7 +114,6 @@ function edd_include_payments_batch_processer( $class ) {
 	if ( 'EDD_Batch_Payments_Export' === $class ) {
 		require_once EDD_PLUGIN_DIR . 'includes/admin/reporting/export/class-batch-export-payments.php';
 	}
-
 }
 
 /**
@@ -138,7 +136,6 @@ function edd_include_customers_batch_processer( $class ) {
 	if ( 'EDD_Batch_Customers_Export' === $class ) {
 		require_once EDD_PLUGIN_DIR . 'includes/admin/reporting/export/class-batch-export-customers.php';
 	}
-
 }
 
 /**
@@ -162,7 +159,6 @@ function edd_include_downloads_batch_processer( $class ) {
 	if ( 'EDD_Batch_Downloads_Export' === $class ) {
 		require_once EDD_PLUGIN_DIR . 'includes/admin/reporting/export/class-batch-export-downloads.php';
 	}
-
 }
 
 /**
@@ -185,5 +181,4 @@ function edd_include_file_downloads_batch_processer( $class ) {
 	if ( 'EDD_Batch_File_Downloads_Export' === $class ) {
 		require_once EDD_PLUGIN_DIR . 'includes/admin/reporting/export/class-batch-export-file-downloads.php';
 	}
-
 }
