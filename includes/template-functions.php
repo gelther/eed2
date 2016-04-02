@@ -288,7 +288,6 @@ add_action( 'edd_purchase_link_top', 'edd_purchase_variable_pricing', 10, 2 );
  * @return void
  */
 function edd_download_purchase_form_quantity_field( $download_id = 0, $args = array() ) {
-
 	$options = array();
 	if ( false !== $args['price_id'] ) {
 		$options['price_id'] = $args['price_id'];
@@ -336,7 +335,6 @@ add_action( 'edd_purchase_link_top', 'edd_download_purchase_form_quantity_field'
  * @return void
  */
 function edd_variable_price_quantity_field( $key, $price, $download_id ) {
-
 	if ( ! edd_item_quantities_enabled() ) {
 		return;
 	}
@@ -513,7 +511,6 @@ add_filter( 'edd_downloads_content', 'edd_downloads_default_content' );
  * @return string
  */
 function edd_get_purchase_download_links( $payment_id = 0 ) {
-
 	$downloads   = edd_get_payment_meta_cart_details( $payment_id, true );
 	$payment_key = edd_get_payment_key( $payment_id );
 	$email       = edd_get_payment_user_email( $payment_id );
@@ -661,7 +658,6 @@ function edd_locate_template( $template_names, $load = false, $require_once = tr
  * @return mixed|void
  */
 function edd_get_theme_template_paths() {
-
 	$template_dir = edd_get_theme_template_dir_name();
 
 	$file_paths = array(
@@ -809,7 +805,6 @@ add_filter( 'the_content', 'edd_microdata_description', 10 );
  * @return void
  */
 function edd_checkout_meta_tags() {
-
 	$pages   = array();
 	$pages[] = edd_get_option( 'success_page' );
 	$pages[] = edd_get_option( 'failure_page' );
