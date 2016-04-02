@@ -174,7 +174,6 @@ function edd_process_paypal_purchase( $purchase_data ) {
 		wp_redirect( $paypal_redirect );
 		exit;
 	}
-
 }
 add_action( 'edd_gateway_paypal', 'edd_process_paypal_purchase' );
 
@@ -608,7 +607,6 @@ function edd_paypal_success_page_content( $content ) {
 	}
 
 	return $content;
-
 }
 add_filter( 'edd_payment_confirm_paypal', 'edd_paypal_success_page_content' );
 
@@ -647,6 +645,5 @@ function edd_paypal_link_transaction_id( $transaction_id, $payment_id ) {
 	$transaction_url = '<a href="' . esc_url( $paypal_base_url . $transaction_id ) . '" target="_blank">' . $transaction_id . '</a>';
 
 	return apply_filters( 'edd_paypal_link_payment_details_transaction_id', $transaction_url );
-
 }
 add_filter( 'edd_payment_details_transaction_id-paypal', 'edd_paypal_link_transaction_id', 10, 2 );
