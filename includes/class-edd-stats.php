@@ -114,7 +114,6 @@ class EDD_Stats {
 
 		$this->start_date = $this->convert_date( $_start_date );
 		$this->end_date   = $this->convert_date( $_end_date, true );
-
 	}
 
 	/**
@@ -443,7 +442,6 @@ class EDD_Stats {
 		}
 
 		return apply_filters( 'edd_stats_date', $date, $end_date, $this );
-
 	}
 
 	/**
