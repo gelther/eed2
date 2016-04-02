@@ -575,7 +575,7 @@ function edd_v21_upgrade_customers_db() {
 	ignore_user_abort( true );
 
 	if ( ! edd_is_func_disabled( 'set_time_limit' ) && ! ini_get( 'safe_mode' ) ) {
-		@set_time_limit(0);
+		@set_time_limit( 0 );
 	}
 
 	if( ! get_option( 'edd_upgrade_customers_db_version' ) ) {
@@ -684,7 +684,7 @@ function edd_v226_upgrade_payments_price_logs_db() {
 	}
 	ignore_user_abort( true );
 	if ( ! edd_is_func_disabled( 'set_time_limit' ) && ! ini_get( 'safe_mode' ) ) {
-		@set_time_limit(0);
+		@set_time_limit( 0 );
 	}
 	$step   = isset( $_GET['step'] ) ? absint( $_GET['step'] ) : 1;
 	$number = 25;
@@ -781,7 +781,7 @@ function edd_v23_upgrade_payment_taxes() {
 	}
 	ignore_user_abort( true );
 	if ( ! edd_is_func_disabled( 'set_time_limit' ) && ! ini_get( 'safe_mode' ) ) {
-		@set_time_limit(0);
+		@set_time_limit( 0 );
 	}
 
 	$step   = isset( $_GET['step'] ) ? absint( $_GET['step'] ) : 1;
@@ -857,7 +857,7 @@ function edd_v23_upgrade_customer_purchases() {
 	ignore_user_abort( true );
 
 	if ( ! edd_is_func_disabled( 'set_time_limit' ) && ! ini_get( 'safe_mode' ) ) {
-		@set_time_limit(0);
+		@set_time_limit( 0 );
 	}
 
 	$step   = isset( $_GET['step'] ) ? absint( $_GET['step'] ) : 1;
@@ -985,7 +985,7 @@ function edd_upgrade_user_api_keys() {
 	ignore_user_abort( true );
 
 	if ( ! edd_is_func_disabled( 'set_time_limit' ) && ! ini_get( 'safe_mode' ) ) {
-		@set_time_limit(0);
+		@set_time_limit( 0 );
 	}
 
 	$step   = isset( $_GET['step'] ) ? absint( $_GET['step'] ) : 1;
@@ -1070,7 +1070,7 @@ function edd_remove_refunded_sale_logs() {
 	ignore_user_abort( true );
 
 	if ( ! edd_is_func_disabled( 'set_time_limit' ) && ! ini_get( 'safe_mode' ) ) {
-		@set_time_limit(0);
+		@set_time_limit( 0 );
 	}
 
 	$step    = isset( $_GET['step'] ) ? absint( $_GET['step'] ) : 1;
