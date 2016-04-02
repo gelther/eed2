@@ -444,7 +444,6 @@ class EDD_Welcome {
 		<?php
 	}
 
-
 	/**
 	 * Parse the EDD readme.txt file
 	 *
@@ -471,7 +470,6 @@ class EDD_Welcome {
 
 		return $readme;
 	}
-
 
 	/**
 	 * Render Contributors List
@@ -568,5 +566,6 @@ class EDD_Welcome {
 			wp_safe_redirect( admin_url( 'index.php?page=edd-about' ) ); exit;
 		}
 	}
+
 }
 new EDD_Welcome();
