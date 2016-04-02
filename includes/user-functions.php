@@ -29,7 +29,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @return bool|object List of all user purchases
  */
 function edd_get_users_purchases( $user = 0, $number = 20, $pagination = false, $status = 'complete' ) {
-
 	if ( empty( $user ) ) {
 		$user = get_current_user_id();
 	}
@@ -185,7 +184,6 @@ function edd_get_users_purchased_products( $user = 0, $status = 'complete' ) {
  * @return      boolean - true if has purchased, false otherwise
  */
 function edd_has_user_purchased( $user_id, $downloads, $variable_price_id = null ) {
-
 	if ( empty( $user_id ) ) {
 		return false;
 	}
@@ -259,7 +257,6 @@ function edd_has_purchases( $user_id = null ) {
  * @return      array
  */
 function edd_get_purchase_stats_by_user( $user = '' ) {
-
 	if ( is_email( $user ) ) {
 
 		$field = 'email';
@@ -316,7 +313,6 @@ function edd_count_purchases_of_customer( $user = null ) {
  * @return      float - the total amount the user has spent
  */
 function edd_purchase_total_of_user( $user = null ) {
-
 	$stats = edd_get_purchase_stats_by_user( $user );
 
 	return $stats['total_spent'];
@@ -398,7 +394,6 @@ add_action( 'user_register', 'edd_connect_existing_customer_to_new_user', 10, 1 
  * @return      void
  */
 function edd_add_past_purchases_to_new_user( $user_id ) {
-
 	$email = get_the_author_meta( 'user_email', $user_id );
 
 	$payments = edd_get_payments( array( 's' => $email ) );
@@ -493,7 +488,6 @@ function edd_get_customer_address( $user_id = 0 ) {
  * @return 		void
  */
 function edd_new_user_notification( $user_id = 0, $user_data = array() ) {
-
 	if ( empty( $user_id ) || empty( $user_data ) ) {
 		return;
 	}
@@ -557,7 +551,6 @@ function edd_set_user_to_pending( $user_id = 0 ) {
  * @return bool             If the user was marked as active or not
  */
 function edd_set_user_to_verified( $user_id = 0 ) {
-
 	if ( empty( $user_id ) ) {
 		return false;
 	}
@@ -583,7 +576,6 @@ function edd_set_user_to_verified( $user_id = 0 ) {
  * @return  bool
  */
 function edd_user_pending_verification( $user_id = 0 ) {
-
 	if ( empty( $user_id ) ) {
 		$user_id = get_current_user_id();
 	}
@@ -607,7 +599,6 @@ function edd_user_pending_verification( $user_id = 0 ) {
  * @return  string
  */
 function edd_get_user_verification_url( $user_id = 0 ) {
-
 	if ( empty( $user_id ) ) {
 		return false;
 	}
@@ -633,7 +624,6 @@ function edd_get_user_verification_url( $user_id = 0 ) {
  * @return  string
  */
 function edd_get_user_verification_request_url( $user_id = 0 ) {
-
 	if ( empty( $user_id ) ) {
 		$user_id = get_current_user_id();
 	}
@@ -654,7 +644,6 @@ function edd_get_user_verification_request_url( $user_id = 0 ) {
  * @return  void
  */
 function edd_send_user_verification_email( $user_id = 0 ) {
-
 	if ( empty( $user_id ) ) {
 		return;
 	}
@@ -713,7 +702,6 @@ function edd_send_user_verification_email( $user_id = 0 ) {
  * @return string The token for the URL.
  */
 function edd_get_user_verification_token( $url = '' ) {
-
 	$args   = array();
 	$hash   = apply_filters( 'edd_get_user_verification_token_algorithm', 'sha256' );
 	$secret = apply_filters( 'edd_get_user_verification_token_secret', hash( $hash, wp_salt() ) );
@@ -787,7 +775,6 @@ function edd_get_user_verification_token( $url = '' ) {
  * @return bool
  */
 function edd_validate_user_verification_token( $url = '' ) {
-
 	$ret        = false;
 	$parts      = parse_url( $url );
 	$query_args = array();
@@ -823,7 +810,6 @@ function edd_validate_user_verification_token( $url = '' ) {
  * @return void
  */
 function edd_process_user_verification_request() {
-
 	if ( ! wp_verify_nonce( $_GET['_wpnonce'], 'edd-request-verification' ) ) {
 		wp_die( __( 'Nonce verification failed.', 'easy-digital-downloads' ), __( 'Error', 'easy-digital-downloads' ), array( 'response' => 403 ) );
 	}
@@ -857,7 +843,6 @@ add_action( 'edd_send_verification_email', 'edd_process_user_verification_reques
  * @return void
  */
 function edd_process_user_account_verification() {
-
 	if ( empty( $_GET['token'] ) ) {
 		return false;
 	}
@@ -921,7 +906,6 @@ function edd_get_user_verification_page() {
  * @return bool         If the detachment was successful
  */
 function edd_detach_deleted_user( $user_id ) {
-
 	$customer = new EDD_Customer( $user_id, true );
 	$detached = false;
 
