@@ -184,8 +184,7 @@ if ( ! function_exists( 'wp_is_writable' ) ) {
 	function wp_is_writable( $path ) {
 			if ( 'WIN' === strtoupper( substr( PHP_OS, 0, 3 ) ) ) {
 					return win_is_writable( $path );
-			}
-			else {
+			} else {
 					return @is_writable( $path );
 			}
 	}
