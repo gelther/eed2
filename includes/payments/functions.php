@@ -31,7 +31,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @return object $payments Payments retrieved from the database
  */
 function edd_get_payments( $args = array() ) {
-
 	// Fallback to post objects to ensure backwards compatibility
 	if ( ! isset( $args['output'] ) ) {
 		$args['output'] = 'posts';
@@ -51,7 +50,6 @@ function edd_get_payments( $args = array() ) {
  * @return      mixed
  */
 function edd_get_payment_by( $field = '', $value = '' ) {
-
 	if ( empty( $field ) || empty( $value ) ) {
 		return false;
 	}
@@ -115,7 +113,6 @@ function edd_get_payment_by( $field = '', $value = '' ) {
  * @return int|bool Payment ID if payment is inserted, false otherwise
  */
 function edd_insert_payment( $payment_data = array() ) {
-
 	if ( empty( $payment_data ) ) {
 		return false;
 	}
@@ -196,7 +193,6 @@ function edd_insert_payment( $payment_data = array() ) {
  * @return bool               If the payment was successfully updated
  */
 function edd_update_payment_status( $payment_id, $new_status = 'publish' ) {
-
 	$payment         = new EDD_Payment( $payment_id );
 	$payment->status = $new_status;
 	$updated         = $payment->save();
@@ -298,7 +294,6 @@ function edd_delete_purchase( $payment_id = 0, $update_customer = true, $delete_
  * @return void
  */
 function edd_undo_purchase( $download_id = false, $payment_id ) {
-
 	/**
 	 * In 2.5.7, a bug was found that $download_id was an incorrect usage. Passing it in
 	 * now does nothing, but we're holding it in place for legacy support of the argument order.
@@ -366,7 +361,6 @@ function edd_undo_purchase( $download_id = false, $payment_id ) {
  * @return array $count Number of payments sorted by payment status
  */
 function edd_count_payments( $args = array() ) {
-
 	global $wpdb;
 
 	$defaults = array(
@@ -587,7 +581,6 @@ function edd_check_for_existing_payment( $payment_id ) {
  * @return bool|mixed if payment status exists, false otherwise
  */
 function edd_get_payment_status( $payment, $return_label = false ) {
-
 	if ( ! is_object( $payment ) || ! isset( $payment->post_status ) ) {
 		return false;
 	}
@@ -658,7 +651,6 @@ function edd_get_payment_status_keys() {
  * @return int $earnings Earnings
  */
 function edd_get_earnings_by_date( $day = null, $month_num, $year = null, $hour = null, $include_taxes = true ) {
-
 	// This is getting deprecated soon. Use EDD_Payment_Stats with the get_earnings() method instead
 
 	global $wpdb;
@@ -719,7 +711,6 @@ function edd_get_earnings_by_date( $day = null, $month_num, $year = null, $hour 
  * @return int $count Sales
  */
 function edd_get_sales_by_date( $day = null, $month_num = null, $year = null, $hour = null ) {
-
 	// This is getting deprecated soon. Use EDD_Payment_Stats with the get_sales() method instead
 
 	$args = array(
@@ -813,7 +804,6 @@ function edd_get_total_sales() {
  * @return float $total Total earnings
  */
 function edd_get_total_earnings() {
-
 	$total = get_option( 'edd_earnings_total', false );
 
 	// If no total stored in DB, use old method of calculating total earnings
@@ -1170,7 +1160,6 @@ function edd_get_payment_number( $payment_id = 0 ) {
  * @return string      The formatted payment number
  */
 function edd_format_payment_number( $number ) {
-
 	if ( ! edd_get_option( 'enable_sequential' ) ) {
 		return $number;
 	}
@@ -1197,7 +1186,6 @@ function edd_format_payment_number( $number ) {
  * @return string $number The next available payment number
  */
 function edd_get_next_payment_number() {
-
 	if ( ! edd_get_option( 'enable_sequential' ) ) {
 		return false;
 	}
@@ -1256,7 +1244,6 @@ function edd_get_next_payment_number() {
  * @return string          The new Payment number without prefix and postfix
  */
 function edd_remove_payment_prefix_postfix( $number ) {
-
 	$prefix  = edd_get_option( 'sequential_prefix' );
 	$postfix = edd_get_option( 'sequential_postfix' );
 
@@ -1421,7 +1408,6 @@ function edd_get_payment_transaction_id( $payment_id = 0 ) {
  * @param string transaction_id The transaciton ID from the gateway
  */
 function edd_set_payment_transaction_id( $payment_id = 0, $transaction_id = '' ) {
-
 	if ( empty( $payment_id ) || empty( $transaction_id ) ) {
 		return false;
 	}
@@ -1482,7 +1468,6 @@ function edd_get_purchase_id_by_transaction_id( $key ) {
  * @return array $notes Payment Notes
  */
 function edd_get_payment_notes( $payment_id = 0, $search = '' ) {
-
 	if ( empty( $payment_id ) && empty( $search ) ) {
 		return false;
 	}
@@ -1564,7 +1549,6 @@ function edd_delete_payment_note( $comment_id = 0, $payment_id = 0 ) {
  * @return string
  */
 function edd_get_payment_note_html( $note, $payment_id = 0 ) {
-
 	if ( is_numeric( $note ) ) {
 		$note = get_comment( $note );
 	}
