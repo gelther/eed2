@@ -1239,8 +1239,7 @@ class EDD_API {
 
 							if ( $i == $dates['m_start'] ) {
 								$d = $dates['day_start'];
-							}
-							else {
+							} else {
 								$d = 1;
 							}
 
@@ -1719,8 +1718,7 @@ class EDD_API {
 				header( 'Content-Type: application/json' );
 				if ( ! empty( $this->pretty_print ) ) {
 					echo json_encode( $this->data, $this->pretty_print );
-				}
-				else {
+				} else {
 					echo json_encode( $this->data );
 				}
 
