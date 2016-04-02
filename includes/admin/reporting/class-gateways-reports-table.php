@@ -95,7 +95,6 @@ class EDD_Gateawy_Reports_Table extends WP_List_Table {
 		return $columns;
 	}
 
-
 	/**
 	 * Retrieve the current page number
 	 *
@@ -106,7 +105,6 @@ class EDD_Gateawy_Reports_Table extends WP_List_Table {
 	public function get_paged() {
 		return isset( $_GET['paged'] ) ? absint( $_GET['paged'] ) : 1;
 	}
-
 
 	/**
 	 * Outputs the reporting views
@@ -119,7 +117,6 @@ class EDD_Gateawy_Reports_Table extends WP_List_Table {
 		// These aren't really bulk actions but this outputs the markup in the right place
 		edd_report_views();
 	}
-
 
 	/**
 	 * Build all the reports data
@@ -149,7 +146,6 @@ class EDD_Gateawy_Reports_Table extends WP_List_Table {
 		return $reports_data;
 	}
 
-
 	/**
 	 * Setup the final data for the table
 	 *
@@ -167,4 +163,5 @@ class EDD_Gateawy_Reports_Table extends WP_List_Table {
 		$this->_column_headers = array( $columns, $hidden, $sortable );
 		$this->items           = $this->reports_data();
 	}
+
 }
