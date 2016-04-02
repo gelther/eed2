@@ -642,7 +642,6 @@ function edd_render_files_field( $post_id = 0 ) {
 }
 add_action( 'edd_meta_box_files_fields', 'edd_render_files_field', 20 );
 
-
 /**
  * Individual file row.
  *
@@ -755,7 +754,6 @@ function edd_download_media_strings( $strings ) {
 	return $strings;
 }
 add_filter( 'media_view_strings', 'edd_download_media_strings', 10, 1 );
-
 
 /**
  * File Download Limit Row
@@ -873,7 +871,6 @@ function edd_render_accounting_options( $post_id ) {
 }
 add_action( 'edd_meta_box_settings_fields', 'edd_render_accounting_options', 25 );
 
-
 /**
  * Render Disable Button
  *
@@ -916,7 +913,6 @@ function edd_render_disable_button( $post_id ) {
 }
 add_action( 'edd_meta_box_settings_fields', 'edd_render_disable_button', 30 );
 
-
 /** Product Notes *****************************************************************/
 
 /**
@@ -949,7 +945,6 @@ function edd_render_product_notes_field( $post_id ) {
 <?php
 }
 add_action( 'edd_product_notes_meta_box_fields', 'edd_render_product_notes_field' );
-
 
 /** Stats *****************************************************************/
 
