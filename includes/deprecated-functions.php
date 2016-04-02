@@ -438,7 +438,6 @@ function edd_apply_email_template( $body, $payment_id, $payment_data=array() ) {
 	$email = str_replace( '{email}', $body, $template );
 
 	return $email;
-
 }
 
 /**
