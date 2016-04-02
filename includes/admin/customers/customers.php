@@ -146,7 +146,6 @@ function edd_render_customer_view( $view, $callbacks ) {
 	<?php
 }
 
-
 /**
  * View a customer
  *
