@@ -152,5 +152,6 @@ class EDD_Heartbeat {
 		</script>
 		<?php
 	}
+
 }
 add_action( 'plugins_loaded', array( 'EDD_Heartbeat', 'init' ) );

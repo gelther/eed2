@@ -315,4 +315,5 @@ class EDD_Customer_Reports_Table extends WP_List_Table {
 			'total_pages' => ceil( $this->total / $this->per_page ),
 		) );
 	}
+
 }

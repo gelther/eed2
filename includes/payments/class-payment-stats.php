@@ -80,7 +80,6 @@ class EDD_Payment_Stats extends EDD_Stats {
 		return $count;
 	}
 
-
 	/**
 	 * Retrieve earning stats
 	 *

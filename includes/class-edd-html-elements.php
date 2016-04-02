@@ -498,6 +498,7 @@ class EDD_HTML_Elements {
 
 		return $output;
 	}
+
 	/**
 	 * Renders a date picker
 	 *
@@ -589,4 +590,5 @@ class EDD_HTML_Elements {
 
 		return $output;
 	}
+
 }

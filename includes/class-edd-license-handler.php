@@ -143,7 +143,6 @@ class EDD_License {
 		);
 	}
 
-
 	/**
 	 * Add license field to settings
 	 *
@@ -165,7 +164,6 @@ class EDD_License {
 
 		return array_merge( $settings, $edd_license_settings );
 	}
-
 
 	/**
 	 * Display help text at the top of the Licenses tag
@@ -193,7 +191,6 @@ class EDD_License {
 
 		$has_ran = true;
 	}
-
 
 	/**
 	 * Activate the license key
@@ -275,7 +272,6 @@ class EDD_License {
 		update_option( $this->item_shortname . '_license_active', $license_data );
 	}
 
-
 	/**
 	 * Deactivate the license key
 	 *
@@ -335,7 +331,6 @@ class EDD_License {
 		}
 	}
 
-
 	/**
 	 * Check if license key is valid once per week
 	 *
@@ -379,7 +374,6 @@ class EDD_License {
 
 		update_option( $this->item_shortname . '_license_active', $license_data );
 	}
-
 
 	/**
 	 * Admin notices for errors
@@ -448,6 +442,7 @@ class EDD_License {
 			$showed_imissing_key_message[ $this->item_shortname ] = true;
 		}
 	}
+
 }
 
 endif; // end class_exists check

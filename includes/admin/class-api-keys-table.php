@@ -273,8 +273,6 @@ class EDD_API_Keys_Table extends WP_List_Table {
 		return $keys;
 	}
 
-
-
 	/**
 	 * Retrieve count of total users with keys
 	 *
@@ -322,4 +320,5 @@ class EDD_API_Keys_Table extends WP_List_Table {
 			)
 		);
 	}
+
 }

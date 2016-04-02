@@ -242,7 +242,6 @@ function edd_has_purchases( $user_id = null ) {
 	return false; // User has never purchased anything
 }
 
-
 /**
  * Get Purchase Status for User
  *
@@ -280,7 +279,6 @@ function edd_get_purchase_stats_by_user( $user = '' ) {
 
 	return (array) apply_filters( 'edd_purchase_stats_by_user', $stats, $user );
 }
-
 
 /**
  * Count number of purchases of a customer
@@ -421,7 +419,6 @@ function edd_add_past_purchases_to_new_user( $user_id ) {
 }
 add_action( 'user_register', 'edd_add_past_purchases_to_new_user', 10, 1 );
 
-
 /**
  * Counts the total number of customers.
  *
@@ -432,7 +429,6 @@ add_action( 'user_register', 'edd_add_past_purchases_to_new_user', 10, 1 );
 function edd_count_total_customers() {
 	return EDD()->customers->count();
 }
-
 
 /**
  * Returns the saved address for a customer

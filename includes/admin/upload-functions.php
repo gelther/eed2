@@ -38,7 +38,6 @@ function edd_change_downloads_upload_dir() {
 }
 add_action( 'admin_init', 'edd_change_downloads_upload_dir', 999 );
 
-
 /**
  * Creates blank index.php and .htaccess files
  *
@@ -163,7 +162,6 @@ function edd_get_htaccess_rules( $method = false ) {
 	$rules = apply_filters( 'edd_protected_directory_htaccess_rules', $rules, $method );
 	return $rules;
 }
-
 
 // For installs on pre WP 3.6
 if ( ! function_exists( 'wp_is_writable' ) ) {

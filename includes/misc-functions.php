@@ -175,7 +175,6 @@ function edd_get_ip() {
 	return apply_filters( 'edd_get_ip', $ip );
 }
 
-
 /**
  * Get user host
  *
@@ -216,7 +215,6 @@ function edd_get_host() {
 
 	return $host;
 }
-
 
 /**
  * Check site host
@@ -295,7 +293,6 @@ function edd_is_host( $host = false ) {
 
 	return $return;
 }
-
 
 /**
  * Get Currencies
@@ -567,7 +564,6 @@ function _edd_deprected_argument( $argument, $function, $version, $replacement =
 	}
 }
 
-
 /**
  * Checks whether function is disabled.
  *
@@ -808,7 +804,6 @@ function edd_get_completed_upgrades() {
 	return $completed_upgrades;
 }
 
-
 if ( ! function_exists( 'cal_days_in_month' ) ) {
 	// Fallback in case the calendar extension is not loaded in PHP
 	// Only supports Gregorian calendar
@@ -845,6 +840,7 @@ function hash_equals( $a, $b ) {
 
 	return $result === 0;
 }
+
 endif;
 
 if ( ! function_exists( 'getallheaders' ) ) :

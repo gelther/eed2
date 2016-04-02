@@ -126,7 +126,6 @@ function edd_logs_view_api_requests() {
 }
 add_action( 'edd_logs_view_api_requests', 'edd_logs_view_api_requests' );
 
-
 /**
  * Default Log Views
  *

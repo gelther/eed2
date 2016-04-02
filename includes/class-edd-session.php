@@ -130,7 +130,6 @@ class EDD_Session {
 		return $this->session;
 	}
 
-
 	/**
 	 * Retrieve session ID
 	 *
@@ -141,7 +140,6 @@ class EDD_Session {
 	public function get_id() {
 		return $this->session->session_id;
 	}
-
 
 	/**
 	 * Retrieve a session variable

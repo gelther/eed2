@@ -132,7 +132,6 @@ function edd_process_collection_purchase( $data ) {
 }
 add_action( 'edd_purchase_collection', 'edd_process_collection_purchase' );
 
-
 /**
  * Process cart updates, primarily for quantities
  *

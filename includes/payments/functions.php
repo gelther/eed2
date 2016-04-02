@@ -348,7 +348,6 @@ function edd_undo_purchase( $download_id = false, $payment_id ) {
 	}
 }
 
-
 /**
  * Count Payments
  *
@@ -1270,6 +1269,7 @@ function edd_payment_amount( $payment_id = 0 ) {
 	$amount = edd_get_payment_amount( $payment_id );
 	return edd_currency_filter( edd_format_amount( $amount ), edd_get_payment_currency_code( $payment_id ) );
 }
+
 /**
  * Get the amount associated with a payment
  *
@@ -1475,7 +1475,6 @@ function edd_get_payment_notes( $payment_id = 0, $search = '' ) {
 	return $notes;
 }
 
-
 /**
  * Add a note to a payment
  *
@@ -1612,7 +1611,6 @@ function edd_hide_payment_notes_pre_41( $clauses, $wp_comment_query ) {
 }
 add_filter( 'comments_clauses', 'edd_hide_payment_notes_pre_41', 10, 2 );
 
-
 /**
  * Exclude notes (comments) on edd_payment post type from showing in comment feeds
  *
@@ -1628,7 +1626,6 @@ function edd_hide_payment_notes_from_feeds( $where, $wp_comment_query ) {
 	return $where;
 }
 add_filter( 'comment_feed_where', 'edd_hide_payment_notes_from_feeds', 10, 2 );
-
 
 /**
  * Remove EDD Comments from the wp_count_comments function
@@ -1691,7 +1688,6 @@ function edd_remove_payment_notes_in_comment_counts( $stats, $post_id ) {
 	return $stats;
 }
 add_filter( 'wp_count_comments', 'edd_remove_payment_notes_in_comment_counts', 10, 2 );
-
 
 /**
  * Filter where older than one week

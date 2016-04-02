@@ -524,7 +524,6 @@ final class EDD_Amazon_Payments {
 		wp_redirect( edd_get_checkout_uri( array( 'payment-mode' => 'amazon', 'state' => 'authorized', 'amazon_reference_id' => $reference ) ) ); exit;
 	}
 
-
 	/**
 	 * Display the log in button
 	 *
@@ -1151,4 +1150,5 @@ final class EDD_Amazon_Payments {
 function EDD_Amazon() {
 	return EDD_Amazon_Payments::getInstance();
 }
+
 EDD_Amazon();

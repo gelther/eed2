@@ -533,7 +533,6 @@ function edd_is_bundled_product( $download_id = 0 ) {
 	return $download->is_bundled_download();
 }
 
-
 /**
  * Retrieves the product IDs of bundled products
  *
@@ -816,7 +815,6 @@ function edd_get_file_downloaded_count( $download_id = 0, $file_key = 0, $paymen
 
 	return $edd_logs->get_log_count( $download_id, 'file_download', $meta_query );
 }
-
 
 /**
  * Gets the file download file limit for a particular download

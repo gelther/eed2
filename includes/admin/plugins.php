@@ -33,7 +33,6 @@ function edd_plugin_action_links( $links, $file ) {
 }
 add_filter( 'plugin_action_links', 'edd_plugin_action_links', 10, 2 );
 
-
 /**
  * Plugin row meta links
  *

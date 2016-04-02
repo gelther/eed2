@@ -282,4 +282,5 @@ class EDD_Roles {
 			$wp_roles->remove_cap( 'shop_vendor', 'upload_files' );
 		}
 	}
+
 }

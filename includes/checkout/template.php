@@ -422,7 +422,6 @@ function edd_default_cc_address_fields() {
 }
 add_action( 'edd_after_cc_fields', 'edd_default_cc_address_fields' );
 
-
 /**
  * Renders the billing address fields for cart taxation
  *
@@ -435,7 +434,6 @@ function edd_checkout_tax_fields() {
 	}
 }
 add_action( 'edd_purchase_form_after_cc_form', 'edd_checkout_tax_fields', 999 );
-
 
 /**
  * Renders the user registration fields. If the user is logged in, a login
@@ -615,7 +613,6 @@ function edd_payment_mode_select() {
 }
 add_action( 'edd_payment_mode_select', 'edd_payment_mode_select' );
 
-
 /**
  * Show Payment Icons by getting all the accepted icons from the EDD Settings
  * then outputting the icons.
@@ -682,7 +679,6 @@ function edd_show_payment_icons() {
 }
 add_action( 'edd_payment_mode_top', 'edd_show_payment_icons' );
 add_action( 'edd_checkout_form_top', 'edd_show_payment_icons' );
-
 
 /**
  * Renders the Discount Code field which allows users to enter a discount code.
@@ -777,7 +773,6 @@ function edd_checkout_final_total() {
 <?php
 }
 add_action( 'edd_purchase_form_before_submit', 'edd_checkout_final_total', 999 );
-
 
 /**
  * Renders the Checkout Submit section

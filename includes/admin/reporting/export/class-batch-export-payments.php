@@ -261,4 +261,5 @@ class EDD_Batch_Payments_Export extends EDD_Batch_Export {
 		$this->end    = isset( $request['end'] )   ? sanitize_text_field( $request['end'] )   : '';
 		$this->status = isset( $request['status'] ) ? sanitize_text_field( $request['status'] ) : 'complete';
 	}
+
 }

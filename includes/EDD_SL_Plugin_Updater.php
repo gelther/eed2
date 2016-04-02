@@ -201,7 +201,6 @@ class EDD_SL_Plugin_Updater {
 		}
 	}
 
-
 	/**
 	 * Updates information on the "View version x.x details" page with custom data.
 	 *
@@ -242,7 +241,6 @@ class EDD_SL_Plugin_Updater {
 
 		return $_data;
 	}
-
 
 	/**
 	 * Disable SSL verification in order to prevent download update failures

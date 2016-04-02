@@ -1645,7 +1645,6 @@ function edd_upload_callback( $args ) {
 	echo $html;
 }
 
-
 /**
  * Color picker Callback
  *

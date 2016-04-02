@@ -120,7 +120,6 @@ function edd_complete_purchase( $payment_id, $new_status, $old_status ) {
 }
 add_action( 'edd_update_payment_status', 'edd_complete_purchase', 100, 3 );
 
-
 /**
  * Record payment status change
  *

@@ -479,7 +479,6 @@ class EDD_DB_Customers extends EDD_DB  {
 		return $customers;
 	}
 
-
 	/**
 	 * Count the total number of customers in the database
 	 *
@@ -564,4 +563,5 @@ class EDD_DB_Customers extends EDD_DB  {
 	public function installed() {
 		return $this->table_exists( $this->table_name );
 	}
+
 }

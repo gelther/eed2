@@ -401,7 +401,6 @@ function edd_v14_upgrades() {
 	}
 }
 
-
 /**
  * Upgrade routine for v1.5
  *

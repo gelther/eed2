@@ -530,4 +530,5 @@ class EDD_Payments_Query extends EDD_Stats {
 
 		$this->__unset( 'download' );
 	}
+
 }

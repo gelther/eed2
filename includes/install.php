@@ -47,6 +47,7 @@ function edd_install( $network_wide = false ) {
 
 	}
 }
+
 register_activation_hook( EDD_PLUGIN_FILE, 'edd_install' );
 
 /**
@@ -239,7 +240,6 @@ function edd_new_blog_created( $blog_id, $user_id, $domain, $path, $site_id, $me
 	}
 }
 add_action( 'wpmu_new_blog', 'edd_new_blog_created', 10, 6 );
-
 
 /**
  * Drop our custom tables when a mu site is deleted

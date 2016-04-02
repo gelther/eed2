@@ -138,8 +138,6 @@ function edd_get_menu_access_level() {
 	return apply_filters( 'edd_menu_access_level', 'manage_options' );
 }
 
-
-
 /**
  * Check if only local taxes are enabled meaning users must opt in by using the
  * option set from the EDD Settings.
@@ -238,6 +236,7 @@ function edd_clear_earnings_cache( $payment, $payment_data ) {
 
 	delete_transient( 'edd_total_earnings' );
 }
+
 //add_action( 'edd_insert_payment', 'edd_clear_earnings_cache', 10, 2 );
 
 /**
@@ -316,7 +315,6 @@ function edd_get_purchase_receipt_template_tags() {
 
 	return apply_filters( 'edd_purchase_receipt_template_tags_description', $tags );
 }
-
 
 /**
  * Get Sale Notification Template Tags

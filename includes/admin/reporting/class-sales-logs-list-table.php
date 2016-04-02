@@ -399,4 +399,5 @@ class EDD_Sales_Log_Table extends WP_List_Table {
 	public function has_items() {
 		return true;
 	}
+
 }
