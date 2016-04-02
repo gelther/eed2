@@ -190,7 +190,6 @@ function edd_reports_download_details() {
 }
 add_action( 'edd_reports_view_downloads', 'edd_reports_download_details' );
 
-
 /**
  * Renders the Gateways Table
  *
@@ -212,7 +211,6 @@ function edd_reports_gateways_table() {
 }
 add_action( 'edd_reports_view_gateways', 'edd_reports_gateways_table' );
 
-
 /**
  * Renders the Reports Earnings Graphs
  *
@@ -231,7 +229,6 @@ function edd_reports_earnings() {
 	edd_reports_graph();
 }
 add_action( 'edd_reports_view_earnings', 'edd_reports_earnings' );
-
 
 /**
  * Renders the Reports Earnings By Category Table & Graphs
