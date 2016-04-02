@@ -382,11 +382,9 @@ function edd_count_payments( $args = array() ) {
 
 		if ( is_email( $args['user'] ) ) {
 			$field = 'email';
-		}
-		elseif ( is_numeric( $args['user'] ) ) {
+		} elseif ( is_numeric( $args['user'] ) ) {
 			$field = 'id';
-		}
-		else {
+		} else {
 			$field = '';
 		}
 
@@ -405,8 +403,7 @@ function edd_count_payments( $args = array() ) {
 
 			if ( is_email( $args['s'] ) ) {
 				$field = '_edd_payment_user_email';
-			}
-			else {
+			} else {
 				$field = '_edd_payment_purchase_key';
 			}
 
