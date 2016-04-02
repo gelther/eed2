@@ -15,7 +15,7 @@ php:
     indentation_whitespace: tab
     opening_doc_asterisk: double
     php_tag_casing: lower
-    # php_tags: full_php_tags
+    php_tags: full_php_tags
     # remove_double_semicolon: remove
     # remove_empty_trailing_leading_doc_lines: remove
     # semicolon_before_closing_php_tag: add
