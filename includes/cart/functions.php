@@ -334,7 +334,6 @@ function edd_get_item_position_in_cart( $download_id = 0, $options = array() ) {
 	return false; // Not found
 }
 
-
 /**
  * Check if quantities are enabled
  *
@@ -368,7 +367,6 @@ function edd_set_cart_item_quantity( $download_id = 0, $quantity = 1, $options =
 	EDD()->session->set( 'edd_cart', $cart );
 	return $cart;
 }
-
 
 /**
  * Get Cart Item Quantity
@@ -689,6 +687,7 @@ function edd_get_cart_items_subtotal( $items ) {
 
 	return apply_filters( 'edd_get_cart_items_subtotal', $subtotal );
 }
+
 /**
  * Get Total Cart Amount
  *
@@ -711,7 +710,6 @@ function edd_get_cart_total( $discounts = false ) {
 
 	return (float) apply_filters( 'edd_get_cart_total', $total );
 }
-
 
 /**
  * Get Total Cart Amount
@@ -1123,7 +1121,6 @@ function edd_save_cart() {
 
 	return false;
 }
-
 
 /**
  * Process the Cart Restoration
