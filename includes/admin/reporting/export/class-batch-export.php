@@ -167,7 +167,6 @@ class EDD_Batch_Export extends EDD_Export {
 		$this->stash_step_data( $col_data );
 
 		return $col_data;
-
 	}
 
 	/**
@@ -261,7 +260,6 @@ class EDD_Batch_Export extends EDD_Export {
 		$default_cols = empty( $default_cols ) ? 0 : 1;
 
 		$this->is_empty = count( $file_rows ) == $default_cols ? true : false;
-
 	}
 
 	/**
