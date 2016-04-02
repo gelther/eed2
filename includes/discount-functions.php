@@ -78,7 +78,6 @@ function edd_has_active_discounts() {
 	return $has_active;
 }
 
-
 /**
  * Get Discount
  *
@@ -295,7 +294,6 @@ function edd_store_discount( $details, $discount_id = null ) {
 	}
 }
 
-
 /**
  * Deletes a discount code.
  *
@@ -310,7 +308,6 @@ function edd_remove_discount( $discount_id = 0 ) {
 
 	do_action( 'edd_post_delete_discount', $discount_id );
 }
-
 
 /**
  * Updates a discount's status from one status to another.
@@ -911,7 +908,6 @@ function edd_is_discount_valid( $code = '', $user = '', $set_error = true ) {
 	return apply_filters( 'edd_is_discount_valid', $return, $discount_id, $code, $user );
 }
 
-
 /**
  * Get Discount By Code
  *
@@ -928,7 +924,6 @@ function edd_get_discount_id_by_code( $code ) {
 	}
 	return false;
 }
-
 
 /**
  * Get Discounted Amount
