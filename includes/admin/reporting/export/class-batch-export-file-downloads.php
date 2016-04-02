@@ -106,7 +106,6 @@ class EDD_Batch_File_Downloads_Export extends EDD_Batch_Export {
 		}
 
 		return false;
-
 	}
 
 	/**
