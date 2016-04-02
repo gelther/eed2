@@ -24,7 +24,7 @@ php:
     true_false_casing: lower
     type_cast_casing: lower
     type_cast_inner_whitespace: no_space
-    # use_quotes: single_quotes
+    use_quotes: single_quotes
     variable_array_index_whitespace: whitespace
     # whitespace_after_control_structure: whitespace
     # whitespace_after_doc_asterisk: single_space
