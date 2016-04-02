@@ -140,6 +140,7 @@ class EDD_Cache_Helper {
 	function w3tc_suspend_cache_addition_post() {
 		wp_suspend_cache_addition();
 	}
+
 }
 
 new EDD_Cache_Helper();
