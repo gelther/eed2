@@ -1305,8 +1305,7 @@ function edd_radio_callback( $args ) {
 
 		if ( isset( $edd_options[ $args['id'] ] ) && $edd_options[ $args['id'] ] == $key ) {
 			$checked = true;
-		}
-		elseif ( isset( $args['std'] ) && $args['std'] == $key && ! isset( $edd_options[ $args['id'] ] ) ) {
+		} elseif ( isset( $args['std'] ) && $args['std'] == $key && ! isset( $edd_options[ $args['id'] ] ) ) {
 			$checked = true;
 		}
 
@@ -1333,8 +1332,7 @@ function edd_gateways_callback( $args ) {
 	foreach ( $args['options'] as $key => $option ) :
 		if ( isset( $edd_options['gateways'][ $key ] ) ) {
 			$enabled = '1';
-		}
-		else {
+		} else {
 			$enabled = null;
 		}
 
