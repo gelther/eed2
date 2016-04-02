@@ -119,7 +119,6 @@ class EDD_Cache_Helper {
 				<?php
 			}
 		}
-
 	}
 
 	/**
