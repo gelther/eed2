@@ -91,7 +91,7 @@ function edd_admin_footer_for_thickbox() {
 			<div class="wrap" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
 				<p><?php echo sprintf( __( 'Use the form below to insert the short code for purchasing a %s', 'easy-digital-downloads' ), edd_get_label_singular() ); ?></p>
 				<div>
-					<?php echo EDD()->html->product_dropdown( array( 'chosen' => true )); ?>
+					<?php echo EDD()->html->product_dropdown( array( 'chosen' => true ) ); ?>
 				</div>
 				<?php if( edd_shop_supports_buy_now() ) : ?>
 					<div>
@@ -118,7 +118,7 @@ function edd_admin_footer_for_thickbox() {
 				if( $colors ) { ?>
 				<div id="edd-color-choice" style="display: none;">
 					<select id="select-edd-color" style="clear: both; display: block; margin-bottom: 1em;">
-						<option value=""><?php _e('Choose a button color', 'easy-digital-downloads' ); ?></option>
+						<option value=""><?php _e( 'Choose a button color', 'easy-digital-downloads' ); ?></option>
 						<?php
 							foreach ( $colors as $key => $color ) {
 								echo '<option value="' . str_replace( ' ', '_', $key ) . '">' . $color['label'] . '</option>';
