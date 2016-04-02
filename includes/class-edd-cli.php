@@ -35,7 +35,6 @@ class EDD_CLI extends WP_CLI_Command {
 		$this->api = new EDD_API;
 	}
 
-
 	/**
 	 * Get EDD details
 	 *
@@ -79,7 +78,6 @@ class EDD_CLI extends WP_CLI_Command {
 		}
 	}
 
-
 	/**
 	 * Get stats for your EDD site
 	 *
@@ -118,7 +116,6 @@ class EDD_CLI extends WP_CLI_Command {
 		WP_CLI::line( sprintf( __( 'Earnings: %s', 'easy-digital-downloads' ), $earnings ) );
 		WP_CLI::line( sprintf( __( 'Sales: %s', 'easy-digital-downloads' ), $sales ) );
 	}
-
 
 	/**
 	 * Get the products currently posted on your EDD site
@@ -221,7 +218,6 @@ class EDD_CLI extends WP_CLI_Command {
 			WP_CLI::line( '' );
 		}
 	}
-
 
 	/**
 	 * Get the customers currently on your EDD site. Can also be used to create customers records
@@ -334,7 +330,6 @@ class EDD_CLI extends WP_CLI_Command {
 		}
 	}
 
-
 	/**
 	 * Get the recent sales for your EDD site
 	 *
@@ -385,7 +380,6 @@ class EDD_CLI extends WP_CLI_Command {
 			WP_CLI::line( '' );
 		}
 	}
-
 
 	/**
 	 * Get discount details for on your EDD site
@@ -448,7 +442,6 @@ class EDD_CLI extends WP_CLI_Command {
 			WP_CLI::line( '' );
 		}
 	}
-
 
 	/**
 	 * Create sample purchase data for your EDD site
@@ -643,4 +636,5 @@ class EDD_CLI extends WP_CLI_Command {
 		WP_CLI::success( sprintf( __( 'Created %s payments', 'easy-digital-downloads' ), $number ) );
 		return;
 	}
+
 }
