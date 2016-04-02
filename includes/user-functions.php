@@ -418,7 +418,6 @@ function edd_add_past_purchases_to_new_user( $user_id ) {
 			edd_update_payment_meta( $payment->ID, '_edd_payment_user_id', $user_id );
 		}
 	}
-
 }
 add_action( 'user_register', 'edd_add_past_purchases_to_new_user', 10, 1 );
 
@@ -516,7 +515,6 @@ function edd_new_user_notification( $user_id = 0, $user_data = array() ) {
 	$emails->__set( 'heading', $user_heading );
 
 	$emails->send( $user_data['user_email'], $user_subject, $user_message );
-
 }
 add_action( 'edd_insert_user', 'edd_new_user_notification', 10, 2 );
 
@@ -586,7 +584,6 @@ function edd_user_pending_verification( $user_id = 0 ) {
 	$pending = get_user_meta( $user_id, '_edd_pending_verification', true );
 
 	return (bool) apply_filters( 'edd_user_pending_verification', ! empty( $pending ), $user_id );
-
 }
 
 /**
@@ -611,7 +608,6 @@ function edd_get_user_verification_url( $user_id = 0 ) {
 	$url   = add_query_arg( 'token', $token, $base_url );
 
 	return apply_filters( 'edd_get_user_verification_url', $url, $user_id );
-
 }
 
 /**
@@ -631,7 +627,6 @@ function edd_get_user_verification_request_url( $user_id = 0 ) {
 	) ), 'edd-request-verification' );
 
 	return apply_filters( 'edd_get_user_verification_request_url', $url, $user_id );
-
 }
 
 /**
@@ -679,7 +674,6 @@ function edd_send_user_verification_email( $user_id = 0 ) {
 	$emails->__set( 'heading', $heading );
 
 	$emails->send( $user_data->user_email, $subject, $message );
-
 }
 
 /**
@@ -760,7 +754,6 @@ function edd_get_user_verification_token( $url = '' ) {
 	$token = md5( $parts['path'] . '?' . $parts['query'] );
 
 	return $token;
-
 }
 
 /**
@@ -829,7 +822,6 @@ function edd_process_user_verification_request() {
 
 	wp_safe_redirect( $redirect );
 	exit;
-
 }
 add_action( 'edd_send_verification_email', 'edd_process_user_verification_request' );
 
@@ -875,7 +867,6 @@ function edd_process_user_account_verification() {
 
 	wp_safe_redirect( $redirect );
 	exit;
-
 }
 add_action( 'edd_verify_user', 'edd_process_user_account_verification' );
 
