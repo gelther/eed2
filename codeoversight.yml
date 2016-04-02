@@ -22,7 +22,7 @@ php:
     static_array_index_whitespace: no_space
     string_operator_whitespace: whitespace
     true_false_casing: lower
-    # type_cast_casing: lower
+    type_cast_casing: lower
     # type_cast_inner_whitespace: no_space
     # use_quotes: single_quotes
     variable_array_index_whitespace: whitespace
