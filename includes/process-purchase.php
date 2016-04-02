@@ -458,8 +458,7 @@ function edd_purchase_form_validate_new_user() {
 				// Invalid username
 				if ( is_multisite() ) {
 					edd_set_error( 'username_invalid', __( 'Invalid username. Only lowercase letters (a-z) and numbers are allowed', 'easy-digital-downloads' ) );
-				}
-				else {
+				} else {
 					edd_set_error( 'username_invalid', __( 'Invalid username', 'easy-digital-downloads' ) );
 				}
 			} else {
