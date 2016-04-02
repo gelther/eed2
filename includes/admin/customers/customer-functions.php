@@ -19,7 +19,6 @@ function edd_register_default_customer_views( $views ) {
 	);
 
 	return array_merge( $views, $default_views );
-
 }
 add_filter( 'edd_customer_views', 'edd_register_default_customer_views', 1, 1 );
 
@@ -72,7 +71,6 @@ function edd_maybe_remove_adminbar_profile_link() {
 		$wp_admin_bar->remove_menu( 'edit-profile', 'user-actions' );
 
 	}
-
 }
 add_action( 'wp_before_admin_bar_render', 'edd_maybe_remove_adminbar_profile_link' );
 
@@ -107,6 +105,5 @@ function edd_maybe_remove_menu_profile_links() {
 		remove_submenu_page( 'users.php', 'profile.php' );
 
 	}
-
 }
 add_action( 'admin_init', 'edd_maybe_remove_menu_profile_links' );
