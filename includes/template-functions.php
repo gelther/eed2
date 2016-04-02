@@ -742,7 +742,6 @@ function edd_microdata_wrapper_open( $query ) {
 		$microdata_open = true;
 		echo '<span itemscope itemtype="http://schema.org/Product">';
 	}
-
 }
 add_action( 'loop_start', 'edd_microdata_wrapper_open', 10 );
 
