@@ -98,7 +98,6 @@ class EDD_CLI extends WP_CLI_Command {
 	 * wp edd stats --date=last_year --product=15
 	 */
 	public function stats( $args, $assoc_args ) {
-
 		$stats      = new EDD_Payment_Stats;
 		$date       = isset( $assoc_args ) && array_key_exists( 'date', $assoc_args )      ? $assoc_args['date']      : false;
 		$start_date = isset( $assoc_args ) && array_key_exists( 'startdate', $assoc_args ) ? $assoc_args['startdate'] : false;
@@ -135,7 +134,6 @@ class EDD_CLI extends WP_CLI_Command {
 	 * wp edd products --id=103
 	 */
 	public function products( $args, $assoc_args ) {
-
 		$product_id = isset( $assoc_args ) && array_key_exists( 'id', $assoc_args ) ? absint( $assoc_args['id'] ) : false;
 		$products   = $this->api->get_products( $product_id );
 
@@ -246,7 +244,6 @@ class EDD_CLI extends WP_CLI_Command {
 	 * wp edd customers --create=1000
 	 */
 	public function customers( $args, $assoc_args ) {
-
 		$customer_id = isset( $assoc_args ) && array_key_exists( 'id', $assoc_args )      ? absint( $assoc_args['id'] ) : false;
 		$email       = isset( $assoc_args ) && array_key_exists( 'email', $assoc_args )   ? $assoc_args['email']        : false;
 		$name        = isset( $assoc_args ) && array_key_exists( 'name', $assoc_args )    ? $assoc_args['name']         : null;
@@ -352,7 +349,6 @@ class EDD_CLI extends WP_CLI_Command {
 	 * wp edd sales
 	 */
 	public function sales( $args, $assoc_args ) {
-
 		$sales = $this->api->get_recent_sales();
 
 		if ( empty( $sales ) ) {
@@ -406,7 +402,6 @@ class EDD_CLI extends WP_CLI_Command {
 	 * wp edd discounts --id=103
 	 */
 	public function discounts( $args, $assoc_args ) {
-
 		$discount_id = isset( $assoc_args ) && array_key_exists( 'id', $assoc_args ) ? absint( $assoc_args['id'] ) : false;
 
 		$discounts = $this->api->get_discounts( $discount_id );
@@ -474,7 +469,6 @@ class EDD_CLI extends WP_CLI_Command {
 	 * wp edd payments create --number=10 --id=103
 	 */
 	public function payments( $args, $assoc_args ) {
-
 		$error = false;
 
 		// At some point we'll likely add another action for payments
