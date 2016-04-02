@@ -106,7 +106,6 @@ class EDD_Payment_History_Table extends WP_List_Table {
 	 * @see WP_List_Table::__construct()
 	 */
 	public function __construct() {
-
 		global $status, $page;
 
 		// Set parent defaults
@@ -188,7 +187,6 @@ class EDD_Payment_History_Table extends WP_List_Table {
 	 * @return array $views All the views available
 	 */
 	public function get_views() {
-
 		$current         = isset( $_GET['status'] ) ? $_GET['status'] : '';
 		$total_count     = '&nbsp;<span class="count">(' . $this->total_count . ')</span>';
 		$complete_count  = '&nbsp;<span class="count">(' . $this->complete_count . ')</span>';
@@ -307,7 +305,6 @@ class EDD_Payment_History_Table extends WP_List_Table {
 	 * @return string Data shown in the Email column
 	 */
 	public function column_email( $payment ) {
-
 		$row_actions = array();
 
 		$email = edd_get_payment_user_email( $payment->ID );
@@ -366,7 +363,6 @@ class EDD_Payment_History_Table extends WP_List_Table {
 	 * @return string Data shown in the User column
 	 */
 	public function column_customer( $payment ) {
-
 		$customer_id = edd_get_payment_customer_id( $payment->ID );
 
 		if ( ! empty( $customer_id ) ) {
@@ -478,7 +474,6 @@ class EDD_Payment_History_Table extends WP_List_Table {
 	 * @return void
 	 */
 	public function get_payment_counts() {
-
 		global $wp_query;
 
 		$args = array();
@@ -525,7 +520,6 @@ class EDD_Payment_History_Table extends WP_List_Table {
 	 * @return array $payment_data Array of all the data for the payments
 	 */
 	public function payments_data() {
-
 		$per_page   = $this->per_page;
 		$orderby    = isset( $_GET['orderby'] )     ? urldecode( $_GET['orderby'] )              : 'ID';
 		$order      = isset( $_GET['order'] )       ? $_GET['order']                             : 'DESC';
@@ -586,7 +580,6 @@ class EDD_Payment_History_Table extends WP_List_Table {
 	 * @return void
 	 */
 	public function prepare_items() {
-
 		wp_reset_vars( array( 'action', 'payment', 'orderby', 'order', 's' ) );
 
 		$columns  = $this->get_columns();
