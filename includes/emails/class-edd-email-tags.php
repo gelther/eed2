@@ -107,7 +107,6 @@ class EDD_Email_Template_Tags {
 	 * @return string Content with email tags filtered out.
 	 */
 	public function do_tags( $content, $payment_id ) {
-
 		// Check if there is atleast one tag added
 		if ( empty( $this->tags ) || ! is_array( $this->tags ) ) {
 			return $content;
@@ -132,7 +131,6 @@ class EDD_Email_Template_Tags {
 	 * @return mixed
 	 */
 	public function do_tag( $m ) {
-
 		// Get tag
 		$tag = $m[1];
 
@@ -235,7 +233,6 @@ function edd_get_emails_tags_list() {
  * @return string Content with email tags filtered out.
  */
 function edd_do_email_tags( $content, $payment_id ) {
-
 	// Replace all tags
 	$content = EDD()->email_tags->do_tags( $content, $payment_id );
 
@@ -262,7 +259,6 @@ add_action( 'init', 'edd_load_email_tags', -999 );
  * @since 1.9
  */
 function edd_setup_email_tags() {
-
 	// Setup default tags array
 	$email_tags = array(
 		array(
@@ -710,7 +706,6 @@ function edd_email_tag_user_email( $payment_id ) {
  * @return string billing_address
  */
 function edd_email_tag_billing_address( $payment_id ) {
-
 	$user_info    = edd_get_payment_meta_user_info( $payment_id );
 	$user_address = ! empty( $user_info['address'] ) ? $user_info['address'] : array( 'line1' => '', 'line2' => '', 'city' => '', 'country' => '', 'state' => '', 'zip' => '' );
 
