@@ -206,7 +206,6 @@ function edd_register_settings() {
 
 	// Creates our settings in the options table
 	register_setting( 'edd_settings', 'edd_settings', 'edd_settings_sanitize' );
-
 }
 add_action( 'admin_init', 'edd_register_settings' );
 
