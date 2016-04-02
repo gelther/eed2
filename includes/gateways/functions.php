@@ -201,7 +201,6 @@ function edd_shop_supports_buy_now() {
  * @return mixed|void
  */
 function edd_build_straight_to_gateway_data( $download_id = 0, $options = array(), $quantity = 1 ) {
-
 	$price_options = array();
 
 	if ( empty( $options ) || ! edd_has_variable_prices( $download_id ) ) {
@@ -301,7 +300,6 @@ function edd_build_straight_to_gateway_data( $download_id = 0, $options = array(
  * @return void
 */
 function edd_send_to_gateway( $gateway, $payment_data ) {
-
 	$payment_data['gateway_nonce'] = wp_create_nonce( 'edd-gateway' );
 
 	// $gateway must match the ID used when registering the gateway
@@ -395,7 +393,6 @@ function edd_record_gateway_error( $title = '', $message = '', $parent = 0 ) {
  * @return int
  */
 function edd_count_sales_by_gateway( $gateway_id = 'paypal', $status = 'publish' ) {
-
 	$ret  = 0;
 	$args = array(
 		'meta_key'    => '_edd_payment_gateway',
