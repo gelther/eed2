@@ -153,7 +153,6 @@ add_action( 'wp_enqueue_scripts', 'edd_register_styles' );
  * @return void
  */
 function edd_load_admin_scripts( $hook ) {
-
 	if ( ! apply_filters( 'edd_load_admin_scripts', edd_is_admin_page(), $hook ) ) {
 		return;
 	}
@@ -335,7 +334,6 @@ add_action( 'admin_head', 'edd_admin_downloads_icon' );
  * @return void
  */
 function edd_load_head_styles() {
-
 	global $post;
 
 	if ( edd_get_option( 'disable_styles', false ) || ! is_object( $post ) ) {
