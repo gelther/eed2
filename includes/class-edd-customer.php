@@ -95,7 +95,6 @@ class EDD_Customer {
 	 * @since 2.3
 	 */
 	public function __construct( $_id_or_email = false, $by_user_id = false ) {
-
 		$this->db = new EDD_DB_Customers;
 
 		if ( false === $_id_or_email || ( is_numeric( $_id_or_email ) && (int) $_id_or_email !== absint( $_id_or_email ) ) ) {
@@ -128,7 +127,6 @@ class EDD_Customer {
 	 * @return bool             If the setup was successful or not
 	 */
 	private function setup_customer( $customer ) {
-
 		if ( ! is_object( $customer ) ) {
 			return false;
 		}
@@ -164,7 +162,6 @@ class EDD_Customer {
 	 * @since 2.3
 	 */
 	public function __get( $key ) {
-
 		if ( method_exists( $this, 'get_' . $key ) ) {
 
 			return call_user_func( array( $this, 'get_' . $key ) );
@@ -185,7 +182,6 @@ class EDD_Customer {
 	 * @return mixed        False if not a valid creation, Customer ID if user is found or valid creation
 	 */
 	public function create( $data = array() ) {
-
 		if ( $this->id != 0 || empty( $data ) ) {
 			return false;
 		}
@@ -235,7 +231,6 @@ class EDD_Customer {
 	 * @return bool         If the update was successful or not
 	 */
 	public function update( $data = array() ) {
-
 		if ( empty( $data ) ) {
 			return false;
 		}
@@ -269,7 +264,6 @@ class EDD_Customer {
 	 * @return bool            If the attachment was successfuly
 	 */
 	public function attach_payment( $payment_id = 0, $update_stats = true ) {
-
 		if ( empty( $payment_id ) ) {
 			return false;
 		}
@@ -329,7 +323,6 @@ class EDD_Customer {
 	 * @return boolean             If the removal was successful
 	 */
 	public function remove_payment( $payment_id = 0, $update_stats = true ) {
-
 		if ( empty( $payment_id ) ) {
 			return false;
 		}
@@ -391,7 +384,6 @@ class EDD_Customer {
 	 * @return int            The purchase count
 	 */
 	public function increase_purchase_count( $count = 1 ) {
-
 		// Make sure it's numeric and not negative
 		if ( ! is_numeric( $count ) || $count != absint( $count ) ) {
 			return false;
@@ -418,7 +410,6 @@ class EDD_Customer {
 	 * @return mixed          If successful, the new count, otherwise false
 	 */
 	public function decrease_purchase_count( $count = 1 ) {
-
 		// Make sure it's numeric and not negative
 		if ( ! is_numeric( $count ) || $count != absint( $count ) ) {
 			return false;
@@ -449,7 +440,6 @@ class EDD_Customer {
 	 * @return mixed         If successful, the new value, otherwise false
 	 */
 	public function increase_value( $value = 0.00 ) {
-
 		$new_value = floatval( $this->purchase_value ) + $value;
 
 		do_action( 'edd_customer_pre_increase_value', $value, $this->id );
@@ -471,7 +461,6 @@ class EDD_Customer {
 	 * @return mixed         If successful, the new value, otherwise false
 	 */
 	public function decrease_value( $value = 0.00 ) {
-
 		$new_value = floatval( $this->purchase_value ) - $value;
 
 		if ( $new_value < 0 ) {
@@ -498,7 +487,6 @@ class EDD_Customer {
 	 * @return array           The notes requsted
 	 */
 	public function get_notes( $length = 20, $paged = 1 ) {
-
 		$length = is_numeric( $length ) ? $length : 20;
 		$offset = is_numeric( $paged ) && $paged != 1 ? ( ( absint( $paged ) - 1 ) * $length ) : 0;
 
@@ -518,7 +506,6 @@ class EDD_Customer {
 	 * @return int The number of notes for the customer
 	 */
 	public function get_notes_count() {
-
 		$all_notes   = $this->get_raw_notes();
 		$notes_array = array_reverse( array_filter( explode( "\n\n", $all_notes ) ) );
 
@@ -534,7 +521,6 @@ class EDD_Customer {
 	 * @return string|boolean The new note if added succesfully, false otherwise
 	 */
 	public function add_note( $note = '' ) {
-
 		$note = trim( $note );
 		if ( empty( $note ) ) {
 			return false;
@@ -572,7 +558,6 @@ class EDD_Customer {
 	 * @return string The Notes for the customer, non-parsed
 	 */
 	private function get_raw_notes() {
-
 		$all_notes = $this->db->get_column( 'notes', $this->id );
 
 		return (string) $all_notes;
@@ -587,7 +572,6 @@ class EDD_Customer {
 	 * @return array       The sanitized data, based off column defaults
 	 */
 	private function sanitize_columns( $data ) {
-
 		$columns        = $this->db->get_columns();
 		$default_values = $this->db->get_column_defaults();
 
