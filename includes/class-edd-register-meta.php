@@ -37,7 +37,6 @@ class EDD_Register_Meta {
 	 * @return $instance
 	 */
 	static public function instance() {
-
 		if ( ! self::$instance ) {
 			self::$instance = new EDD_Register_Meta();
 		}
@@ -114,7 +113,6 @@ class EDD_Register_Meta {
 	 * @return array         The sanitized value.
 	 */
 	public function sanitize_array( $value = array() ) {
-
 		if ( ! is_array( $value ) ) {
 
 			if ( is_object( $value ) ) {
@@ -206,7 +204,6 @@ class EDD_Register_Meta {
 	 * @return array $new New meta value with empty keys removed
 	 */
 	private function remove_blank_rows( $new ) {
-
 		if ( is_array( $new ) ) {
 			foreach ( $new as $key => $value ) {
 				if ( empty( $value['name'] ) && empty( $value['amount'] ) && empty( $value['file'] ) ) {
