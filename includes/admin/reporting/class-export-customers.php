@@ -169,4 +169,5 @@ class EDD_Customers_Export extends EDD_Export {
 
 		return $data;
 	}
+
 }
