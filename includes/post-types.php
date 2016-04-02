@@ -284,7 +284,6 @@ function edd_get_taxonomy_labels( $taxonomy = 'download_category' ) {
 	}
 
 	return apply_filters( 'edd_get_taxonomy_labels', $labels, $taxonomy );
-
 }
 
 /**
