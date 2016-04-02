@@ -662,7 +662,6 @@ class EDD_API {
 		return isset( $wp_query->query_vars['page'] ) ? $wp_query->query_vars['page'] : 1;
 	}
 
-
 	/**
 	 * Number of results to display per page
 	 *
@@ -1616,7 +1615,6 @@ class EDD_API {
 		return apply_filters( 'edd_api_output_format', $format );
 	}
 
-
 	/**
 	 * Log each API request, if enabled
 	 *
@@ -1667,7 +1665,6 @@ class EDD_API {
 
 		$edd_logs->insert_log( $log_data, $log_meta );
 	}
-
 
 	/**
 	 * Retrieve the output data
@@ -1912,7 +1909,6 @@ class EDD_API {
 	public function get_version() {
 		return self::VERSION;
 	}
-
 
 	/**
 	 * Generate and Save API key
