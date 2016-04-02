@@ -112,7 +112,6 @@ class EDD_Payments_Query extends EDD_Stats {
 	 * @return void
 	 */
 	public function init() {
-
 		add_action( 'edd_pre_get_payments', array( $this, 'date_filter_pre' ) );
 		add_action( 'edd_post_get_payments', array( $this, 'date_filter_post' ) );
 
@@ -140,7 +139,6 @@ class EDD_Payments_Query extends EDD_Stats {
 	 * @return object
 	 */
 	public function get_payments() {
-
 		do_action( 'edd_pre_get_payments', $this );
 
 		$query = new WP_Query( $this->args );
@@ -250,7 +248,6 @@ class EDD_Payments_Query extends EDD_Stats {
 	 * @return void
 	 */
 	public function per_page() {
-
 		if ( ! isset( $this->args['number'] ) ){
 			return;
 		}
@@ -332,7 +329,6 @@ class EDD_Payments_Query extends EDD_Stats {
 	 * @return void
 	 */
 	public function search() {
-
 		if ( ! isset( $this->args['s'] ) ) {
 			return;
 		}
@@ -493,7 +489,6 @@ class EDD_Payments_Query extends EDD_Stats {
 	 * @return void
 	 */
 	public function download() {
-
 		if ( empty( $this->args['download'] ) ) {
 			return;
 		}
