@@ -40,7 +40,7 @@ function edd_checkout_form() {
 					do_action( 'edd_checkout_form_top' );
 
 					if ( edd_show_gateways() ) {
-						do_action( 'edd_payment_mode_select'  );
+						do_action( 'edd_payment_mode_select' );
 					} else {
 						do_action( 'edd_purchase_form' );
 					}
@@ -266,11 +266,11 @@ function edd_get_cc_form() {
 			</label>
 			<span class="edd-description"><?php _e( 'The date your credit card expires, typically on the front of the card.', 'easy-digital-downloads' ); ?></span>
 			<select id="card_exp_month" name="card_exp_month" class="card-expiry-month edd-select edd-select-small required">
-				<?php for( $i = 1; $i <= 12; $i++ ) { echo '<option value="' . $i . '">' . sprintf ('%02d', $i ) . '</option>'; } ?>
+				<?php for( $i = 1; $i <= 12; $i++ ) { echo '<option value="' . $i . '">' . sprintf ( '%02d', $i ) . '</option>'; } ?>
 			</select>
 			<span class="exp-divider"> / </span>
 			<select id="card_exp_year" name="card_exp_year" class="card-expiry-year edd-select edd-select-small required">
-				<?php for( $i = date('Y'); $i <= date('Y') + 30; $i++ ) { echo '<option value="' . $i . '">' . substr( $i, 2 ) . '</option>'; } ?>
+				<?php for( $i = date( 'Y' ); $i <= date( 'Y' ) + 30; $i++ ) { echo '<option value="' . $i . '">' . substr( $i, 2 ) . '</option>'; } ?>
 			</select>
 		</p>
 		<?php do_action( 'edd_after_cc_expiration' ); ?>
@@ -457,11 +457,11 @@ function edd_get_register_fields() {
 			<p id="edd-login-account-wrap"><?php _e( 'Already have an account?', 'easy-digital-downloads' ); ?> <a href="<?php echo esc_url( add_query_arg( 'login', 1 ) ); ?>" class="edd_checkout_register_login" data-action="checkout_login"><?php _e( 'Login', 'easy-digital-downloads' ); ?></a></p>
 		<?php } ?>
 
-		<?php do_action('edd_register_fields_before'); ?>
+		<?php do_action( 'edd_register_fields_before' ); ?>
 
 		<fieldset id="edd_register_account_fields">
 			<span><legend><?php _e( 'Create an account', 'easy-digital-downloads' ); if( ! edd_no_guest_checkout() ) { echo ' ' . __( '(optional)', 'easy-digital-downloads' ); } ?></legend></span>
-			<?php do_action('edd_register_account_fields_before'); ?>
+			<?php do_action( 'edd_register_account_fields_before' ); ?>
 			<p id="edd-user-login-wrap">
 				<label for="edd_user_login">
 					<?php _e( 'Username', 'easy-digital-downloads' ); ?>
@@ -495,7 +495,7 @@ function edd_get_register_fields() {
 			<?php do_action( 'edd_register_account_fields_after' ); ?>
 		</fieldset>
 
-		<?php do_action('edd_register_fields_after'); ?>
+		<?php do_action( 'edd_register_fields_after' ); ?>
 
 		<input type="hidden" name="edd-purchase-var" value="needs-to-register"/>
 
@@ -528,12 +528,12 @@ function edd_get_login_fields() {
 			<?php if( $show_register_form == 'both' ) { ?>
 				<p id="edd-new-account-wrap">
 					<?php _e( 'Need to create an account?', 'easy-digital-downloads' ); ?>
-					<a href="<?php echo esc_url( remove_query_arg('login') ); ?>" class="edd_checkout_register_login" data-action="checkout_register">
+					<a href="<?php echo esc_url( remove_query_arg( 'login' ) ); ?>" class="edd_checkout_register_login" data-action="checkout_register">
 						<?php _e( 'Register', 'easy-digital-downloads' ); if( ! edd_no_guest_checkout() ) { echo ' ' . __( 'or checkout as a guest.', 'easy-digital-downloads' ); } ?>
 					</a>
 				</p>
 			<?php } ?>
-			<?php do_action('edd_checkout_login_fields_before'); ?>
+			<?php do_action( 'edd_checkout_login_fields_before' ); ?>
 			<p id="edd-user-login-wrap">
 				<label class="edd-label" for="edd-username">
 					<?php _e( 'Username', 'easy-digital-downloads' ); ?>
@@ -558,7 +558,7 @@ function edd_get_login_fields() {
 			<p id="edd-user-login-submit">
 				<input type="submit" class="edd-submit button <?php echo $color; ?>" name="edd_login_submit" value="<?php _e( 'Login', 'easy-digital-downloads' ); ?>"/>
 			</p>
-			<?php do_action('edd_checkout_login_fields_after'); ?>
+			<?php do_action( 'edd_checkout_login_fields_after' ); ?>
 		</fieldset><!--end #edd_login_fields-->
 	<?php
 	echo ob_get_clean();
@@ -577,7 +577,7 @@ add_action( 'edd_purchase_form_login_fields', 'edd_get_login_fields' );
 function edd_payment_mode_select() {
 	$gateways = edd_get_enabled_payment_gateways( true );
 	$page_URL = edd_get_current_page_url();
-	do_action('edd_payment_mode_top'); ?>
+	do_action( 'edd_payment_mode_top' ); ?>
 	<?php if( edd_is_ajax_disabled() ) { ?>
 	<form id="edd_payment_mode" action="<?php echo $page_URL; ?>" method="GET">
 	<?php } ?>
@@ -613,7 +613,7 @@ function edd_payment_mode_select() {
 	</form>
 	<?php } ?>
 	<div id="edd_purchase_form_wrap"></div><!-- the checkout fields are loaded into this-->
-	<?php do_action('edd_payment_mode_bottom');
+	<?php do_action( 'edd_payment_mode_bottom' );
 }
 add_action( 'edd_payment_mode_select', 'edd_payment_mode_select' );
 
