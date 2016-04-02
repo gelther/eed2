@@ -57,8 +57,7 @@ function edd_shopping_cart( $echo = false ) {
 
 	if ( $echo ) {
 		echo ob_get_clean();
-	}
-	else {
+	} else {
 		return ob_get_clean();
 	}
 }

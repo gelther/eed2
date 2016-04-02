@@ -88,8 +88,7 @@ class EDD_Payments_Query extends EDD_Stats {
 	public function __set( $query_var, $value ) {
 		if ( in_array( $query_var, array( 'meta_query', 'tax_query' ) ) ) {
 			$this->args[ $query_var ][] = $value;
-		}
-		else {
+		} else {
 			$this->args[ $query_var ] = $value;
 		}
 	}
@@ -254,8 +253,7 @@ class EDD_Payments_Query extends EDD_Stats {
 
 		if ( $this->args['number'] == -1 ) {
 			$this->__set( 'nopaging', true );
-		}
-		else {
+		} else {
 			$this->__set( 'posts_per_page', $this->args['number'] );
 		}
 

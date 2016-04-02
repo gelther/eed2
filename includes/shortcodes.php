@@ -488,11 +488,9 @@ function edd_downloads_query( $atts, $content = null ) {
 
 	if ( get_query_var( 'paged' ) ) {
 		$query['paged'] = get_query_var( 'paged' );
-	}
-	elseif ( get_query_var( 'page' ) ) {
+	} elseif ( get_query_var( 'page' ) ) {
 		$query['paged'] = get_query_var( 'page' );
-	}
-	else {
+	} else {
 		$query['paged'] = 1;
 	}
 

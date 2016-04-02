@@ -42,11 +42,9 @@ function edd_get_users_purchases( $user = 0, $number = 20, $pagination = false, 
 	if ( $pagination ) {
 		if ( get_query_var( 'paged' ) ) {
 			$paged = get_query_var( 'paged' );
-		}
-		elseif ( get_query_var( 'page' ) ) {
+		} elseif ( get_query_var( 'page' ) ) {
 			$paged = get_query_var( 'page' );
-		}
-		else {
+		} else {
 			$paged = 1;
 		}
 	}
