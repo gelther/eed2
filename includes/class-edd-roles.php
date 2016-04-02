@@ -222,7 +222,6 @@ class EDD_Roles {
 		}
 
 		return $caps;
-
 	}
 
 	/**
