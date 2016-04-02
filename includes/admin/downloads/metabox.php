@@ -97,7 +97,7 @@ function edd_download_meta_box_save( $post_id, $post ) {
 		return;
 	}
 
-	if ( ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) || ( defined( 'DOING_AJAX') && DOING_AJAX ) || isset( $_REQUEST['bulk_edit'] ) ) {
+	if ( ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) || ( defined( 'DOING_AJAX' ) && DOING_AJAX ) || isset( $_REQUEST['bulk_edit'] ) ) {
 		return;
 	}
 
@@ -451,7 +451,7 @@ function edd_render_price_row( $key, $args = array(), $post_id, $index ) {
 	<?php do_action( 'edd_download_price_table_row', $post_id, $key, $args ); ?>
 
 	<td>
-		<a href="#" class="edd_remove_repeatable" data-type="price" style="background: url(<?php echo admin_url('/images/xit.gif'); ?>) no-repeat;">&times;</a>
+		<a href="#" class="edd_remove_repeatable" data-type="price" style="background: url(<?php echo admin_url( '/images/xit.gif' ); ?>) no-repeat;">&times;</a>
 	</td>
 <?php
 }
@@ -531,7 +531,7 @@ function edd_render_products_field( $post_id ) {
 								?>
 							</td>
 							<td>
-								<a href="#" class="edd_remove_repeatable" data-type="file" style="background: url(<?php echo admin_url('/images/xit.gif'); ?>) no-repeat;">&times;</a>
+								<a href="#" class="edd_remove_repeatable" data-type="file" style="background: url(<?php echo admin_url( '/images/xit.gif' ); ?>) no-repeat;">&times;</a>
 							</td>
 							<?php do_action( 'edd_download_products_table_row', $post_id ); ?>
 						</tr>
@@ -555,7 +555,7 @@ function edd_render_products_field( $post_id ) {
 							?>
 						</td>
 						<td>
-							<a href="#" class="edd_remove_repeatable" data-type="file" style="background: url(<?php echo admin_url('/images/xit.gif'); ?>) no-repeat;">&times;</a>
+							<a href="#" class="edd_remove_repeatable" data-type="file" style="background: url(<?php echo admin_url( '/images/xit.gif' ); ?>) no-repeat;">&times;</a>
 						</td>
 						<?php do_action( 'edd_download_products_table_row', $post_id ); ?>
 					</tr>
@@ -733,7 +733,7 @@ function edd_render_file_row( $key = '', $args = array(), $post_id, $index ) {
 	<?php do_action( 'edd_download_file_table_row', $post_id, $key, $args ); ?>
 
 	<td>
-		<a href="#" class="edd_remove_repeatable" data-type="file" style="background: url(<?php echo admin_url('/images/xit.gif'); ?>) no-repeat;">&times;</a>
+		<a href="#" class="edd_remove_repeatable" data-type="file" style="background: url(<?php echo admin_url( '/images/xit.gif' ); ?>) no-repeat;">&times;</a>
 	</td>
 <?php
 }
@@ -993,5 +993,5 @@ function edd_render_stats_meta_box() {
 		<span><a href="<?php echo admin_url( 'edit.php?page=edd-reports&view=file_downloads&post_type=download&tab=logs&download=' . $post->ID ); ?>"><?php _e( 'View File Download Log', 'easy-digital-downloads' ); ?></a></span><br/>
 	</p>
 <?php
-	do_action('edd_stats_meta_box');
+	do_action( 'edd_stats_meta_box' );
 }
