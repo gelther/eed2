@@ -203,4 +203,5 @@ class EDD_Payments_Export extends EDD_Export {
 
 		return $data;
 	}
+
 }
