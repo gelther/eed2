@@ -112,7 +112,6 @@ function edd_is_ajax_disabled() {
 	return apply_filters( 'edd_is_ajax_disabled', $retval );
 }
 
-
 /**
  * Get AJAX URL
  *
@@ -229,8 +228,6 @@ function edd_ajax_add_to_cart() {
 }
 add_action( 'wp_ajax_edd_add_to_cart', 'edd_ajax_add_to_cart' );
 add_action( 'wp_ajax_nopriv_edd_add_to_cart', 'edd_ajax_add_to_cart' );
-
-
 
 /**
  * Gets the cart's subtotal via AJAX.
@@ -652,7 +649,6 @@ function edd_check_for_download_price_variations() {
 	edd_die();
 }
 add_action( 'wp_ajax_edd_check_for_download_price_variations', 'edd_check_for_download_price_variations' );
-
 
 /**
  * Searches for users via ajax and returns a list of results
