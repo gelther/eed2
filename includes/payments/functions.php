@@ -525,7 +525,7 @@ function edd_count_payments( $args = array() ) {
 
 	$cache_key = md5( $query );
 
-	$count = wp_cache_get( $cache_key, 'counts');
+	$count = wp_cache_get( $cache_key, 'counts' );
 	if ( false !== $count ) {
 		return $count;
 	}
@@ -757,7 +757,7 @@ function edd_get_sales_by_date( $day = null, $month_num = null, $year = null, $h
 		$args['hour'] = $hour;
 	}
 
-	$args = apply_filters( 'edd_get_sales_by_date_args', $args  );
+	$args = apply_filters( 'edd_get_sales_by_date_args', $args );
 
 	$key   = 'edd_stats_' . substr( md5( serialize( $args ) ), 0, 15 );
 	$count = get_transient( $key );
@@ -1330,7 +1330,7 @@ function edd_payment_subtotal( $payment_id = 0 ) {
  * @param int $payment_id Payment ID
  * @return float $subtotal Subtotal for payment (non formatted)
  */
-function edd_get_payment_subtotal( $payment_id = 0) {
+function edd_get_payment_subtotal( $payment_id = 0 ) {
 	$payment = new EDD_Payment( $payment_id );
 
 	return $payment->subtotal;
@@ -1705,7 +1705,7 @@ function edd_remove_payment_notes_in_comment_counts( $stats, $post_id ) {
 
 	$stats['total_comments'] = $total;
 	foreach ( $approved as $key ) {
-		if ( empty($stats[$key]) ) {
+		if ( empty( $stats[$key] ) ) {
 			$stats[$key] = 0;
 		}
 	}
