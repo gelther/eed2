@@ -183,7 +183,7 @@ add_action( 'edd_activate_discount', 'edd_activate_discount' );
  * @param array $data Discount code data
  * @uses edd_update_discount_status()
  * @return void
-*/
+ */
 function edd_deactivate_discount( $data ) {
 	if ( ! isset( $data['_wpnonce'] ) || ! wp_verify_nonce( $data['_wpnonce'], 'edd_discount_nonce' ) ) {
 		wp_die( __( 'Trying to cheat or something?', 'easy-digital-downloads' ), __( 'Error', 'easy-digital-downloads' ), array( 'response' => 403 ) );
