@@ -100,11 +100,11 @@ function edd_get_cart_item_template( $cart_key, $item, $ajax = false ) {
 	$item     = str_replace( '{item_id}', absint( $id ), $item );
 	$item     = str_replace( '{item_quantity}', absint( $quantity ), $item );
 	$item     = str_replace( '{remove_url}', $remove_url, $item );
-  	$subtotal = '';
-  	if ( $ajax ){
-   	 $subtotal = edd_currency_filter( edd_format_amount( edd_get_cart_subtotal() ) ) ;
-  	}
- 	$item = str_replace( '{subtotal}', $subtotal, $item );
+	$subtotal = '';
+	if ( $ajax ){
+	$subtotal = edd_currency_filter( edd_format_amount( edd_get_cart_subtotal() ) ) ;
+	}
+	$item = str_replace( '{subtotal}', $subtotal, $item );
 
 	return apply_filters( 'edd_cart_item', $item, $id );
 }
@@ -130,7 +130,7 @@ function edd_empty_checkout_cart() {
 }
 add_action( 'edd_cart_empty', 'edd_empty_checkout_cart' );
 
-/*
+/**
  * Calculate the number of columns in the cart table dynamically.
  *
  * @since 1.8

@@ -1086,7 +1086,7 @@ function edd_get_file_download_method() {
  * @param bool $post_ids True for array of post ids, false if array of posts
  */
 function edd_get_random_download( $post_ids = true ) {
-	 edd_get_random_downloads( 1, $post_ids );
+	edd_get_random_downloads( 1, $post_ids );
 }
 
 /**
@@ -1131,7 +1131,7 @@ function edd_get_download_token( $url = '' ) {
 	$hash   = apply_filters( 'edd_get_url_token_algorithm', 'sha256' );
 	$secret = apply_filters( 'edd_get_url_token_secret', hash( $hash, wp_salt() ) );
 
-	/*
+	/**
 	 * Add additional args to the URL for generating the token.
 	 * Allows for restricting access to IP and/or user agent.
 	 */
@@ -1165,7 +1165,7 @@ function edd_get_download_token( $url = '' ) {
 
 	}
 
-	/*
+	/**
 	 * Filter to modify arguments and allow custom options to be tested.
 	 * Be sure to rawurlencode any custom options for consistent results.
 	 */

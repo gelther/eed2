@@ -140,7 +140,7 @@ function edd_show_upgrade_notices() {
 			);
 		}
 
-		/*
+		/**
 		 *  NOTICE:
 		 *
 		 *  When adding new upgrade notices, please be sure to put the action into the upgrades array during install:

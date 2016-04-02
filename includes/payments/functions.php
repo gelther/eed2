@@ -838,7 +838,7 @@ function edd_get_total_earnings() {
 			$payments = edd_get_payments( $args );
 			if ( $payments ) {
 
-				/*
+				/**
 				 * If performing a purchase, we need to skip the very last payment in the database, since it calls
 				 * edd_increase_total_earnings() on completion, which results in duplicated earnings for the very
 				 * first purchase
@@ -1647,7 +1647,7 @@ add_filter( 'comments_clauses', 'edd_hide_payment_notes_pre_41', 10, 2 );
  * @return array $where
  */
 function edd_hide_payment_notes_from_feeds( $where, $wp_comment_query ) {
-    global $wpdb;
+	global $wpdb;
 
 	$where .= $wpdb->prepare( " AND comment_type != %s", 'edd_payment_note' );
 	return $where;
