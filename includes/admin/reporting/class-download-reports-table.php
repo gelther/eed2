@@ -143,7 +143,6 @@ class EDD_Download_Reports_Table extends WP_List_Table {
 		return isset( $_GET['paged'] ) ? absint( $_GET['paged'] ) : 1;
 	}
 
-
 	/**
 	 * Retrieve the category being viewed
 	 *
@@ -154,7 +153,6 @@ class EDD_Download_Reports_Table extends WP_List_Table {
 	public function get_category() {
 		return isset( $_GET['category'] ) ? absint( $_GET['category'] ) : 0;
 	}
-
 
 	/**
 	 * Retrieve the total number of downloads
@@ -184,7 +182,6 @@ class EDD_Download_Reports_Table extends WP_List_Table {
 		edd_report_views();
 	}
 
-
 	/**
 	 * Attaches the category filter to the log views
 	 *
@@ -197,7 +194,6 @@ class EDD_Download_Reports_Table extends WP_List_Table {
 			echo EDD()->html->category_dropdown( 'category', $this->get_category() );
 		}
 	}
-
 
 	/**
 	 * Performs the products query
@@ -279,7 +275,6 @@ class EDD_Download_Reports_Table extends WP_List_Table {
 		return $reports_data;
 	}
 
-
 	/**
 	 * Setup the final data for the table
 	 *
@@ -314,4 +309,5 @@ class EDD_Download_Reports_Table extends WP_List_Table {
 			)
 		);
 	}
+
 }
