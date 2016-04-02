@@ -30,7 +30,6 @@ class EDD_HTML_Elements {
 	 * @return string $output Product dropdown
 	 */
 	public function product_dropdown( $args = array() ) {
-
 		$defaults = array(
 			'name'        => 'products',
 			'id'          => 'products',
@@ -121,7 +120,6 @@ class EDD_HTML_Elements {
 	 * @return string $output Customer dropdown
 	 */
 	public function customer_dropdown( $args = array() ) {
-
 		$defaults = array(
 			'name'        => 'customers',
 			'id'          => 'customers',
@@ -509,7 +507,6 @@ class EDD_HTML_Elements {
 	 * @return string Datepicker field
 	 */
 	public function date_field( $args = array() ) {
-
 		if ( empty( $args['class'] ) ) {
 			$args['class'] = 'edd_datepicker';
 		} elseif ( ! strpos( $args['class'], 'edd_datepicker' ) ) {
@@ -569,7 +566,6 @@ class EDD_HTML_Elements {
 	 * @return string text field with ajax search
 	 */
 	public function ajax_user_search( $args = array() ) {
-
 		$defaults = array(
 			'name'         => 'user_id',
 			'value'        => null,
