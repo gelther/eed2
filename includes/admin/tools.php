@@ -55,7 +55,6 @@ function edd_tools_page() {
 <?php
 }
 
-
 /**
  * Retrieve tools tabs
  *
@@ -71,7 +70,6 @@ function edd_get_tools_tabs() {
 
 	return apply_filters( 'edd_tools_tabs', $tabs );
 }
-
 
 /**
  * Display the ban emails tab
@@ -108,7 +106,6 @@ function edd_tools_banned_emails_display() {
 	do_action( 'edd_tools_after' );
 }
 add_action( 'edd_tools_tab_general', 'edd_tools_banned_emails_display' );
-
 
 /**
  * Display the recount stats
@@ -242,7 +239,6 @@ function edd_tools_api_keys_display() {
 }
 add_action( 'edd_tools_tab_api_keys', 'edd_tools_api_keys_display' );
 
-
 /**
  * Save banned emails
  *
@@ -302,7 +298,6 @@ function edd_tools_clear_upgrade_notice() {
 }
 add_action( 'edd_clear_doing_upgrade', 'edd_tools_clear_upgrade_notice' );
 
-
 /**
  * Display the tools import/export tab
  *
@@ -352,7 +347,6 @@ function edd_tools_import_export_display() {
 }
 add_action( 'edd_tools_tab_import_export', 'edd_tools_import_export_display' );
 
-
 /**
  * Process a settings export that generates a .json file of the shop settings
  *
@@ -390,7 +384,6 @@ function edd_tools_import_export_process_export() {
 	exit;
 }
 add_action( 'edd_export_settings', 'edd_tools_import_export_process_export' );
-
 
 /**
  * Process a settings import from a json file
@@ -430,7 +423,6 @@ function edd_tools_import_export_process_import() {
 }
 add_action( 'edd_import_settings', 'edd_tools_import_export_process_import' );
 
-
 /**
  * Display the system info tab
  *
@@ -453,7 +445,6 @@ function edd_tools_sysinfo_display() {
 <?php
 }
 add_action( 'edd_tools_tab_system_info', 'edd_tools_sysinfo_display' );
-
 
 /**
  * Get system info
@@ -756,7 +747,6 @@ function edd_tools_sysinfo_get() {
 
 	return $return;
 }
-
 
 /**
  * Generates a System Info download file
