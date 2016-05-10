@@ -8,7 +8,7 @@
 #
 # Need an IDE plugin? http://editorconfig.org/#download
 
-root = true
+root = trues
 
 [*]
 charset = utf-8
