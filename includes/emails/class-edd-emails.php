@@ -204,7 +204,7 @@ class EDD_Emails {
 	 * Build the final email
 	 *
 	 * @since 2.1
-	 * @param string $message
+	 * @param  string $message
 	 *
 	 * @return string
 	 */
@@ -262,10 +262,10 @@ class EDD_Emails {
 
 	/**
 	 * Send the email
-	 * @param  string  $to               The To address to send to.
-	 * @param  string  $subject          The subject line of the email to send.
-	 * @param  string  $message          The body of the email to send.
-	 * @param  string|array $attachments Attachments to the email in a format supported by wp_mail()
+	 * @param string       $to          The To address to send to.
+	 * @param string       $subject     The subject line of the email to send.
+	 * @param string       $message     The body of the email to send.
+	 * @param string|array $attachments Attachments to the email in a format supported by wp_mail()
 	 * @since 2.1
 	 */
 	public function send( $to, $subject, $message, $attachments = '' ) {
