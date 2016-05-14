@@ -347,7 +347,7 @@ class EDD_Product_Details_Widget extends WP_Widget {
 		<?php $download_count = wp_count_posts( 'download' ); ?>
 		<?php if ( $download_count->publish < 1000 ) : ?>
 			<?php
-			$args = array(
+			$args      = array(
 				'post_type'      => 'download',
 				'posts_per_page' => -1,
 				'post_status'    => 'publish',
