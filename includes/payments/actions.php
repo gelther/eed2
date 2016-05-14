@@ -19,9 +19,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * Triggered by the edd_update_payment_status() function.
  *
  * @since 1.0.8.3
- * @param int $payment_id the ID number of the payment
- * @param string $new_status the status of the payment, probably "publish"
- * @param string $old_status the status of the payment prior to being marked as "complete", probably "pending"
+ * @param  int    $payment_id the ID number of the payment
+ * @param  string $new_status the status of the payment, probably "publish"
+ * @param  string $old_status the status of the payment prior to being marked as "complete", probably "pending"
  * @return void
  */
 function edd_complete_purchase( $payment_id, $new_status, $old_status ) {
@@ -124,9 +124,9 @@ add_action( 'edd_update_payment_status', 'edd_complete_purchase', 100, 3 );
  * Record payment status change
  *
  * @since 1.4.3
- * @param int $payment_id the ID number of the payment
- * @param string $new_status the status of the payment, probably "publish"
- * @param string $old_status the status of the payment prior to being marked as "complete", probably "pending"
+ * @param  int    $payment_id the ID number of the payment
+ * @param  string $new_status the status of the payment, probably "publish"
+ * @param  string $old_status the status of the payment prior to being marked as "complete", probably "pending"
  * @return void
  */
 function edd_record_status_change( $payment_id, $new_status, $old_status ) {
@@ -145,7 +145,7 @@ add_action( 'edd_update_payment_status', 'edd_record_status_change', 100, 3 );
  * Reduces earnings and sales stats when a purchase is refunded
  *
  * @since 1.8.2
- * @param $data Arguments passed
+ * @param       $data Arguments passed
  * @return void
  */
 function edd_undo_purchase_on_refund( $payment_id, $new_status, $old_status ) {
@@ -182,7 +182,7 @@ add_action( 'edd_update_payment_status', 'edd_clear_user_history_cache', 10, 3 )
  * This is so that payments can be queried by their totals
  *
  * @since 1.2
- * @param array $data Arguments passed
+ * @param  array $data Arguments passed
  * @return void
  */
 function edd_update_old_payments_with_totals( $data ) {
@@ -249,11 +249,11 @@ add_action( 'edd_weekly_scheduled_events', 'edd_mark_abandoned_orders' );
  * Listens to the updated_postmeta hook for our backwards compatible payment_meta updates, and runs through them
  *
  * @since  2.3
- * @param  int $meta_id    The Meta ID that was updated
- * @param  int $object_id  The Object ID that was updated (post ID)
- * @param  string $meta_key   The Meta key that was updated
+ * @param  int              $meta_id    The Meta ID that was updated
+ * @param  int              $object_id  The Object ID that was updated (post ID)
+ * @param  string           $meta_key   The Meta key that was updated
  * @param  string|int|float $meta_value The Value being updated
- * @return bool|int             If successful the number of rows updated, if it fails, false
+ * @return bool|int                     If successful the number of rows updated, if it fails, false
  */
 function edd_update_payment_backwards_compat( $meta_id, $object_id, $meta_key, $meta_value ) {
 	$meta_keys = array( '_edd_payment_meta', '_edd_payment_tax' );
