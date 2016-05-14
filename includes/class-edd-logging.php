@@ -44,7 +44,7 @@ class EDD_Logging {
 	public function register_post_type() {
 		/* Logs post type */
 		$log_args = array(
-			'labels'			  => array( 'name' => __( 'Logs', 'easy-digital-downloads' ) ),
+			'labels'              => array( 'name' => __( 'Logs', 'easy-digital-downloads' ) ),
 			'public'              => false,
 			'exclude_from_search' => true,
 			'publicly_queryable'  => false,
@@ -79,7 +79,7 @@ class EDD_Logging {
 	 *
 	 * @access public
 	 * @since 1.3.1
-	 * @return  array $terms
+	 * @return array $terms
 	 */
 	public function log_types() {
 		$terms = array(
@@ -97,8 +97,8 @@ class EDD_Logging {
 	 * @access public
 	 * @since 1.3.1
 	 * @uses EDD_Logging::log_types()
-	 * @param string $type Log type
-	 * @return bool Whether log type is valid
+	 * @param  string $type Log type
+	 * @return bool         Whether log type is valid
 	 */
 	function valid_type( $type ) {
 		return in_array( $type, $this->log_types() );
@@ -113,11 +113,11 @@ class EDD_Logging {
 	 * @access public
 	 * @since 1.3.1
 	 * @uses EDD_Logging::insert_log()
-	 * @param string $title Log entry title
-	 * @param string $message Log entry message
-	 * @param int $parent Log entry parent
-	 * @param string $type Log type (default: null)
-	 * @return int Log ID
+	 * @param  string $title   Log entry title
+	 * @param  string $message Log entry message
+	 * @param  int    $parent  Log entry parent
+	 * @param  string $type    Log type (default: null)
+	 * @return int             Log ID
 	 */
 	public function add( $title = '', $message = '', $parent = 0, $type = null ) {
 		$log_data = array(
@@ -136,10 +136,10 @@ class EDD_Logging {
 	 * @access public
 	 * @since 1.3.1
 	 * @uses EDD_Logging::get_connected_logs()
-	 * @param int $object_id (default: 0)
-	 * @param string $type Log type (default: null)
-	 * @param int $paged Page number (default: null)
-	 * @return array Array of the connected logs
+	 * @param  int    $object_id (default: 0)
+	 * @param  string $type      Log type (default: null)
+	 * @param  int    $paged     Page number (default: null)
+	 * @return array             Array of the connected logs
 	 */
 	public function get_logs( $object_id = 0, $type = null, $paged = null ) {
 		return $this->get_connected_logs( array( 'post_parent' => $object_id, 'paged' => $paged, 'log_type' => $type ) );
@@ -151,9 +151,9 @@ class EDD_Logging {
 	 * @access public
 	 * @since 1.3.1
 	 * @uses EDD_Logging::valid_type()
-	 * @param array $log_data Log entry data
-	 * @param array $log_meta Log entry meta
-	 * @return int The ID of the newly created log item
+	 * @param  array $log_data Log entry data
+	 * @param  array $log_meta Log entry meta
+	 * @return int             The ID of the newly created log item
 	 */
 	function insert_log( $log_data = array(), $log_meta = array() ) {
 		$defaults = array(
@@ -193,9 +193,9 @@ class EDD_Logging {
 	 *
 	 * @access public
 	 * @since 1.3.1
-	 * @param array $log_data Log entry data
-	 * @param array $log_meta Log entry meta
-	 * @return bool True if successful, false otherwise
+	 * @param  array $log_data Log entry data
+	 * @param  array $log_meta Log entry meta
+	 * @return bool            True if successful, false otherwise
 	 */
 	public function update_log( $log_data = array(), $log_meta = array() ) {
 		do_action( 'edd_pre_update_log', $log_data, $log_meta );
@@ -229,8 +229,8 @@ class EDD_Logging {
 	 *
 	 * @access private
 	 * @since 1.3.1
-	 * @param array $args Query arguments
-	 * @return mixed array if logs were found, false otherwise
+	 * @param  array $args Query arguments
+	 * @return mixed       array if logs were found, false otherwise
 	 */
 	public function get_connected_logs( $args = array() ) {
 		$defaults = array(
@@ -268,11 +268,11 @@ class EDD_Logging {
 	 *
 	 * @access public
 	 * @since 1.3.1
-	 * @param int $object_id (default: 0)
-	 * @param string $type Log type (default: null)
-	 * @param array $meta_query Log meta query (default: null)
-	 * @param array $date_query Log data query (default: null) (since 1.9)
-	 * @return int Log count
+	 * @param  int    $object_id  (default: 0)
+	 * @param  string $type       Log type (default: null)
+	 * @param  array  $meta_query Log meta query (default: null)
+	 * @param  array  $date_query Log data query (default: null) (since 1.9)
+	 * @return int                Log count
 	 */
 	public function get_log_count( $object_id = 0, $type = null, $meta_query = null, $date_query = null ) {
 		global $pagenow, $typenow;
@@ -314,9 +314,9 @@ class EDD_Logging {
 	 * @access public
 	 * @since 1.3.1
 	 * @uses EDD_Logging::valid_type
-	 * @param int $object_id (default: 0)
-	 * @param string $type Log type (default: null)
-	 * @param array $meta_query Log meta query (default: null)
+	 * @param  int    $object_id  (default: 0)
+	 * @param  string $type       Log type (default: null)
+	 * @param  array  $meta_query Log meta query (default: null)
 	 * @return void
 	 */
 	public function delete_logs( $object_id = 0, $type = null, $meta_query = null ) {
