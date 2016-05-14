@@ -83,8 +83,8 @@ class EDD_Discount_Codes_Table extends WP_List_Table {
 	 * @access public
 	 * @since 1.4
 	 *
-	 * @param string $text Label for the search box
-	 * @param string $input_id ID of the search box
+	 * @param  string $text     Label for the search box
+	 * @param  string $input_id ID of the search box
 	 *
 	 * @return svoid
 	 */
@@ -191,10 +191,10 @@ class EDD_Discount_Codes_Table extends WP_List_Table {
 	 * @access public
 	 * @since 1.4
 	 *
-	 * @param array $item Contains all the data of the discount code
-	 * @param string $column_name The name of the column
+	 * @param  array  $item        Contains all the data of the discount code
+	 * @param  string $column_name The name of the column
 	 *
-	 * @return string Column Name
+	 * @return string              Column Name
 	 */
 	function column_default( $item, $column_name ) {
 		return $item[ $column_name ];
@@ -205,8 +205,8 @@ class EDD_Discount_Codes_Table extends WP_List_Table {
 	 *
 	 * @access public
 	 * @since 1.4
-	 * @param array $item Contains all the data of the discount code
-	 * @return string Data shown in the Name column
+	 * @param  array  $item Contains all the data of the discount code
+	 * @return string       Data shown in the Name column
 	 */
 	function column_name( $item ) {
 		$discount    = get_post( $item['ID'] );
@@ -232,8 +232,8 @@ class EDD_Discount_Codes_Table extends WP_List_Table {
 	 *
 	 * @access public
 	 * @since 1.4
-	 * @param array $item Contains all the data for the checkbox column
-	 * @return string Displays a checkbox
+	 * @param  array  $item Contains all the data for the checkbox column
+	 * @return string       Displays a checkbox
 	 */
 	function column_cb( $item ) {
 		return sprintf(
@@ -248,8 +248,8 @@ class EDD_Discount_Codes_Table extends WP_List_Table {
 	 *
 	 * @access public
 	 * @since 1.9.9
-	 * @param array $item Contains all the data for the checkbox column
-	 * @return string Displays the discount status
+	 * @param  array  $item Contains all the data for the checkbox column
+	 * @return string       Displays the discount status
 	 */
 	function column_status( $item ) {
 		switch ( $item['status'] ) {
