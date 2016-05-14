@@ -184,7 +184,7 @@ class EDD_API {
 	 * @access public
 	 * @since 1.5
 	 * @author Daniel J Griffiths
-	 * @param array $vars Query vars
+	 * @param  array    $vars Query vars
 	 * @return string[] $vars New query vars
 	 */
 	public function query_vars( $vars ) {
@@ -344,9 +344,9 @@ class EDD_API {
 	 * @global object $wpdb Used to query the database using the WordPress
 	 * Database API
 	 *
-	 * @param string $key Public Key
+	 * @param  string $key Public Key
 	 *
-	 * @return bool if user ID is found, false otherwise
+	 * @return bool        if user ID is found, false otherwise
 	 */
 	public function get_user( $key = '' ) {
 		global $wpdb, $wp_query;
@@ -654,7 +654,7 @@ class EDD_API {
 	 * @access private
 	 * @since 1.5
 	 * @global $wp_query
-	 * @return int $wp_query->query_vars['page'] if page number returned (default: 1)
+	 * @return int $wp_query->query_vars ['page'] if page number returned (default: 1)
 	 */
 	public function get_paged() {
 		global $wp_query;
@@ -687,7 +687,7 @@ class EDD_API {
 	 *
 	 * @access public
 	 * @since 1.5.1
-	 * @param array $args Arguments to override defaults
+	 * @param  array $args  Arguments to override defaults
 	 * @return array $dates
 	 */
 	public function get_dates( $args = array() ) {
@@ -868,7 +868,7 @@ class EDD_API {
 	 * @author Daniel J Griffiths
 	 * @global object $wpdb Used to query the database using the WordPress
 	 * Database API
-	 * @param int $customer Customer ID
+	 * @param  int   $customer  Customer ID
 	 * @return array $customers Multidimensional array of the customers
 	 */
 	public function get_customers( $customer = null ) {
@@ -957,7 +957,7 @@ class EDD_API {
 	 * @access public
 	 * @author Daniel J Griffiths
 	 * @since 1.5
-	 * @param int $product Product (Download) ID
+	 * @param  int   $product   Product (Download) ID
 	 * @return array $customers Multidimensional array of the products
 	 */
 	public function get_products( $product = null ) {
@@ -1052,7 +1052,7 @@ class EDD_API {
 	 *
 	 * @global object $wpdb Used to query the database using the WordPress
 	 *
-	 * @param array $args Arguments provided by API Request
+	 * @param  array $args Arguments provided by API Request
 	 *
 	 * @return array
 	 */
@@ -1073,10 +1073,10 @@ class EDD_API {
 		$earnings = array(
 			'earnings' => array()
 		);
-		$sales = array(
+		$sales    = array(
 			'sales' => array()
 		);
-		$error = array();
+		$error    = array();
 
 		if ( ! user_can( $this->user_id, 'view_shop_reports' ) && ! $this->override ) {
 			return $stats;
@@ -1415,7 +1415,7 @@ class EDD_API {
 	 * @since 1.6
 	 * @global object $wpdb Used to query the database using the WordPress
 	 * Database API
-	 * @param int $discount Discount ID
+	 * @param  int   $discount  Discount ID
 	 * @return array $discounts Multidimensional array of the discounts
 	 */
 	public function get_discounts( $discount = null ) {
@@ -1500,8 +1500,8 @@ class EDD_API {
 	 * @since 2.5
 	 * @author Daniel J Griffiths
 	 *
-	 * @param  int $customer_id The customer ID you wish to retrieve download logs for
-	 * @return array            Multidimensional array of the download logs
+	 * @param  int   $customer_id The customer ID you wish to retrieve download logs for
+	 * @return array              Multidimensional array of the download logs
 	 */
 	public function get_download_logs( $customer_id = 0 ) {
 		global $edd_logs;
@@ -1622,7 +1622,7 @@ class EDD_API {
 	 * @since  1.5
 	 * @global $edd_logs
 	 * @global $wp_query
-	 * @param array $data
+	 * @param  array $data
 	 * @return void
 	 */
 	private function log_request( $data = array() ) {
@@ -1740,7 +1740,7 @@ class EDD_API {
 	 * @access public
 	 * @author Daniel J Griffiths
 	 * @since 1.5
-	 * @param object $user Current user info
+	 * @param  object $user Current user info
 	 * @return void
 	 */
 	function user_key_field( $user ) {
@@ -1780,7 +1780,7 @@ class EDD_API {
 	 *
 	 * @access public
 	 * @since 2.0.0
-	 * @param array $args
+	 * @param  array $args
 	 * @return void
 	 */
 	public function process_api_key( $args ) {
@@ -1837,9 +1837,9 @@ class EDD_API {
 	 *
 	 * @access public
 	 * @since 2.0.0
-	 * @param int $user_id User ID the key is being generated for
-	 * @param boolean $regenerate Regenerate the key for the user
-	 * @return boolean True if (re)generated succesfully, false otherwise.
+	 * @param  int     $user_id    User ID the key is being generated for
+	 * @param  boolean $regenerate Regenerate the key for the user
+	 * @return boolean             True if (re)generated succesfully, false otherwise.
 	 */
 	public function generate_api_key( $user_id = 0, $regenerate = false ) {
 		if ( empty( $user_id ) ) {
@@ -1877,7 +1877,7 @@ class EDD_API {
 	 *
 	 * @access public
 	 * @since 2.0.0
-	 * @param int $user_id User ID of user to revoke key for
+	 * @param  int    $user_id User ID of user to revoke key for
 	 * @return string
 	 */
 	public function revoke_api_key( $user_id = 0 ) {
@@ -1918,7 +1918,7 @@ class EDD_API {
 	 * @access public
 	 * @author Daniel J Griffiths
 	 * @since 1.5
-	 * @param int $user_id
+	 * @param  int  $user_id
 	 * @return void
 	 */
 	public function update_key( $user_id ) {
@@ -1946,7 +1946,7 @@ class EDD_API {
 	 *
 	 * @access private
 	 * @since 1.9.9
-	 * @param string $user_email
+	 * @param  string $user_email
 	 * @return string
 	 */
 	private function generate_public_key( $user_email = '' ) {
@@ -1960,7 +1960,7 @@ class EDD_API {
 	 *
 	 * @access private
 	 * @since 1.9.9
-	 * @param int $user_id
+	 * @param  int    $user_id
 	 * @return string
 	 */
 	private function generate_private_key( $user_id = 0 ) {
@@ -1974,7 +1974,7 @@ class EDD_API {
 	 *
 	 * @access private
 	 * @since 1.9.9
-	 * @param int $user_id
+	 * @param  int    $user_id
 	 * @return string
 	 */
 	public function get_token( $user_id = 0 ) {
@@ -2022,9 +2022,9 @@ class EDD_API {
 	 *
 	 * @since  2.4
 	 * @param  string $check     Wether to check the cache or not
-	 * @param  int $object_id    The User ID being passed
+	 * @param  int    $object_id The User ID being passed
 	 * @param  string $meta_key  The user meta key
-	 * @param  bool $single      If it should return a single value or array
+	 * @param  bool   $single    If it should return a single value or array
 	 * @return string            The API key/secret for the user supplied
 	 */
 	public function api_key_backwards_copmat( $check, $object_id, $meta_key, $single ) {
