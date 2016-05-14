@@ -146,8 +146,8 @@ class EDD_Session {
 	 *
 	 * @access public
 	 * @since 1.5
-	 * @param string $key Session key
-	 * @return string Session variable
+	 * @param  string $key Session key
+	 * @return string      Session variable
 	 */
 	public function get( $key ) {
 		$key = sanitize_key( $key );
@@ -159,9 +159,9 @@ class EDD_Session {
 	 *
 	 * @since 1.5
 	 *
-	 * @param string $key Session key
-	 * @param integer $value Session variable
-	 * @return string Session variable
+	 * @param  string  $key   Session key
+	 * @param  integer $value Session variable
+	 * @return string         Session variable
 	 */
 	public function set( $key, $value ) {
 		$key = sanitize_key( $key );
@@ -187,7 +187,7 @@ class EDD_Session {
 	 *
 	 * @access public
 	 * @since 1.8
-	 * @param string $set Whether to set or destroy
+	 * @param  string $set Whether to set or destroy
 	 * @return void
 	 */
 	public function set_cart_cookie( $set = true ) {
@@ -207,7 +207,7 @@ class EDD_Session {
 	 *
 	 * @access public
 	 * @since 2.0
-	 * @param int $exp Default expiration (1 hour)
+	 * @param  int $exp Default expiration (1 hour)
 	 * @return int
 	 */
 	public function set_expiration_variant_time( $exp ) {
@@ -219,7 +219,7 @@ class EDD_Session {
 	 *
 	 * @access public
 	 * @since 1.9
-	 * @param int $exp Default expiration (1 hour)
+	 * @param  int $exp Default expiration (1 hour)
 	 * @return int
 	 */
 	public function set_expiration_time( $exp ) {
