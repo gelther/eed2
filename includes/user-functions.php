@@ -21,12 +21,12 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  *
  * @since  1.0
  *
- * @param int    $user User ID or email address
- * @param int    $number Number of purchases to retrieve
- * @param bool   $pagination
- * @param string $status
+ * @param  int         $user       User ID or email address
+ * @param  int         $number     Number of purchases to retrieve
+ * @param  bool        $pagination
+ * @param  string      $status
  *
- * @return bool|object List of all user purchases
+ * @return bool|object             List of all user purchases
  */
 function edd_get_users_purchases( $user = 0, $number = 20, $pagination = false, $status = 'complete' ) {
 	if ( empty( $user ) ) {
@@ -93,10 +93,10 @@ function edd_get_users_purchases( $user = 0, $number = 20, $pagination = false, 
  *
  * @since  2.0
  *
- * @param int    $user User ID or email address
- * @param string $status
+ * @param  int         $user   User ID or email address
+ * @param  string      $status
  *
- * @return bool|object List of unique products purchased by user
+ * @return bool|object         List of unique products purchased by user
  */
 function edd_get_users_purchased_products( $user = 0, $status = 'complete' ) {
 	if ( empty( $user ) ) {
@@ -176,10 +176,10 @@ function edd_get_users_purchased_products( $user = 0, $status = 'complete' ) {
  *
  * @access      public
  * @since       1.0
- * @param       int $user_id - the ID of the user to check
- * @param       array $downloads - Array of IDs to check if purchased. If an int is passed, it will be converted to an array
- * @param       int $variable_price_id - the variable price ID to check for
- * @return      boolean - true if has purchased, false otherwise
+ * @param  int     $user_id           - the ID of the user to check
+ * @param  array   $downloads         - Array of IDs to check if purchased. If an int is passed, it will be converted to an array
+ * @param  int     $variable_price_id - the variable price ID to check for
+ * @return boolean                    - true if has purchased, false otherwise
  */
 function edd_has_user_purchased( $user_id, $downloads, $variable_price_id = null ) {
 	if ( empty( $user_id ) ) {
@@ -229,7 +229,7 @@ function edd_has_user_purchased( $user_id, $downloads, $variable_price_id = null
  * @access      public
  * @since       1.0
  * @param       $user_id int - the ID of the user to check
- * @return      bool - true if has purchased, false other wise.
+ * @return bool          - true if has purchased, false other wise.
  */
 function edd_has_purchases( $user_id = null ) {
 	if ( empty( $user_id ) ) {
@@ -249,9 +249,9 @@ function edd_has_purchases( $user_id = null ) {
  *
  * @access      public
  * @since       1.6
- * @param       $user int|string - the ID or email of the customer to retrieve stats for
- * @param       $mode string - "test" or "live"
- * @return      array
+ * @param        $user int|string - the ID or email of the customer to retrieve stats for
+ * @param        $mode string - "test" or "live"
+ * @return array
  */
 function edd_get_purchase_stats_by_user( $user = '' ) {
 	if ( is_email( $user ) ) {
@@ -287,8 +287,8 @@ function edd_get_purchase_stats_by_user( $user = '' ) {
  *
  * @access      public
  * @since       1.3
- * @param       $user mixed - ID or email
- * @return      int - the total number of purchases
+ * @param      $user mixed - ID or email
+ * @return int       - the total number of purchases
  */
 function edd_count_purchases_of_customer( $user = null ) {
 	if ( empty( $user ) ) {
@@ -305,8 +305,8 @@ function edd_count_purchases_of_customer( $user = null ) {
  *
  * @access      public
  * @since       1.3
- * @param       $user mixed - ID or email
- * @return      float - the total amount the user has spent
+ * @param        $user mixed - ID or email
+ * @return float       - the total amount the user has spent
  */
 function edd_purchase_total_of_user( $user = null ) {
 	$stats = edd_get_purchase_stats_by_user( $user );
@@ -319,8 +319,8 @@ function edd_purchase_total_of_user( $user = null ) {
  *
  * @access      public
  * @since       1.3
- * @param       $user mixed - ID or email
- * @return      int - The total number of files the user has downloaded
+ * @param      $user mixed - ID or email
+ * @return int       - The total number of files the user has downloaded
  */
 function edd_count_file_downloads_of_user( $user ) {
 	global $edd_logs;
@@ -350,8 +350,8 @@ function edd_count_file_downloads_of_user( $user ) {
  *
  * @access      public
  * @since       1.3.4
- * @param       string $username The username to validate
- * @return      bool
+ * @param  string $username The username to validate
+ * @return bool
  */
 function edd_validate_username( $username ) {
 	$sanitized = sanitize_user( $username, false );
@@ -363,7 +363,7 @@ function edd_validate_username( $username ) {
  * Attach the newly created user_id to a customer, if one exists
  *
  * @since  2.4.6
- * @param  int $user_id The User ID that was created
+ * @param  int  $user_id The User ID that was created
  * @return void
  */
 function edd_connect_existing_customer_to_new_user( $user_id ) {
@@ -387,7 +387,7 @@ add_action( 'user_register', 'edd_connect_existing_customer_to_new_user', 10, 1 
  * @access      public
  * @since       1.6
  * @param       $user_id INT - the new user's ID
- * @return      void
+ * @return void
  */
 function edd_add_past_purchases_to_new_user( $user_id ) {
 	$email = get_the_author_meta( 'user_email', $user_id );
@@ -424,7 +424,7 @@ add_action( 'user_register', 'edd_add_past_purchases_to_new_user', 10, 1 );
  *
  * @access 		public
  * @since 		1.7
- * @return 		int - The total number of customers.
+ * @return int - The total number of customers.
  */
 function edd_count_total_customers() {
 	return EDD()->customers->count();
@@ -435,7 +435,7 @@ function edd_count_total_customers() {
  *
  * @access 		public
  * @since 		1.8
- * @return 		array - The customer's address, if any
+ * @return array - The customer's address, if any
  */
 function edd_get_customer_address( $user_id = 0 ) {
 	if ( empty( $user_id ) ) {
@@ -476,9 +476,9 @@ function edd_get_customer_address( $user_id = 0 ) {
  *
  * @access 		public
  * @since 		1.8.8
- * @param int   $user_id
- * @param array $user_data
- * @return 		void
+ * @param  int   $user_id
+ * @param  array $user_data
+ * @return void
  */
 function edd_new_user_notification( $user_id = 0, $user_data = array() ) {
 	if ( empty( $user_id ) || empty( $user_data ) ) {
@@ -565,7 +565,7 @@ function edd_set_user_to_verified( $user_id = 0 ) {
  *
  * @access  public
  * @since   2.4.4
- * @return  bool
+ * @return bool
  */
 function edd_user_pending_verification( $user_id = 0 ) {
 	if ( empty( $user_id ) ) {
@@ -587,7 +587,7 @@ function edd_user_pending_verification( $user_id = 0 ) {
  *
  * @access  public
  * @since   2.4.4
- * @return  string
+ * @return string
  */
 function edd_get_user_verification_url( $user_id = 0 ) {
 	if ( empty( $user_id ) ) {
@@ -611,7 +611,7 @@ function edd_get_user_verification_url( $user_id = 0 ) {
  *
  * @access  public
  * @since   2.4.4
- * @return  string
+ * @return string
  */
 function edd_get_user_verification_request_url( $user_id = 0 ) {
 	if ( empty( $user_id ) ) {
@@ -630,7 +630,7 @@ function edd_get_user_verification_request_url( $user_id = 0 ) {
  *
  * @access  public
  * @since   2.4.4
- * @return  void
+ * @return void
  */
 function edd_send_user_verification_email( $user_id = 0 ) {
 	if ( empty( $user_id ) ) {
@@ -687,7 +687,7 @@ function edd_send_user_verification_email( $user_id = 0 ) {
  * @since  2.4.4
  *
  * @param  string $url The URL to generate a token for.
- * @return string The token for the URL.
+ * @return string      The token for the URL.
  */
 function edd_get_user_verification_token( $url = '' ) {
 	$args   = array();
@@ -887,8 +887,8 @@ function edd_get_user_verification_page() {
  * When a user is deleted, detach that user id from the customer record
  *
  * @since  2.5
- * @param  int $user_id The User ID being deleted
- * @return bool         If the detachment was successful
+ * @param  int  $user_id The User ID being deleted
+ * @return bool          If the detachment was successful
  */
 function edd_detach_deleted_user( $user_id ) {
 	$customer = new EDD_Customer( $user_id, true );
