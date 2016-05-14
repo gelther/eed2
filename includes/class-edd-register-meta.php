@@ -108,8 +108,8 @@ class EDD_Register_Meta {
 	 * Sanitize values that come in as arrays
 	 *
 	 * @since  2.5
-	 * @param  array  $value The value passed into the meta.
-	 * @return array         The sanitized value.
+	 * @param  array $value The value passed into the meta.
+	 * @return array        The sanitized value.
 	 */
 	public function sanitize_array( $value = array() ) {
 		if ( ! is_array( $value ) ) {
@@ -133,7 +133,7 @@ class EDD_Register_Meta {
 	 * Ensures prices are correctly mapped to an array starting with an index of 0
 	 *
 	 * @since 2.5
-	 * @param array $prices Variable prices
+	 * @param  array $prices Variable prices
 	 * @return array $prices Array of the remapped variable prices
 	 */
 	function sanitize_variable_prices( $prices = array() ) {
@@ -169,7 +169,7 @@ class EDD_Register_Meta {
 	 * Ensures files are correctly mapped to an array starting with an index of 0
 	 *
 	 * @since 2.5
-	 * @param array $files Array of all the file downloads
+	 * @param  array $files Array of all the file downloads
 	 * @return array $files Array of the remapped file downloads
 	 */
 	function sanitize_files( $files = array() ) {
@@ -199,7 +199,7 @@ class EDD_Register_Meta {
 	 * be saved.
 	 *
 	 * @since 2.5
-	 * @param array $new Array of all the meta values
+	 * @param  array $new Array of all the meta values
 	 * @return array $new New meta value with empty keys removed
 	 */
 	private function remove_blank_rows( $new ) {
