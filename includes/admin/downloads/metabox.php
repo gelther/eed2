@@ -169,7 +169,7 @@ add_action( 'save_post', 'edd_download_meta_box_save', 10, 2 );
  *
  * @since       1.6
  *
- * @param array $products
+ * @param  array $products
  * @return array
  */
 function edd_sanitize_bundled_products_save( $products = array() ) {
@@ -193,7 +193,7 @@ add_filter( 'edd_metabox_save__edd_bundled_products', 'edd_sanitize_bundled_prod
  * be saved.
  *
  * @since 1.2.2
- * @param array $new Array of all the meta values
+ * @param  array $new Array of all the meta values
  * @return array $new New meta value with empty keys removed
  */
 function edd_metabox_save_check_blank_rows( $new ) {
@@ -457,7 +457,7 @@ add_action( 'edd_render_price_row', 'edd_render_price_row', 10, 4 );
  *
  * @access      private
  * @since       1.6
- * @return      void
+ * @return void
  */
 function edd_render_product_type_field( $post_id = 0 ) {
 	$types = edd_get_download_types();
@@ -576,7 +576,7 @@ add_action( 'edd_meta_box_files_fields', 'edd_render_products_field', 10 );
  *
  * @since 1.0
  * @see edd_render_file_row()
- * @param int $post_id Download (Post) ID
+ * @param  int  $post_id Download (Post) ID
  * @return void
  */
 function edd_render_files_field( $post_id = 0 ) {
@@ -649,9 +649,9 @@ add_action( 'edd_meta_box_files_fields', 'edd_render_files_field', 20 );
  * Can be called directly, or attached to an action.
  *
  * @since 1.2.2
- * @param string $key Array key
- * @param array $args Array of all the arguments passed to the function
- * @param int $post_id Download (Post) ID
+ * @param  string $key     Array key
+ * @param  array  $args    Array of all the arguments passed to the function
+ * @param  int    $post_id Download (Post) ID
  * @return void
  */
 function edd_render_file_row( $key = '', $args = array(), $post_id, $index ) {
@@ -762,7 +762,7 @@ add_filter( 'media_view_strings', 'edd_download_media_strings', 10, 1 );
  * can be downloaded by the buyer
  *
  * @since 1.3.1
- * @param int $post_id Download (Post) ID
+ * @param  int  $post_id Download (Post) ID
  * @return void
  */
 function edd_render_download_limit_row( $post_id ) {
@@ -794,7 +794,7 @@ add_action( 'edd_meta_box_settings_fields', 'edd_render_download_limit_row', 20 
  * Outputs the option to mark whether a product is exclusive of tax
  *
  * @since 1.9
- * @param int $post_id Download (Post) ID
+ * @param  int  $post_id Download (Post) ID
  * @return void
  */
 function edd_render_dowwn_tax_options( $post_id = 0 ) {
@@ -846,7 +846,7 @@ add_action( 'edd_meta_box_settings_fields', 'edd_render_meta_box_shortcode', 35 
  * Render Accounting Options
  *
  * @since 1.6
- * @param int $post_id Download (Post) ID
+ * @param  int  $post_id Download (Post) ID
  * @return void
  */
 function edd_render_accounting_options( $post_id ) {
@@ -875,7 +875,7 @@ add_action( 'edd_meta_box_settings_fields', 'edd_render_accounting_options', 25 
  * Render Disable Button
  *
  * @since 1.0
- * @param int $post_id Download (Post) ID
+ * @param  int  $post_id Download (Post) ID
  * @return void
  */
 function edd_render_disable_button( $post_id ) {
@@ -934,7 +934,7 @@ function edd_render_product_notes_meta_box() {
  * Render Product Notes Field
  *
  * @since 1.2.1
- * @param int $post_id Download (Post) ID
+ * @param  int  $post_id Download (Post) ID
  * @return void
  */
 function edd_render_product_notes_field( $post_id ) {
