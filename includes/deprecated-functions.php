@@ -22,12 +22,12 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @since       1.0
  * @deprecated  1.3.4
  *
- * @param int $download_id ID number of the download to retrieve a log for
- * @param bool $paginate Whether to paginate the results or not
- * @param int $number Number of results to return
- * @param int $offset Number of items to skip
+ * @param  int   $download_id ID number of the download to retrieve a log for
+ * @param  bool  $paginate    Whether to paginate the results or not
+ * @param  int   $number      Number of results to return
+ * @param  int   $offset      Number of items to skip
  *
- * @return mixed array|bool
+ * @return mixed              array|bool
  */
 function edd_get_download_sales_log( $download_id, $paginate = false, $number = 10, $offset = 0 ) {
 	$backtrace = debug_backtrace();
@@ -60,12 +60,12 @@ function edd_get_download_sales_log( $download_id, $paginate = false, $number = 
  * @deprecated 1.3.4
  * @since 1.0
  *
- * @param int $download_id the ID number of the download to retrieve a log for
- * @param bool $paginate whether to paginate the results or not
- * @param int $number the number of results to return
- * @param int $offset the number of items to skip
+ * @param  int   $download_id the ID number of the download to retrieve a log for
+ * @param  bool  $paginate    whether to paginate the results or not
+ * @param  int   $number      the number of results to return
+ * @param  int   $offset      the number of items to skip
  *
- * @return mixed array|bool
+ * @return mixed              array|bool
  */
 function edd_get_file_download_log( $download_id, $paginate = false, $number = 10, $offset = 0 ) {
 	$backtrace = debug_backtrace();
@@ -98,8 +98,8 @@ function edd_get_file_download_log( $download_id, $paginate = false, $number = 1
  * @since 1.0
  * @deprecated 1.4
  *
- * @param int  $payment_id ID number of the purchase
- * @param null $payment_meta
+ * @param  int        $payment_id   ID number of the purchase
+ * @param  null       $payment_meta
  * @return bool|mixed
  */
 function edd_get_downloads_of_purchase( $payment_id, $payment_meta = null ) {
@@ -225,8 +225,8 @@ function edd_show_has_purchased_item_message() {
  *
  * @since 1.2
  * @deprecated 1.8.4
- * @param int $payment Payment ID
- * @param array $payment_data Payment Data
+ * @param  int   $payment      Payment ID
+ * @param  array $payment_data Payment Data
  * @return void
  */
 function edd_clear_earnings_cache( $payment, $payment_data ) {
@@ -244,9 +244,9 @@ function edd_clear_earnings_cache( $payment, $payment_data ) {
  *
  * @since 1.0
  * @deprecated 1.9
- * @param bool $add_taxes Whether to apply taxes (if enabled) (default: true)
- * @param bool $local_override Force the local opt-in param - used for when not reading $_POST (default: false)
- * @return float Total amount
+ * @param  bool  $add_taxes      Whether to apply taxes (if enabled) (default: true)
+ * @param  bool  $local_override Force the local opt-in param - used for when not reading $_POST (default: false)
+ * @return float                 Total amount
  */
 function edd_get_cart_amount( $add_taxes = true, $local_override = false ) {
 	$backtrace = debug_backtrace();
@@ -398,10 +398,10 @@ function edd_get_email_body_footer() {
  *
  * @since 1.0.8.2
  * @deprecated 2.0
- * @param string $body The contents of the receipt email
- * @param int $payment_id The ID of the payment we are sending a receipt for
- * @param array $payment_data An array of meta information for the payment
- * @return string $email Formatted email with the template applied
+ * @param  string $body         The contents of the receipt email
+ * @param  int    $payment_id   The ID of the payment we are sending a receipt for
+ * @param  array  $payment_data An array of meta information for the payment
+ * @return string $email        Formatted email with the template applied
  */
 function edd_apply_email_template( $body, $payment_id, $payment_data=array() ) {
 	global $edd_options;
@@ -465,13 +465,13 @@ function edd_taxes_after_discounts() {
  *
  * @since 1.0
  *
- * @param int    $download_id
- * @param string $key
- * @param string $email
- * @param string $expire
- * @param int    $file_key
+ * @param  int    $download_id
+ * @param  string $key
+ * @param  string $email
+ * @param  string $expire
+ * @param  int    $file_key
  *
- * @return bool True if payment and link was verified, false otherwise
+ * @return bool                True if payment and link was verified, false otherwise
  */
 function edd_verify_download_link( $download_id = 0, $key = '', $email = '', $expire = '', $file_key = 0 ) {
 	$meta_query = array(
