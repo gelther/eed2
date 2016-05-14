@@ -63,10 +63,10 @@ class EDD_Categories_Reports_Table extends WP_List_Table {
 	 * @access public
 	 * @since 2.4
 	 *
-	 * @param array $item Contains all the data of the downloads
-	 * @param string $column_name The name of the column
+	 * @param  array  $item        Contains all the data of the downloads
+	 * @param  string $column_name The name of the column
 	 *
-	 * @return string Column Name
+	 * @return string              Column Name
 	 */
 	public function column_default( $item, $column_name ) {
 		return $item[ $column_name ];
