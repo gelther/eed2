@@ -75,10 +75,10 @@ class EDD_API_Keys_Table extends WP_List_Table {
 	 * @access public
 	 * @since 2.0
 	 *
-	 * @param array $item Contains all the data of the keys
-	 * @param string $column_name The name of the column
+	 * @param  array  $item        Contains all the data of the keys
+	 * @param  string $column_name The name of the column
 	 *
-	 * @return string Column Name
+	 * @return string              Column Name
 	 */
 	public function column_default( $item, $column_name ) {
 		return $item[ $column_name ];
@@ -90,10 +90,10 @@ class EDD_API_Keys_Table extends WP_List_Table {
 	 * @access public
 	 * @since 2.4
 	 *
-	 * @param array $item Contains all the data of the keys
-	 * @param string $column_name The name of the column
+	 * @param  array  $item        Contains all the data of the keys
+	 * @param  string $column_name The name of the column
 	 *
-	 * @return string Column Name
+	 * @return string              Column Name
 	 */
 	public function column_key( $item ) {
 		return '<input readonly="readonly" type="text" class="large-text" value="' . esc_attr( $item['key'] ) . '"/>';
@@ -105,10 +105,10 @@ class EDD_API_Keys_Table extends WP_List_Table {
 	 * @access public
 	 * @since 2.4
 	 *
-	 * @param array $item Contains all the data of the keys
-	 * @param string $column_name The name of the column
+	 * @param  array  $item        Contains all the data of the keys
+	 * @param  string $column_name The name of the column
 	 *
-	 * @return string Column Name
+	 * @return string              Column Name
 	 */
 	public function column_token( $item ) {
 		return '<input readonly="readonly" type="text" class="large-text" value="' . esc_attr( $item['token'] ) . '"/>';
@@ -120,10 +120,10 @@ class EDD_API_Keys_Table extends WP_List_Table {
 	 * @access public
 	 * @since 2.4
 	 *
-	 * @param array $item Contains all the data of the keys
-	 * @param string $column_name The name of the column
+	 * @param  array  $item        Contains all the data of the keys
+	 * @param  string $column_name The name of the column
 	 *
-	 * @return string Column Name
+	 * @return string              Column Name
 	 */
 	public function column_secret( $item ) {
 		return '<input readonly="readonly" type="text" class="large-text" value="' . esc_attr( $item['secret'] ) . '"/>';
@@ -152,7 +152,7 @@ class EDD_API_Keys_Table extends WP_List_Table {
 			esc_url( wp_nonce_url( add_query_arg( array( 'user_id' => $item['id'], 'edd_action' => 'process_api_key', 'edd_api_process' => 'regenerate' ) ), 'edd-api-nonce' ) ),
 			__( 'Reissue', 'easy-digital-downloads' )
 		);
-		$actions['revoke'] = sprintf(
+		$actions['revoke']  = sprintf(
 			'<a href="%s" class="edd-revoke-api-key edd-delete">%s</a>',
 			esc_url( wp_nonce_url( add_query_arg( array( 'user_id' => $item['id'], 'edd_action' => 'process_api_key', 'edd_api_process' => 'revoke' ) ), 'edd-api-nonce' ) ),
 			__( 'Revoke', 'easy-digital-downloads' )
@@ -258,7 +258,7 @@ class EDD_API_Keys_Table extends WP_List_Table {
 			'number'     => $this->per_page,
 			'offset'     => $this->per_page * ( $this->get_paged() - 1 ),
 		) );
-		$keys = array();
+		$keys  = array();
 
 		foreach ( $users as $user ) {
 			$keys[ $user->ID ]['id']    = $user->ID;
