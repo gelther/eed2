@@ -77,7 +77,7 @@ class EDD_Email_Template_Tags {
 	 *
 	 * @since 1.9
 	 *
-	 * @param string $tag Email tag that will be searched
+	 * @param  string $tag Email tag that will be searched
 	 *
 	 * @return bool
 	 */
@@ -99,8 +99,8 @@ class EDD_Email_Template_Tags {
 	/**
 	 * Search content for email tags and filter email tags through their hooks
 	 *
-	 * @param string $content Content to search for email tags
-	 * @param int $payment_id The payment id
+	 * @param string $content    Content to search for email tags
+	 * @param int    $payment_id The payment id
 	 *
 	 * @since 1.9
 	 *
@@ -126,7 +126,7 @@ class EDD_Email_Template_Tags {
 	 *
 	 * @since 1.9
 	 *
-	 * @param $m message
+	 * @param        $m message
 	 *
 	 * @return mixed
 	 */
@@ -172,7 +172,7 @@ function edd_remove_email_tag( $tag ) {
  *
  * @since 1.9
  *
- * @param string $tag Email tag that will be searched
+ * @param  string $tag Email tag that will be searched
  *
  * @return bool
  */
@@ -225,8 +225,8 @@ function edd_get_emails_tags_list() {
 /**
  * Search content for email tags and filter email tags through their hooks
  *
- * @param string $content Content to search for email tags
- * @param int $payment_id The payment id
+ * @param string $content    Content to search for email tags
+ * @param int    $payment_id The payment id
  *
  * @since 1.9
  *
@@ -367,9 +367,9 @@ add_action( 'edd_add_email_tags', 'edd_setup_email_tags' );
  * Email template tag: download_list
  * A list of download links for each download purchased
  *
- * @param int $payment_id
+ * @param  int    $payment_id
  *
- * @return string download_list
+ * @return string             download_list
  */
 function edd_email_tag_download_list( $payment_id ) {
 	$payment = new EDD_Payment( $payment_id );
@@ -478,9 +478,9 @@ function edd_email_tag_download_list( $payment_id ) {
  * A list of download links for each download purchased in plaintext
  *
  * @since 2.1.1
- * @param int $payment_id
+ * @param  int    $payment_id
  *
- * @return string download_list
+ * @return string             download_list
  */
 function edd_email_tag_download_list_plain( $payment_id ) {
 	$payment = new EDD_Payment( $payment_id );
@@ -577,7 +577,7 @@ function edd_email_tag_download_list_plain( $payment_id ) {
  * Email template tag: file_urls
  * A plain-text list of download URLs for each download purchased
  *
- * @param int $payment_id
+ * @param  int    $payment_id
  *
  * @return string $file_urls
  */
@@ -624,9 +624,9 @@ function edd_email_tag_file_urls( $payment_id ) {
  * Email template tag: name
  * The buyer's first name
  *
- * @param int $payment_id
+ * @param  int    $payment_id
  *
- * @return string name
+ * @return string             name
  */
 function edd_email_tag_first_name( $payment_id ) {
 	$payment   = new EDD_Payment( $payment_id );
@@ -645,9 +645,9 @@ function edd_email_tag_first_name( $payment_id ) {
  * Email template tag: fullname
  * The buyer's full name, first and last
  *
- * @param int $payment_id
+ * @param  int    $payment_id
  *
- * @return string fullname
+ * @return string             fullname
  */
 function edd_email_tag_fullname( $payment_id ) {
 	$payment   = new EDD_Payment( $payment_id );
@@ -665,9 +665,9 @@ function edd_email_tag_fullname( $payment_id ) {
  * Email template tag: username
  * The buyer's user name on the site, if they registered an account
  *
- * @param int $payment_id
+ * @param  int    $payment_id
  *
- * @return string username
+ * @return string             username
  */
 function edd_email_tag_username( $payment_id ) {
 	$payment   = new EDD_Payment( $payment_id );
@@ -685,9 +685,9 @@ function edd_email_tag_username( $payment_id ) {
  * Email template tag: user_email
  * The buyer's email address
  *
- * @param int $payment_id
+ * @param  int    $payment_id
  *
- * @return string user_email
+ * @return string             user_email
  */
 function edd_email_tag_user_email( $payment_id ) {
 	$payment = new EDD_Payment( $payment_id );
@@ -699,9 +699,9 @@ function edd_email_tag_user_email( $payment_id ) {
  * Email template tag: billing_address
  * The buyer's billing address
  *
- * @param int $payment_id
+ * @param  int    $payment_id
  *
- * @return string billing_address
+ * @return string             billing_address
  */
 function edd_email_tag_billing_address( $payment_id ) {
 	$user_info    = edd_get_payment_meta_user_info( $payment_id );
@@ -721,9 +721,9 @@ function edd_email_tag_billing_address( $payment_id ) {
  * Email template tag: date
  * Date of purchase
  *
- * @param int $payment_id
+ * @param  int    $payment_id
  *
- * @return string date
+ * @return string             date
  */
 function edd_email_tag_date( $payment_id ) {
 	$payment = new EDD_Payment( $payment_id );
@@ -734,9 +734,9 @@ function edd_email_tag_date( $payment_id ) {
  * Email template tag: subtotal
  * Price of purchase before taxes
  *
- * @param int $payment_id
+ * @param  int    $payment_id
  *
- * @return string subtotal
+ * @return string             subtotal
  */
 function edd_email_tag_subtotal( $payment_id ) {
 	$payment  = new EDD_Payment( $payment_id );
@@ -748,9 +748,9 @@ function edd_email_tag_subtotal( $payment_id ) {
  * Email template tag: tax
  * The taxed amount of the purchase
  *
- * @param int $payment_id
+ * @param  int    $payment_id
  *
- * @return string tax
+ * @return string             tax
  */
 function edd_email_tag_tax( $payment_id ) {
 	$payment = new EDD_Payment( $payment_id );
@@ -762,9 +762,9 @@ function edd_email_tag_tax( $payment_id ) {
  * Email template tag: price
  * The total price of the purchase
  *
- * @param int $payment_id
+ * @param  int    $payment_id
  *
- * @return string price
+ * @return string             price
  */
 function edd_email_tag_price( $payment_id ) {
 	$payment = new EDD_Payment( $payment_id );
@@ -776,9 +776,9 @@ function edd_email_tag_price( $payment_id ) {
  * Email template tag: payment_id
  * The unique ID number for this purchase
  *
- * @param int $payment_id
+ * @param  int $payment_id
  *
- * @return int payment_id
+ * @return int             payment_id
  */
 function edd_email_tag_payment_id( $payment_id ) {
 	$payment = new EDD_Payment( $payment_id );
@@ -789,9 +789,9 @@ function edd_email_tag_payment_id( $payment_id ) {
  * Email template tag: receipt_id
  * The unique ID number for this purchase receipt
  *
- * @param int $payment_id
+ * @param  int    $payment_id
  *
- * @return string receipt_id
+ * @return string             receipt_id
  */
 function edd_email_tag_receipt_id( $payment_id ) {
 	$payment = new EDD_Payment( $payment_id );
@@ -802,9 +802,9 @@ function edd_email_tag_receipt_id( $payment_id ) {
  * Email template tag: payment_method
  * The method of payment used for this purchase
  *
- * @param int $payment_id
+ * @param  int    $payment_id
  *
- * @return string gateway
+ * @return string             gateway
  */
 function edd_email_tag_payment_method( $payment_id ) {
 	$payment = new EDD_Payment( $payment_id );
@@ -815,9 +815,9 @@ function edd_email_tag_payment_method( $payment_id ) {
  * Email template tag: sitename
  * Your site name
  *
- * @param int $payment_id
+ * @param  int    $payment_id
  *
- * @return string sitename
+ * @return string             sitename
  */
 function edd_email_tag_sitename( $payment_id ) {
 	return wp_specialchars_decode( get_bloginfo( 'name' ), ENT_QUOTES );
@@ -827,16 +827,16 @@ function edd_email_tag_sitename( $payment_id ) {
  * Email template tag: receipt_link
  * Adds a link so users can view their receipt directly on your website if they are unable to view it in the browser correctly
  *
- * @param $payment_id int
+ * @param         $payment_id int
  *
- * @return string receipt_link
+ * @return string             receipt_link
  */
 function edd_email_tag_receipt_link( $payment_id ) {
 	$receipt_url = esc_url( add_query_arg( array(
 		'payment_key' => edd_get_payment_key( $payment_id ),
 		'edd_action'  => 'view_receipt'
 	), home_url() ) );
-	$formatted = sprintf( __( '%1$sView it in your browser %2$s', 'edd' ), '<a href="' . $receipt_url . '">', '&raquo;</a>' );
+	$formatted   = sprintf( __( '%1$sView it in your browser %2$s', 'edd' ), '<a href="' . $receipt_url . '">', '&raquo;</a>' );
 
 	if ( edd_get_option( 'email_template' ) !== 'none' ) {
 		return $formatted;
@@ -850,7 +850,7 @@ function edd_email_tag_receipt_link( $payment_id ) {
  * Adds a list of any discount codes applied to this purchase
  *
  * @since  2.0
- * @param $int payment_id
+ * @param         $int            payment_id
  * @return string $discount_codes
  */
 function edd_email_tag_discount_codes( $payment_id ) {
@@ -870,8 +870,8 @@ function edd_email_tag_discount_codes( $payment_id ) {
  * IP address of the customer
  *
  * @since  2.3
- * @param int $payment_id
- * @return string IP address
+ * @param  int    $payment_id
+ * @return string             IP address
  */
 function edd_email_tag_ip_address( $payment_id ) {
 	$payment = new EDD_Payment( $payment_id );
