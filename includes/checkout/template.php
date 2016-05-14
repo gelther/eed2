@@ -466,7 +466,7 @@ function edd_get_register_fields() {
 					<?php } ?>
 				</label>
 				<span class="edd-description"><?php _e( 'The username you will use to log into your account.', 'easy-digital-downloads' ); ?></span>
-				<input name="edd_user_login" id="edd_user_login" class="<?php if(edd_no_guest_checkout()) { echo 'required '; } ?>edd-input" type="text" placeholder="<?php _e( 'Username', 'easy-digital-downloads' ); ?>" title="<?php _e( 'Username', 'easy-digital-downloads' ); ?>"/>
+				<input name="edd_user_login" id="edd_user_login" class="<?php if( edd_no_guest_checkout() ) { echo 'required '; } ?>edd-input" type="text" placeholder="<?php _e( 'Username', 'easy-digital-downloads' ); ?>" title="<?php _e( 'Username', 'easy-digital-downloads' ); ?>"/>
 			</p>
 			<p id="edd-user-pass-wrap">
 				<label for="edd_user_pass">
@@ -476,7 +476,7 @@ function edd_get_register_fields() {
 					<?php } ?>
 				</label>
 				<span class="edd-description"><?php _e( 'The password used to access your account.', 'easy-digital-downloads' ); ?></span>
-				<input name="edd_user_pass" id="edd_user_pass" class="<?php if(edd_no_guest_checkout()) { echo 'required '; } ?>edd-input" placeholder="<?php _e( 'Password', 'easy-digital-downloads' ); ?>" type="password"/>
+				<input name="edd_user_pass" id="edd_user_pass" class="<?php if( edd_no_guest_checkout() ) { echo 'required '; } ?>edd-input" placeholder="<?php _e( 'Password', 'easy-digital-downloads' ); ?>" type="password"/>
 			</p>
 			<p id="edd-user-pass-confirm-wrap" class="edd_register_password">
 				<label for="edd_user_pass_confirm">
@@ -486,7 +486,7 @@ function edd_get_register_fields() {
 					<?php } ?>
 				</label>
 				<span class="edd-description"><?php _e( 'Confirm your password.', 'easy-digital-downloads' ); ?></span>
-				<input name="edd_user_pass_confirm" id="edd_user_pass_confirm" class="<?php if(edd_no_guest_checkout()) { echo 'required '; } ?>edd-input" placeholder="<?php _e( 'Confirm password', 'easy-digital-downloads' ); ?>" type="password"/>
+				<input name="edd_user_pass_confirm" id="edd_user_pass_confirm" class="<?php if( edd_no_guest_checkout() ) { echo 'required '; } ?>edd-input" placeholder="<?php _e( 'Confirm password', 'easy-digital-downloads' ); ?>" type="password"/>
 			</p>
 			<?php do_action( 'edd_register_account_fields_after' ); ?>
 		</fieldset>
@@ -537,7 +537,7 @@ function edd_get_login_fields() {
 					<span class="edd-required-indicator">*</span>
 					<?php } ?>
 				</label>
-				<input class="<?php if(edd_no_guest_checkout()) { echo 'required '; } ?>edd-input" type="text" name="edd_user_login" id="edd_user_login" value="" placeholder="<?php _e( 'Your username', 'easy-digital-downloads' ); ?>"/>
+				<input class="<?php if( edd_no_guest_checkout() ) { echo 'required '; } ?>edd-input" type="text" name="edd_user_login" id="edd_user_login" value="" placeholder="<?php _e( 'Your username', 'easy-digital-downloads' ); ?>"/>
 			</p>
 			<p id="edd-user-pass-wrap" class="edd_login_password">
 				<label class="edd-label" for="edd-password">
@@ -546,7 +546,7 @@ function edd_get_login_fields() {
 					<span class="edd-required-indicator">*</span>
 					<?php } ?>
 				</label>
-				<input class="<?php if(edd_no_guest_checkout()) { echo 'required '; } ?>edd-input" type="password" name="edd_user_pass" id="edd_user_pass" placeholder="<?php _e( 'Your password', 'easy-digital-downloads' ); ?>"/>
+				<input class="<?php if( edd_no_guest_checkout() ) { echo 'required '; } ?>edd-input" type="password" name="edd_user_pass" id="edd_user_pass" placeholder="<?php _e( 'Your password', 'easy-digital-downloads' ); ?>"/>
 				<?php if ( edd_no_guest_checkout() ) : ?>
 					<input type="hidden" name="edd-purchase-var" value="needs-to-login"/>
 				<?php endif; ?>
@@ -892,7 +892,7 @@ function edd_checkout_hidden_fields() {
  * Applies filters to the success page content.
  *
  * @since 1.0
- * @param string $content Content before filters
+ * @param  string $content Content before filters
  * @return string $content Filtered content
  */
 function edd_filter_success_page_content( $content ) {
@@ -910,9 +910,9 @@ add_filter( 'the_content', 'edd_filter_success_page_content', 99999 );
  * Show a download's files in the purchase receipt
  *
  * @since  1.8.6
- * @param  int        $item_id      The download ID
- * @param  array      $receipt_args Args specified in the [edd_receipt] shortcode
- * @param  array      $item         Cart item array
+ * @param  int     $item_id      The download ID
+ * @param  array   $receipt_args Args specified in the [edd_receipt] shortcode
+ * @param  array   $item         Cart item array
  * @return boolean
  */
 function edd_receipt_show_download_files( $item_id, $receipt_args, $item = array() ) {
