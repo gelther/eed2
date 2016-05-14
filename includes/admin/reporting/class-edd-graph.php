@@ -29,7 +29,7 @@ class EDD_Graph {
 
 	$data = array(
 
-		'Label' => array(
+		'Label'        => array(
 			array( 1, 5 ),
 			array( 3, 8 ),
 			array( 10, 2 )
@@ -106,7 +106,7 @@ class EDD_Graph {
 	/**
 	 * Set an option
 	 *
-	 * @param $key The option key to set
+	 * @param $key   The option key to set
 	 * @param $value The value to assign to the key
 	 * @since 1.9
 	 */
