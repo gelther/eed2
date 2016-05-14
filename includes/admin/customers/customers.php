@@ -77,7 +77,7 @@ function edd_customers_list() {
  *
  * @since  2.3
  * @param  string $view      The View being requested
- * @param  array $callbacks  The Registered views and their callback functions
+ * @param  array  $callbacks The Registered views and their callback functions
  * @return void
  */
 function edd_render_customer_view( $view, $callbacks ) {
@@ -107,7 +107,7 @@ function edd_render_customer_view( $view, $callbacks ) {
 	?>
 
 	<div class='wrap'>
-		<h2><?php _e( 'Customer Details', 'easy-digital-downloads' );?></h2>
+		<h2><?php _e( 'Customer Details', 'easy-digital-downloads' ); ?></h2>
 		<?php if ( edd_get_errors() ) :?>
 			<div class="error settings-error">
 				<?php edd_print_errors(); ?>
@@ -150,7 +150,7 @@ function edd_render_customer_view( $view, $callbacks ) {
  * View a customer
  *
  * @since  2.3
- * @param  $customer The Customer object being displayed
+ * @param       $customer The Customer object being displayed
  * @return void
  */
 function edd_customers_view( $customer ) {
@@ -404,14 +404,14 @@ function edd_customers_view( $customer ) {
  * View the notes of a customer
  *
  * @since  2.3
- * @param  $customer The Customer being displayed
+ * @param       $customer The Customer being displayed
  * @return void
  */
 function edd_customer_notes_view( $customer ) {
-	$paged       = isset( $_GET['paged'] ) && is_numeric( $_GET['paged'] ) ? $_GET['paged'] : 1;
-	$paged       = absint( $paged );
-	$note_count  = $customer->get_notes_count();
-	$per_page    = apply_filters( 'edd_customer_notes_per_page', 20 );
+	$paged      = isset( $_GET['paged'] ) && is_numeric( $_GET['paged'] ) ? $_GET['paged'] : 1;
+	$paged      = absint( $paged );
+	$note_count = $customer->get_notes_count();
+	$per_page   = apply_filters( 'edd_customer_notes_per_page', 20 );
 	$total_pages = ceil( $note_count / $per_page );
 
 	$customer_notes = $customer->get_notes( $per_page, $paged );
