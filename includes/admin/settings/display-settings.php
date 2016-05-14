@@ -93,7 +93,7 @@ function edd_options_page() {
 					'tab'              => $active_tab,
 					'section'          => $section_id
 				) );
-				$class = '';
+				$class   = '';
 				if ( $section == $section_id ) {
 					$class = 'current';
 				}
