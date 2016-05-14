@@ -246,7 +246,7 @@ class EDD_Batch_Export extends EDD_Export {
 	 * Append data to export file
 	 *
 	 * @since 2.4
-	 * @param $data string The data to add to the file
+	 * @param       $data string The data to add to the file
 	 * @return void
 	 */
 	protected function stash_step_data( $data = '' ) {
