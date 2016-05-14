@@ -131,8 +131,8 @@ function edd_scan_folders( $path = '', $return = array() ) {
  *
  * @since 1.6
  *
- * @param bool $method
- * @return mixed|void The htaccess rules
+ * @param  bool       $method
+ * @return mixed|void         The htaccess rules
  */
 function edd_get_htaccess_rules( $method = false ) {
 	if ( empty( $method ) ) {
@@ -176,7 +176,7 @@ if ( ! function_exists( 'wp_is_writable' ) ) {
 	 *
 	 * @since 3.6.0
 	 *
-	 * @param string $path
+	 * @param  string $path
 	 * @return bool
 	 */
 	function wp_is_writable( $path ) {
