@@ -25,9 +25,9 @@ class EDD_SL_Plugin_Updater {
 	 * @uses plugin_basename()
 	 * @uses hook()
 	 *
-	 * @param string  $_api_url     The URL pointing to the custom API endpoint.
-	 * @param string  $_plugin_file Path to the plugin file.
-	 * @param array   $_api_data    Optional data to send with API calls.
+	 * @param string $_api_url     The URL pointing to the custom API endpoint.
+	 * @param string $_plugin_file Path to the plugin file.
+	 * @param array  $_api_data    Optional data to send with API calls.
 	 */
 	public function __construct( $_api_url, $_plugin_file, $_api_data = null ) {
 		global $edd_plugin_data;
@@ -69,8 +69,8 @@ class EDD_SL_Plugin_Updater {
 	 *
 	 * @uses api_request()
 	 *
-	 * @param array   $_transient_data Update array build by WordPress.
-	 * @return array Modified update array with custom plugin data.
+	 * @param  array $_transient_data Update array build by WordPress.
+	 * @return array                  Modified update array with custom plugin data.
 	 */
 	public function check_update( $_transient_data ) {
 		global $pagenow;
@@ -108,8 +108,8 @@ class EDD_SL_Plugin_Updater {
 	/**
 	 * show update nofication row -- needed for multisite subsites, because WP won't tell you otherwise!
 	 *
-	 * @param string  $file
-	 * @param array   $plugin
+	 * @param string $file
+	 * @param array  $plugin
 	 */
 	public function show_update_notification( $file, $plugin ) {
 		if ( ! current_user_can( 'update_plugins' ) ) {
@@ -206,9 +206,9 @@ class EDD_SL_Plugin_Updater {
 	 *
 	 * @uses api_request()
 	 *
-	 * @param mixed   $_data
-	 * @param string  $_action
-	 * @param object  $_args
+	 * @param  mixed  $_data
+	 * @param  string $_action
+	 * @param  object $_args
 	 * @return object $_data
 	 */
 	public function plugins_api_filter( $_data, $_action = '', $_args = null ) {
@@ -245,8 +245,8 @@ class EDD_SL_Plugin_Updater {
 	/**
 	 * Disable SSL verification in order to prevent download update failures
 	 *
-	 * @param array   $args
-	 * @param string  $url
+	 * @param  array  $args
+	 * @param  string $url
 	 * @return object $array
 	 */
 	public function http_request_args( $args, $url ) {
@@ -264,8 +264,8 @@ class EDD_SL_Plugin_Updater {
 	 * @uses wp_remote_post()
 	 * @uses is_wp_error()
 	 *
-	 * @param string  $_action The requested action.
-	 * @param array   $_data   Parameters for the API action.
+	 * @param  string       $_action The requested action.
+	 * @param  array        $_data   Parameters for the API action.
 	 * @return false|object
 	 */
 	private function api_request( $_action, $_data ) {
